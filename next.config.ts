@@ -29,7 +29,7 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   // PGlite ships WASM and data files that must stay out of the bundle.
-  serverExternalPackages: ["@electric-sql/pglite"],
+  serverExternalPackages: ["@electric-sql/pglite", "@electric-sql/pglite-pgvector"],
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
   },

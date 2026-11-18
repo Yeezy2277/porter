@@ -27,9 +27,10 @@ async function open(): Promise<Db> {
 export async function openPglite(dataDir?: string): Promise<Db> {
   if (dataDir) (await import("node:fs")).mkdirSync(dataDir, { recursive: true });
   const { PGlite } = await import("@electric-sql/pglite");
+  const { vector } = await import("@electric-sql/pglite-pgvector");
   const { drizzle } = await import("drizzle-orm/pglite");
   const { migrate } = await import("drizzle-orm/pglite/migrator");
-  const db = drizzle(new PGlite(dataDir), { schema });
+  const db = drizzle(new PGlite({ dataDir, extensions: { vector } }), { schema });
   await migrate(db, { migrationsFolder: "drizzle" });
   return db as unknown as Db;
 }

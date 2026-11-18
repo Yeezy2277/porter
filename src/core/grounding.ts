@@ -66,10 +66,21 @@ export function bodyPreserved(sourceText: string, migratedText: string, allowedG
 
 const STOP = new Set(["The", "A", "An", "This", "That", "These", "Those", "It", "Its", "We", "Our", "You", "Your", "I", "In", "On", "At", "For", "From", "With", "How", "What", "Why", "When", "Where", "Which", "Who", "And", "But", "Or", "If", "To", "Of", "By", "As", "Is", "Are", "Be", "All", "Each", "Every", "Most", "Some", "Six", "Four", "Two", "Three", "Ten", "One", "Five"]);
 
-/** Numbers and capitalised words (names, places) a generated text uses. */
+/**
+ * Numbers and capitalised words (names, places) a generated text uses. A
+ * capital at the start of a sentence says nothing ("Planning your first
+ * walk…"), so those words are skipped: a name there goes unchecked, which is
+ * the cheaper mistake than rejecting good sentences.
+ */
 export function factTokens(text: string): string[] {
   const numbers = text.match(/\d[\d,.]*/g)?.map((n) => n.replace(/[,.]+$/, "").replace(/,/g, "")) ?? [];
-  const names = (text.match(/\b\p{Lu}[\p{L}'’-]*/gu) ?? []).filter((w) => !STOP.has(w));
+  const names: string[] = [];
+  for (const m of text.matchAll(/\p{Lu}[\p{L}'’-]*/gu)) {
+    const before = text.slice(0, m.index).replace(/["“'‘(\s]+$/, "");
+    const sentenceStart = before === "" || /[.!?:]$/.test(before);
+    const wordStart = m.index === 0 || !/\p{L}/u.test(text[m.index - 1] ?? "");
+    if (wordStart && !sentenceStart && !STOP.has(m[0])) names.push(m[0]);
+  }
   return [...new Set([...numbers, ...names])];
 }
 

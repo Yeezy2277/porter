@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from "vitest";
 
 // Replay everything: recorded Voyage vectors and recorded Claude answers, no keys.
-vi.mock("./env", () => ({ serverEnv: () => ({ databaseUrl: null, live: null, voyage: null, record: false }) }));
+vi.mock("./env", () => ({ serverEnv: () => ({ databaseUrl: null, live: null, voyage: null, record: false, replayFirst: false }) }));
 const { openPglite } = await import("@/db/client");
 const { embedder } = await import("./embed");
 const { buildIndex, proposeLinks } = await import("./link");

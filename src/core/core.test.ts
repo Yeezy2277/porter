@@ -142,6 +142,12 @@ describe("guardrails", () => {
     expect(ungrounded("Confeitaria Nacional, founded in 1830.", src)).toEqual(["1830"]);
     expect(ungrounded("The best tarts in Porto.", src)).toEqual(["Porto"]);
   });
+
+  it("doesn't take a sentence's first word for a name (regression: 'Planning' was rejected)", () => {
+    const src = `${post(1202).title}\n${visibleText(post(1202).html)}`;
+    expect(ungrounded("Planning your first hut-to-hut walk in the Alps? Book early.", src)).toEqual([]);
+    expect(ungrounded("Walks from Zermatt and the Alps.", src)).toEqual(["Zermatt"]);
+  });
 });
 
 describe("entry validation", () => {

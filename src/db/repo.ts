@@ -1,8 +1,10 @@
+import type { AgentEvent, Provenance, RunStatus } from "@/core/agent";
+import type { EntryDraft } from "@/core/model";
 import { desc, eq, sql } from "drizzle-orm";
 import type { Mapping } from "@/core/mapping";
 import type { CallResult } from "@/lib/llm";
 import type { Db } from "./client";
-import { llmCalls, mappings, type LlmCallRow, type MappingRow } from "./schema";
+import { agentRuns, entries, llmCalls, mappings, type AgentRunRow, type EntryRow, type LlmCallRow, type MappingRow } from "./schema";
 
 export async function logCall(db: Db, purpose: string, promptVersion: string, r: CallResult<unknown>): Promise<LlmCallRow> {
   const [row] = await db
@@ -67,4 +69,56 @@ export async function approve(db: Db, contentType: string, seenUpdatedAt: string
 
 export async function resetMapping(db: Db, contentType: string): Promise<void> {
   await db.delete(mappings).where(eq(mappings.contentType, contentType));
+}
+
+// Stage 04: agent runs and the review queue
+
+
+/** Starts a run unless one for this post is already going (within 5 minutes: older ones crashed). */
+export async function startRun(db: Db, postId: number, mode: "live" | "replay"): Promise<AgentRunRow | null> {
+  const running = await db
+    .select({ id: agentRuns.id })
+    .from(agentRuns)
+    .where(sql`${agentRuns.postId} = ${postId} and ${agentRuns.status} = 'running' and ${agentRuns.startedAt} > now() - interval '5 minutes'`);
+  if (running.length) return null;
+  const [row] = await db.insert(agentRuns).values({ postId, mode, status: "running" }).returning();
+  return row ?? null;
+}
+
+export async function finishRun(
+  db: Db,
+  id: number,
+  r: { status: RunStatus; reason: string; turns: number; inputTokens: number; outputTokens: number; cacheReadTokens: number; costMicros: number; events: AgentEvent[] },
+): Promise<void> {
+  await db.update(agentRuns).set({ ...r, finishedAt: new Date() }).where(eq(agentRuns.id, id));
+}
+
+export async function latestRuns(db: Db): Promise<AgentRunRow[]> {
+  return db.select().from(agentRuns).orderBy(desc(agentRuns.id)).limit(50);
+}
+
+export async function saveEntry(db: Db, e: { postId: number; draft: EntryDraft; provenance: Provenance; status: EntryRow["status"]; notes: string; runId: number }): Promise<void> {
+  const values = { postId: e.postId, entryId: e.draft.id, draft: e.draft, provenance: e.provenance, status: e.status, notes: e.notes, runId: e.runId, updatedAt: new Date() };
+  await db.insert(entries).values(values).onConflictDoUpdate({ target: entries.postId, set: values });
+}
+
+export async function getEntries(db: Db): Promise<EntryRow[]> {
+  return db.select().from(entries).orderBy(entries.postId);
+}
+
+/** A reviewer's edit to an agent-written field: the value changes and its origin becomes "person". */
+export async function editEntryField(db: Db, postId: number, field: string, value: string, seenUpdatedAt: string): Promise<EntryRow | null> {
+  const [row] = await db.select().from(entries).where(eq(entries.postId, postId));
+  if (!row || row.updatedAt.toISOString() !== seenUpdatedAt) return null;
+  const draft = { ...row.draft, fields: { ...row.draft.fields, [field]: value } };
+  const provenance = { ...row.provenance, [field]: { origin: "person" as const, detail: "Edited in review" } };
+  const [updated] = await db.update(entries).set({ draft, provenance, status: "in_review", updatedAt: new Date() }).where(eq(entries.postId, postId)).returning();
+  return updated ?? null;
+}
+
+export async function setEntryStatus(db: Db, postId: number, status: "approved" | "rejected", seenUpdatedAt: string): Promise<EntryRow | null> {
+  const [row] = await db.select().from(entries).where(eq(entries.postId, postId));
+  if (!row || row.updatedAt.toISOString() !== seenUpdatedAt) return null;
+  const [updated] = await db.update(entries).set({ status, updatedAt: new Date() }).where(eq(entries.postId, postId)).returning();
+  return updated ?? null;
 }

@@ -42,6 +42,7 @@ export async function embed(texts: readonly string[], inputType: InputType): Pro
   if (e.mode === "replay") return { vectors: texts.map((t) => recorded.vectors[keyOf(inputType, t)] ?? null), tokens: 0 };
 
   const env = serverEnv();
+  if (env.replayFirst && texts.every((t) => recorded.vectors[keyOf(inputType, t)])) return { vectors: texts.map((t) => recorded.vectors[keyOf(inputType, t)] ?? null), tokens: 0 };
   const out: (number[] | null)[] = [];
   let tokens = 0;
   // Voyage takes up to 128 inputs per request.

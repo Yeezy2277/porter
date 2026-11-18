@@ -2,7 +2,7 @@ import { describe, expect, it, vi } from "vitest";
 import { z } from "zod";
 
 // Replay mode: no key, so `structured` must answer from recordings only.
-vi.mock("./env", () => ({ serverEnv: () => ({ databaseUrl: null, live: null, voyage: null, record: false }) }));
+vi.mock("./env", () => ({ serverEnv: () => ({ databaseUrl: null, live: null, voyage: null, record: false, replayFirst: false }) }));
 vi.mock("../../samples/recordings.json", () => {
   return {
     default: {

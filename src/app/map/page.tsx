@@ -5,6 +5,7 @@ import { contentType } from "@/core/model";
 import { migratable } from "@/core/source";
 import { getDb } from "@/db/client";
 import { getMapping, recentCalls, spend } from "@/db/repo";
+import { getLinks } from "@/db/search";
 import { serverEnv } from "@/lib/env";
 import { preview, problemsFor } from "@/lib/map";
 import { MAP_PROMPT_VERSION } from "@/prompts/map";
@@ -21,14 +22,14 @@ const usd = (micros: number) => `$${(micros / 1_000_000).toFixed(micros < 10_000
 export default async function MapPage({ searchParams }: { searchParams: Promise<{ post?: string }> }) {
   const ct = contentType(model, CT);
   const db = await getDb();
-  const [row, calls, total] = await Promise.all([getMapping(db, CT), recentCalls(db, 5), spend(db)]);
+  const [row, calls, total, linkRows] = await Promise.all([getMapping(db, CT), recentCalls(db, 5), spend(db), getLinks(db)]);
   const live = serverEnv().live;
   const problems = row ? problemsFor(row.mapping) : [];
   const errors = problems.filter((p) => p.severity === "error").length;
   const posts = source.posts.filter((p) => migratable(p).ok);
   const { post: postParam } = await searchParams;
   const chosen = posts.find((p) => String(p.id) === postParam) ?? posts[0];
-  const pv = row && chosen ? preview(row.mapping, chosen) : null;
+  const pv = row && chosen ? preview(row.mapping, chosen, linkRows) : null;
   const proposedBy = row?.proposedBy ? calls.find((c) => c.id === row.proposedBy) : undefined;
 
   return (
@@ -148,6 +149,11 @@ export default async function MapPage({ searchParams }: { searchParams: Promise<
                         <span className="mono">{f}</span>: the primary source was empty or broke the rules, so the fallback ran.
                       </li>
                     ))}
+                    {pv.droppedTopics.length > 0 && (
+                      <li>
+                        <span className="mono">topics</span>: over the field&apos;s limit, so {pv.droppedTopics.join(", ")} didn&apos;t make it (categories come first).
+                      </li>
+                    )}
                     {pv.pending.map((p) => (
                       <li key={p.target} className="is-pending">
                         <span className="mono">{p.target}</span>: {p.transform === "generate" ? "written in stage 04" : "linked in stage 03"} from {p.sources.join(", ")}.

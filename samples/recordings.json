@@ -1,4 +1,125 @@
 {
+  "2b2e4a7f874f79231d2169d3": {
+    "promptVersion": "link-v1",
+    "model": "claude-opus-5-5",
+    "output": {
+      "decisions": [
+        {
+          "source": "category:10",
+          "decision": "link",
+          "entryId": "topic-food",
+          "reason": "Eating out at restaurants is covered by the Food & Drink topic.",
+          "evidence": "Markets, restaurants, bakeries"
+        },
+        {
+          "source": "category:11",
+          "decision": "link",
+          "entryId": "topic-hiking",
+          "reason": "The Hiking & Trails topic explicitly covers trekking.",
+          "evidence": "trekking and mountain huts"
+        },
+        {
+          "source": "category:12",
+          "decision": "link",
+          "entryId": "topic-rail",
+          "reason": "Trains are the subject of the Rail Travel topic.",
+          "evidence": "Trains, routes, rail passes and sleeper services"
+        },
+        {
+          "source": "category:13",
+          "decision": "link",
+          "entryId": "topic-cities",
+          "reason": "The City Guides topic is described as covering city breaks.",
+          "evidence": "City breaks: neighbourhoods, where to stay"
+        },
+        {
+          "source": "tag:100",
+          "decision": "link",
+          "entryId": "topic-portugal",
+          "reason": "Lisbon is a destination listed under the Portugal topic.",
+          "evidence": "Destination: Lisbon, Porto"
+        },
+        {
+          "source": "tag:101",
+          "decision": "link",
+          "entryId": "topic-food",
+          "reason": "Pastries belong under food, which covers bakeries.",
+          "evidence": "bakeries"
+        },
+        {
+          "source": "tag:102",
+          "decision": "skip",
+          "entryId": null,
+          "reason": "The Alps span France, Switzerland and Austria, so no single candidate clearly fits.",
+          "evidence": "Alps"
+        },
+        {
+          "source": "tag:103",
+          "decision": "link",
+          "entryId": "topic-hiking",
+          "reason": "The Hiking & Trails topic explicitly includes mountain huts.",
+          "evidence": "trekking and mountain huts"
+        },
+        {
+          "source": "tag:104",
+          "decision": "link",
+          "entryId": "topic-rail",
+          "reason": "Night trains are sleeper services, which are covered by Rail Travel.",
+          "evidence": "sleeper services"
+        },
+        {
+          "source": "tag:105",
+          "decision": "link",
+          "entryId": "topic-rail",
+          "reason": "Interrail is a rail pass, which is covered by Rail Travel.",
+          "evidence": "rail passes"
+        },
+        {
+          "source": "tag:106",
+          "decision": "link",
+          "entryId": "topic-budget",
+          "reason": "The Budget Travel topic explicitly lists cheap eats.",
+          "evidence": "cheap eats"
+        },
+        {
+          "source": "tag:107",
+          "decision": "link",
+          "entryId": "topic-sustainable",
+          "reason": "The Sustainable Travel topic explicitly includes slow travel.",
+          "evidence": "responsible tourism and slow travel"
+        },
+        {
+          "source": "tag:108",
+          "decision": "link",
+          "entryId": "topic-japan",
+          "reason": "Kyoto is a destination listed under the Japan topic.",
+          "evidence": "Destination: Tokyo, Kyoto, Osaka"
+        },
+        {
+          "source": "tag:109",
+          "decision": "link",
+          "entryId": "topic-shopping",
+          "reason": "Markets are the headline subject of the Markets & Shopping topic.",
+          "evidence": "Topic: Markets & Shopping"
+        },
+        {
+          "source": "tag:110",
+          "decision": "link",
+          "entryId": "topic-portugal",
+          "reason": "Porto is a destination listed under the Portugal topic.",
+          "evidence": "Destination: Lisbon, Porto"
+        }
+      ]
+    },
+    "usage": {
+      "inputTokens": 6164,
+      "outputTokens": 1495,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 12930,
+    "recordedAt": "2026-11-18T04:38:53.304Z"
+  },
   "4443cf4a2208031e98b88206": {
     "promptVersion": "map-v1",
     "model": "claude-opus-5-5",
@@ -148,5 +269,42 @@
     },
     "durationMs": 17551,
     "recordedAt": "2026-11-18T04:14:41.178Z"
+  },
+  "4bbec796f384cffd63575f0b": {
+    "promptVersion": "link-v1",
+    "model": "claude-opus-5-5",
+    "output": {
+      "decisions": [
+        {
+          "source": "author:3",
+          "decision": "link",
+          "entryId": "author-brennan",
+          "reason": "The abbreviated name matches Tom Brennan and both bios describe a former mountain guide writing about huts and weather.",
+          "evidence": "Former mountain guide. Writes about long walks, huts and weather."
+        },
+        {
+          "source": "author:5",
+          "decision": "link",
+          "entryId": "author-okafor",
+          "reason": "The abbreviated name matches Chidi Okafor and both bios give the same role.",
+          "evidence": "Chidi Okafor. Editor at large."
+        },
+        {
+          "source": "author:6",
+          "decision": "new",
+          "entryId": null,
+          "reason": "This is a collective staff byline, and none of the retrieved candidates is a staff or team author, so it needs a new entry.",
+          "evidence": "Northbound Staff"
+        }
+      ]
+    },
+    "usage": {
+      "inputTokens": 1979,
+      "outputTokens": 466,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 7268,
+    "recordedAt": "2026-11-18T04:38:40.363Z"
   }
 }

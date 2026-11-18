@@ -11,6 +11,7 @@ const Env = z
   .object({
     DATABASE_URL: opt,
     ANTHROPIC_API_KEY: opt,
+    VOYAGE_API_KEY: opt,
     PORTER_MODEL: opt,
     PORTER_LIVE: opt,
     PORTER_RECORD: opt,
@@ -29,6 +30,8 @@ export type ServerEnv = {
   databaseUrl: string | null;
   /** Live model calls: needs a key, and on Vercel an explicit PORTER_LIVE (a public demo must not spend money by default). */
   live: { model: string } | null;
+  /** Live embeddings, under the same rule as live model calls. */
+  voyage: { key: string } | null;
   record: boolean;
 };
 
@@ -51,6 +54,7 @@ export function parseEnv(source: Record<string, string | undefined>): ServerEnv 
   return {
     databaseUrl: e.DATABASE_URL ?? null,
     live: liveAllowed ? { model: e.PORTER_MODEL ?? DEFAULT_MODEL } : null,
+    voyage: e.VOYAGE_API_KEY && (!source.VERCEL || flag(e.PORTER_LIVE)) ? { key: e.VOYAGE_API_KEY } : null,
     record: flag(e.PORTER_RECORD),
   };
 }

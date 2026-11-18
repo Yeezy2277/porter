@@ -6,7 +6,7 @@ import { migratable } from "@/core/source";
 const STAGES = [
   { n: "01", name: "Convert", what: "HTML to Rich Text in code, with a word-for-word check", built: true, href: "/posts/1201" },
   { n: "02", name: "Map", what: "Claude proposes field mappings; you approve them", built: true, href: "/map" },
-  { n: "03", name: "Link", what: "Authors and topics matched to existing entries (RAG)", built: false },
+  { n: "03", name: "Link", what: "Authors and topics matched to existing entries (RAG)", built: true, href: "/link" },
   { n: "04", name: "Migrate", what: "An agent assembles each entry with tools; you review", built: false },
   { n: "05", name: "Measure", what: "Evals on a golden set, per prompt version", built: false },
 ];

@@ -1,4 +1,305 @@
 {
+  "0359c56c344db87d468f2a8f": {
+    "promptVersion": "judge-v1",
+    "model": "claude-haiku-5-5",
+    "output": {
+      "faithful": {
+        "reason": "All claims (thirty minutes, passes Opera House and heads, a few dollars with transport card) appear in the article; no invented facts.",
+        "pass": true
+      },
+      "specific": {
+        "reason": "Names the Circular Quay to Manly ferry, Opera House and harbour heads; could not be pasted onto a different article.",
+        "pass": true
+      },
+      "plain": {
+        "reason": "Calm, direct wording with no exclamation marks, superlatives or hype; 'Skip the tour boats' is a mild imperative but not clickbait.",
+        "pass": true
+      },
+      "purpose": {
+        "reason": "A single sentence that tells the searcher what the article covers and gives a reason to click, though it leans on the route detail rather than promising more guidance.",
+        "pass": true
+      }
+    },
+    "usage": {
+      "inputTokens": 1133,
+      "outputTokens": 248,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 2317,
+    "recordedAt": "2026-11-18T05:14:23.834Z"
+  },
+  "19debe8c6d8a9ba27790343b": {
+    "promptVersion": "link-v1",
+    "model": "claude-opus-5-5",
+    "output": {
+      "decisions": [
+        {
+          "source": "category:10",
+          "decision": "link",
+          "entryId": "topic-food",
+          "reason": "Eating out at restaurants is covered by the Food & Drink topic.",
+          "evidence": "Markets, restaurants, bakeries"
+        },
+        {
+          "source": "category:11",
+          "decision": "link",
+          "entryId": "topic-hiking",
+          "reason": "The Hiking & Trails topic explicitly includes trekking.",
+          "evidence": "trekking and mountain huts"
+        },
+        {
+          "source": "category:12",
+          "decision": "link",
+          "entryId": "topic-rail",
+          "reason": "Trains are the core subject of the Rail Travel topic.",
+          "evidence": "Trains, routes, rail passes and sleeper services"
+        },
+        {
+          "source": "category:13",
+          "decision": "link",
+          "entryId": "topic-cities",
+          "reason": "The City Guides topic is described as covering city breaks.",
+          "evidence": "City breaks: neighbourhoods"
+        },
+        {
+          "source": "tag:100",
+          "decision": "link",
+          "entryId": "topic-portugal",
+          "reason": "Lisbon is a destination listed under the Portugal topic.",
+          "evidence": "Destination: Lisbon, Porto"
+        },
+        {
+          "source": "tag:101",
+          "decision": "link",
+          "entryId": "topic-food",
+          "reason": "Pastries fall under the bakeries covered by Food & Drink.",
+          "evidence": "bakeries"
+        },
+        {
+          "source": "tag:102",
+          "decision": "skip",
+          "entryId": null,
+          "reason": "The Alps span France, Switzerland and Austria, so no single country topic clearly fits.",
+          "evidence": "Tag: Alps"
+        },
+        {
+          "source": "tag:103",
+          "decision": "link",
+          "entryId": "topic-hiking",
+          "reason": "Mountain huts are explicitly part of the Hiking & Trails topic.",
+          "evidence": "trekking and mountain huts"
+        },
+        {
+          "source": "tag:104",
+          "decision": "link",
+          "entryId": "topic-rail",
+          "reason": "Night trains are sleeper services covered by Rail Travel.",
+          "evidence": "sleeper services"
+        },
+        {
+          "source": "tag:105",
+          "decision": "link",
+          "entryId": "topic-rail",
+          "reason": "Interrail is a rail pass, which belongs under Rail Travel.",
+          "evidence": "rail passes"
+        },
+        {
+          "source": "tag:106",
+          "decision": "link",
+          "entryId": "topic-budget",
+          "reason": "The Budget Travel topic explicitly lists cheap eats.",
+          "evidence": "cheap eats"
+        },
+        {
+          "source": "tag:107",
+          "decision": "link",
+          "entryId": "topic-sustainable",
+          "reason": "The Sustainable Travel topic explicitly includes slow travel.",
+          "evidence": "responsible tourism and slow travel"
+        },
+        {
+          "source": "tag:108",
+          "decision": "link",
+          "entryId": "topic-japan",
+          "reason": "Kyoto is a destination listed under the Japan topic.",
+          "evidence": "Tokyo, Kyoto, Osaka"
+        },
+        {
+          "source": "tag:109",
+          "decision": "link",
+          "entryId": "topic-shopping",
+          "reason": "Markets are the headline subject of the Markets & Shopping topic.",
+          "evidence": "Topic: Markets & Shopping"
+        },
+        {
+          "source": "tag:110",
+          "decision": "link",
+          "entryId": "topic-portugal",
+          "reason": "Porto is a destination listed under the Portugal topic.",
+          "evidence": "Destination: Lisbon, Porto"
+        }
+      ]
+    },
+    "usage": {
+      "inputTokens": 6168,
+      "outputTokens": 1564,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 12783,
+    "recordedAt": "2026-11-18T05:13:55.994Z"
+  },
+  "20be82256ed482e586a71b5d": {
+    "promptVersion": "judge-v1",
+    "model": "claude-haiku-5-5",
+    "output": {
+      "faithful": {
+        "reason": "Restoration, reopening, four years, stalls, upstairs restaurants and lunch are all in the article. 'When to go' reflects the weekday morning advice. Nothing invented.",
+        "pass": true
+      },
+      "specific": {
+        "reason": "Names Porto's Bolhão market and its specific details (reopening after restoration, upstairs restaurants), so it is not generic.",
+        "pass": true
+      },
+      "plain": {
+        "reason": "Calm, factual wording with no hype, superlatives, exclamation marks or clichés.",
+        "pass": true
+      },
+      "purpose": {
+        "reason": "It is a single sentence that tells a searcher what the page covers and invites a click, matching the SEO description purpose.",
+        "pass": true
+      }
+    },
+    "usage": {
+      "inputTokens": 1161,
+      "outputTokens": 243,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 2355,
+    "recordedAt": "2026-11-18T05:17:00.840Z"
+  },
+  "24a2ac6d86f9b8c54977c095": {
+    "promptVersion": "judge-v1",
+    "model": "claude-haiku-5-5",
+    "output": {
+      "faithful": {
+        "reason": "The description accurately reflects the article: no stars or scores, instead what a place is good for, who will like it, and when to go. It does not add unsupported claims.",
+        "pass": true
+      },
+      "specific": {
+        "reason": "It names the specific policy of not rating restaurants and the specific three things offered instead, so it is tied to this article and not generic travel copy.",
+        "pass": true
+      },
+      "plain": {
+        "reason": "The tone is calm and factual with no hype, superlatives, exclamation marks, or marketing clichés.",
+        "pass": true
+      },
+      "purpose": {
+        "reason": "It is a single sentence that tells a searcher what the article covers and gives a reason to click for readers wondering about restaurant ratings, though it is somewhat descriptive rather than strongly inviting.",
+        "pass": true
+      }
+    },
+    "usage": {
+      "inputTokens": 1086,
+      "outputTokens": 265,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 2437,
+    "recordedAt": "2026-11-18T05:16:09.391Z"
+  },
+  "253d412d4e709325703a0fd4": {
+    "promptVersion": "judge-v1",
+    "model": "claude-haiku-5-5",
+    "output": {
+      "faithful": {
+        "reason": "The summary matches the article: the team stopped short flights under 1,000 km two years ago and found train trips longer and better. It calls the piece an editor's note, which the article itself labels it as partly. Nothing invented.",
+        "pass": true
+      },
+      "specific": {
+        "reason": "It names the specific policy (flights under 1,000 km) and the train-travel change, so it could not be pasted onto a different travel article.",
+        "pass": true
+      },
+      "plain": {
+        "reason": "Calm, plain wording with no hype, superlatives, exclamation marks or clichés.",
+        "pass": true
+      },
+      "purpose": {
+        "reason": "It is a one-sentence summary that tells the reader what the article covers: the policy and why train trips came out better. It fits the summary role.",
+        "pass": true
+      }
+    },
+    "usage": {
+      "inputTokens": 1150,
+      "outputTokens": 251,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 2403,
+    "recordedAt": "2026-11-18T05:14:11.329Z"
+  },
+  "285a0782c955b201f5e56fd3": {
+    "promptVersion": "judge-v1",
+    "model": "claude-haiku-5-5",
+    "output": {
+      "faithful": {
+        "reason": "The article says scores reflect one evening for one writer, that they instead describe what a place is good for, who will like it, and when to go, and that recommended meals are paid for by the writers. The summary matches these points without adding unsupported claims.",
+        "pass": true
+      },
+      "specific": {
+        "reason": "It names this article's specific policy topic (no stars or scores, paying for meals) and could not be pasted onto an unrelated travel article.",
+        "pass": true
+      },
+      "plain": {
+        "reason": "The tone is calm and factual with no hype, superlatives, exclamation marks, or marketing clichés.",
+        "pass": true
+      },
+      "purpose": {
+        "reason": "As a one-sentence summary it tells the reader what they will get: the reasoning for no ratings, what is offered instead, and the payment policy.",
+        "pass": true
+      }
+    },
+    "usage": {
+      "inputTokens": 1079,
+      "outputTokens": 264,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 2307,
+    "recordedAt": "2026-11-18T05:16:06.951Z"
+  },
+  "28eba7aa0b542501420b6717": {
+    "promptVersion": "judge-v1",
+    "model": "claude-haiku-5-5",
+    "output": {
+      "faithful": {
+        "reason": "The description matches the article: coffee house as place to linger, the three coffee types, and the water refill as a sign you are welcome to stay. 'Nobody will rush you' is a reasonable reading of 'you are welcome to stay', though it slightly extends the article's claim.",
+        "pass": true
+      },
+      "specific": {
+        "reason": "It names the specific coffees (Melange, Einspänner, Verlängerter) and the Viennese coffee house context, so it is clearly about this article and not pasteable onto another travel piece.",
+        "pass": true
+      },
+      "plain": {
+        "reason": "The tone is calm and informational, with a question and no hype, superlatives, exclamation marks or clichés.",
+        "pass": true
+      },
+      "purpose": {
+        "reason": "As an SEO description it is a single sentence that tells a searcher what the article covers and invites a click, with a question hook.",
+        "pass": true
+      }
+    },
+    "usage": {
+      "inputTokens": 1124,
+      "outputTokens": 295,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 2405,
+    "recordedAt": "2026-11-18T05:15:04.488Z"
+  },
   "2b2e4a7f874f79231d2169d3": {
     "promptVersion": "link-v1",
     "model": "claude-opus-5-5",
@@ -119,6 +420,366 @@
     },
     "durationMs": 12930,
     "recordedAt": "2026-11-18T04:38:53.304Z"
+  },
+  "3272aecd92519afa07394685": {
+    "promptVersion": "judge-v1",
+    "model": "claude-haiku-5-5",
+    "output": {
+      "faithful": {
+        "reason": "Every lesson named (sale pass, flexi pass, avoiding high-speed reservations, night trains) comes from the article; the summary invents nothing and the list of ten matches the article's ten points.",
+        "pass": true
+      },
+      "specific": {
+        "reason": "It names Interrail, the month-long budget trip, the high-speed reservation and night train lessons, so it describes this article rather than any generic travel piece.",
+        "pass": true
+      },
+      "plain": {
+        "reason": "The tone is calm and factual with no hype, superlatives, exclamation marks or clichés.",
+        "pass": true
+      },
+      "purpose": {
+        "reason": "It is a single sentence telling the reader the article covers ten budget lessons from an Interrail trip, which is what a summary should do.",
+        "pass": true
+      }
+    },
+    "usage": {
+      "inputTokens": 1223,
+      "outputTokens": 252,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 2401,
+    "recordedAt": "2026-11-18T05:14:03.987Z"
+  },
+  "36ba861fb2029b3e28730c7e": {
+    "promptVersion": "judge-v1",
+    "model": "claude-haiku-5-5",
+    "output": {
+      "faithful": {
+        "reason": "Mentions cable car vs Platteklip Gorge climb of two to three hours, queues and tablecloth cloud, all drawn from the article. Nothing invented.",
+        "pass": true
+      },
+      "specific": {
+        "reason": "Names Table Mountain, Platteklip Gorge and the tablecloth cloud; clearly about this article only.",
+        "pass": true
+      },
+      "plain": {
+        "reason": "Calm, plain wording with a question and no hype, superlatives or exclamation marks.",
+        "pass": true
+      },
+      "purpose": {
+        "reason": "As an SEO description it is a single sentence that poses the cable car versus hike choice a searcher would want answered, giving a reason to click.",
+        "pass": true
+      }
+    },
+    "usage": {
+      "inputTokens": 1136,
+      "outputTokens": 239,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 2029,
+    "recordedAt": "2026-11-18T05:16:23.729Z"
+  },
+  "38e2cd6a6eb0bcf361db01b3": {
+    "promptVersion": "judge-v1",
+    "model": "claude-haiku-5-5",
+    "output": {
+      "faithful": {
+        "reason": "The text claims the climb is the most breathtaking on the planet and that the mountain will blow your mind, which the article does not support; it only describes logistics and a cloud that obscures views.",
+        "pass": false
+      },
+      "specific": {
+        "reason": "It mentions Table Mountain and the cable car, so it is tied to this article, though the content is generic hype that could fit many mountain pieces.",
+        "pass": false
+      },
+      "plain": {
+        "reason": "It uses superlatives, all-caps, multiple exclamation marks and hype language like blow your mind, the opposite of plain and calm.",
+        "pass": false
+      },
+      "purpose": {
+        "reason": "As an SEO description it is a single sentence-like blurb, but it does not convey what the article covers (cable car versus Platteklip path, timing, weather) and so gives a searcher little reason to click beyond vague hype.",
+        "pass": false
+      }
+    },
+    "usage": {
+      "inputTokens": 1119,
+      "outputTokens": 293,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 2652,
+    "recordedAt": "2026-11-18T05:18:05.617Z"
+  },
+  "3c18eeca4248bf7f0b6192b0": {
+    "promptVersion": "link-v1",
+    "model": "claude-opus-5-5",
+    "output": {
+      "decisions": [
+        {
+          "source": "demo-category-10",
+          "decision": "link",
+          "entryId": "topic-food",
+          "reason": "Eating out is about restaurants, which the Food & Drink topic covers.",
+          "evidence": "Markets, restaurants, bakeries"
+        },
+        {
+          "source": "demo-category-11",
+          "decision": "link",
+          "entryId": "topic-hiking",
+          "reason": "The Hiking & Trails topic explicitly includes trekking.",
+          "evidence": "trekking and mountain huts"
+        },
+        {
+          "source": "demo-category-12",
+          "decision": "link",
+          "entryId": "topic-rail",
+          "reason": "Trains is the same subject as Rail Travel.",
+          "evidence": "Trains, routes, rail passes and sleeper services"
+        },
+        {
+          "source": "demo-category-13",
+          "decision": "link",
+          "entryId": "topic-cities",
+          "reason": "The City Guides topic is explicitly about city breaks.",
+          "evidence": "City breaks: neighbourhoods"
+        },
+        {
+          "source": "demo-tag-100",
+          "decision": "link",
+          "entryId": "topic-portugal",
+          "reason": "Lisbon is a destination in Portugal, which that topic lists.",
+          "evidence": "Destination: Lisbon, Porto"
+        },
+        {
+          "source": "demo-tag-101",
+          "decision": "link",
+          "entryId": "topic-food",
+          "reason": "Pastries belong under food, which covers bakeries.",
+          "evidence": "bakeries"
+        },
+        {
+          "source": "demo-tag-102",
+          "decision": "skip",
+          "entryId": null,
+          "reason": "The Alps span France, Switzerland and Austria, so no single country topic clearly fits.",
+          "evidence": "Alps"
+        },
+        {
+          "source": "demo-tag-103",
+          "decision": "link",
+          "entryId": "topic-hiking",
+          "reason": "Mountain huts are explicitly part of the Hiking & Trails topic.",
+          "evidence": "trekking and mountain huts"
+        },
+        {
+          "source": "demo-tag-104",
+          "decision": "link",
+          "entryId": "topic-rail",
+          "reason": "Night trains are sleeper services, which belong under Rail Travel.",
+          "evidence": "sleeper services"
+        },
+        {
+          "source": "demo-tag-105",
+          "decision": "link",
+          "entryId": "topic-rail",
+          "reason": "Interrail is a rail pass, which belongs under Rail Travel.",
+          "evidence": "rail passes"
+        },
+        {
+          "source": "demo-tag-106",
+          "decision": "link",
+          "entryId": "topic-budget",
+          "reason": "The Budget Travel topic explicitly lists cheap eats.",
+          "evidence": "cheap eats"
+        },
+        {
+          "source": "demo-tag-107",
+          "decision": "link",
+          "entryId": "topic-sustainable",
+          "reason": "The Sustainable Travel topic explicitly covers slow travel.",
+          "evidence": "responsible tourism and slow travel"
+        },
+        {
+          "source": "demo-tag-108",
+          "decision": "link",
+          "entryId": "topic-japan",
+          "reason": "Kyoto is a destination in Japan, which that topic lists.",
+          "evidence": "Tokyo, Kyoto, Osaka"
+        },
+        {
+          "source": "demo-tag-109",
+          "decision": "link",
+          "entryId": "topic-shopping",
+          "reason": "Markets is a core subject of the Markets & Shopping topic.",
+          "evidence": "Markets & Shopping"
+        },
+        {
+          "source": "demo-tag-110",
+          "decision": "link",
+          "entryId": "topic-portugal",
+          "reason": "Porto is a destination in Portugal, which that topic lists.",
+          "evidence": "Lisbon, Porto, the Douro"
+        },
+        {
+          "source": "x-category-food",
+          "decision": "link",
+          "entryId": "topic-food",
+          "reason": "Food is the same subject as Food & Drink.",
+          "evidence": "Food & Drink"
+        },
+        {
+          "source": "x-category-wine",
+          "decision": "link",
+          "entryId": "topic-wine",
+          "reason": "The Wine Regions topic covers wine.",
+          "evidence": "Vineyards, cellars and wine routes"
+        },
+        {
+          "source": "x-category-cycling-tours",
+          "decision": "link",
+          "entryId": "topic-cycling",
+          "reason": "Cycling tours are bike touring, which the Cycling topic covers.",
+          "evidence": "Bike touring"
+        },
+        {
+          "source": "x-category-ski",
+          "decision": "link",
+          "entryId": "topic-winter",
+          "reason": "Skiing is covered by the Winter Sports topic.",
+          "evidence": "Skiing, snowboarding and ski resorts"
+        },
+        {
+          "source": "x-category-island-hopping",
+          "decision": "link",
+          "entryId": "topic-ferries",
+          "reason": "The Ferries & Islands topic explicitly covers island hopping.",
+          "evidence": "island hopping"
+        },
+        {
+          "source": "x-category-kids",
+          "decision": "link",
+          "entryId": "topic-family",
+          "reason": "Kids & Family is the same subject as Family Travel.",
+          "evidence": "Trips with children"
+        },
+        {
+          "source": "x-category-podcasts",
+          "decision": "skip",
+          "entryId": null,
+          "reason": "Podcasts is a content format rather than a travel topic, and no candidate fits.",
+          "evidence": "Podcasts"
+        },
+        {
+          "source": "x-category-news",
+          "decision": "skip",
+          "entryId": null,
+          "reason": "News is a meta category with no matching topic.",
+          "evidence": "News"
+        },
+        {
+          "source": "x-tag-espresso",
+          "decision": "link",
+          "entryId": "topic-coffee",
+          "reason": "Espresso belongs under the Coffee Culture topic.",
+          "evidence": "Coffee Culture"
+        },
+        {
+          "source": "x-tag-tokyo",
+          "decision": "link",
+          "entryId": "topic-japan",
+          "reason": "Tokyo is a destination in Japan, which that topic lists.",
+          "evidence": "Destination: Tokyo"
+        },
+        {
+          "source": "x-tag-provence",
+          "decision": "link",
+          "entryId": "topic-france",
+          "reason": "Provence is a region of France, which that topic lists.",
+          "evidence": "Paris, the Alps, Provence"
+        },
+        {
+          "source": "x-tag-carnival",
+          "decision": "link",
+          "entryId": "topic-festivals",
+          "reason": "The Festivals & Events topic explicitly includes carnivals.",
+          "evidence": "carnivals"
+        },
+        {
+          "source": "x-tag-photo-tips",
+          "decision": "link",
+          "entryId": "topic-photography",
+          "reason": "Photography tips belong under Travel Photography.",
+          "evidence": "how to take better pictures"
+        },
+        {
+          "source": "x-tag-sunsets",
+          "decision": "skip",
+          "entryId": null,
+          "reason": "Sunsets is too generic to clearly belong on any single topic page.",
+          "evidence": "sunsets"
+        },
+        {
+          "source": "x-tag-best-of-2019",
+          "decision": "skip",
+          "entryId": null,
+          "reason": "This is a dated editorial meta tag, not a topic.",
+          "evidence": "best of 2019"
+        },
+        {
+          "source": "x-tag-vineyards",
+          "decision": "link",
+          "entryId": "topic-wine",
+          "reason": "The Wine Regions topic explicitly covers vineyards.",
+          "evidence": "Vineyards, cellars and wine routes"
+        },
+        {
+          "source": "x-tag-dolomites",
+          "decision": "skip",
+          "entryId": null,
+          "reason": "The Dolomites are in Italy, but the Italy topic is not among the candidates and no listed topic clearly fits.",
+          "evidence": "Dolomites"
+        }
+      ]
+    },
+    "usage": {
+      "inputTokens": 12101,
+      "outputTokens": 3153,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 26017,
+    "recordedAt": "2026-11-18T05:13:18.599Z"
+  },
+  "40b3f9073a6ee6a136dc3d69": {
+    "promptVersion": "judge-v1",
+    "model": "claude-haiku-5-5",
+    "output": {
+      "faithful": {
+        "reason": "The text is just the word 'Marrakech', which is a place the article covers, so it invents nothing.",
+        "pass": true
+      },
+      "specific": {
+        "reason": "A single city name is too generic; it could sit atop any Marrakech article and says nothing about souks or the advice given.",
+        "pass": false
+      },
+      "plain": {
+        "reason": "It is plain and calm with no hype, superlatives, or clichés.",
+        "pass": true
+      },
+      "purpose": {
+        "reason": "A summary should tell the reader what they will get in one or two sentences; a bare city name tells them nothing about the content or benefit.",
+        "pass": false
+      }
+    },
+    "usage": {
+      "inputTokens": 1100,
+      "outputTokens": 199,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 2577,
+    "recordedAt": "2026-11-18T05:18:10.552Z"
   },
   "4443cf4a2208031e98b88206": {
     "promptVersion": "map-v1",
@@ -270,6 +931,36 @@
     "durationMs": 17551,
     "recordedAt": "2026-11-18T04:14:41.178Z"
   },
+  "444833b4ab48d74f242bcb8a": {
+    "promptVersion": "judge-v1",
+    "model": "claude-haiku-5-5",
+    "output": {
+      "faithful": {
+        "reason": "The article mentions pho, bun cha, egg coffee, plastic stools, stalls, and queuing locals, but says nothing about 'how to choose where to stop' beyond looking for queues; that is a mild extension, and 'a day of' matches the article's day plan. Claim that stalls each make one dish is in the article. Mostly supported, with a small overreach on the 'how to choose' promise being a reasonable reading of the queue tip.",
+        "pass": true
+      },
+      "specific": {
+        "reason": "Names Hanoi, specific dishes, the Old Quarter-style street stall setting, and the queuing tip; it could not be pasted onto a different travel article.",
+        "pass": true
+      },
+      "plain": {
+        "reason": "Calm, descriptive wording with no exclamation marks, superlatives, or hype; 'Eat like a local' is mild but not clickbait.",
+        "pass": true
+      },
+      "purpose": {
+        "reason": "A single sentence that tells the searcher what the article covers and invites a click, which fits an SEO description.",
+        "pass": true
+      }
+    },
+    "usage": {
+      "inputTokens": 1120,
+      "outputTokens": 343,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 2673,
+    "recordedAt": "2026-11-18T05:17:23.638Z"
+  },
   "4bbec796f384cffd63575f0b": {
     "promptVersion": "link-v1",
     "model": "claude-opus-5-5",
@@ -306,5 +997,1243 @@
     },
     "durationMs": 7268,
     "recordedAt": "2026-11-18T04:38:40.363Z"
+  },
+  "4cab5ad43fb8d73ea8866b11": {
+    "promptVersion": "judge-v1",
+    "model": "claude-haiku-5-5",
+    "output": {
+      "faithful": {
+        "reason": "The article says the team stopped taking flights under 1,000 km and that trains make the journey part of the story; the description reflects this without inventing facts.",
+        "pass": true
+      },
+      "specific": {
+        "reason": "It names the specific policy (flights under 1,000 km) and the train-journey angle, so it is clearly about this article and not pasteable onto another travel piece.",
+        "pass": true
+      },
+      "plain": {
+        "reason": "The wording is calm and factual with no hype, superlatives, exclamation marks or clichés.",
+        "pass": true
+      },
+      "purpose": {
+        "reason": "As a single sentence it tells a searcher what the piece covers and gives a reason to click, though it leans on a summary rather than a strong hook.",
+        "pass": true
+      }
+    },
+    "usage": {
+      "inputTokens": 1147,
+      "outputTokens": 240,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 1954,
+    "recordedAt": "2026-11-18T05:14:13.285Z"
+  },
+  "5751d9dcae729aea395cfc8f": {
+    "promptVersion": "link-v1",
+    "model": "claude-opus-5-5",
+    "output": {
+      "decisions": [
+        {
+          "source": "author:3",
+          "decision": "link",
+          "entryId": "author-brennan",
+          "reason": "The abbreviated name matches Tom Brennan and both bios describe a former mountain guide writing about huts and weather.",
+          "evidence": "Former mountain guide. Writes about long walks, huts and weather."
+        },
+        {
+          "source": "author:5",
+          "decision": "link",
+          "entryId": "author-okafor",
+          "reason": "The abbreviated name matches Chidi Okafor and both bios give the same role of editor at large.",
+          "evidence": "Chidi Okafor. Editor at large."
+        },
+        {
+          "source": "author:6",
+          "decision": "new",
+          "entryId": null,
+          "reason": "This is a collective staff byline, and none of the retrieved candidates is a staff or team author; the Guest Contributor entry covers outside writers, not staff.",
+          "evidence": "Author: Northbound Staff"
+        }
+      ]
+    },
+    "usage": {
+      "inputTokens": 1979,
+      "outputTokens": 476,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 7925,
+    "recordedAt": "2026-11-18T05:13:43.207Z"
+  },
+  "595064bf77d606088c8d1347": {
+    "promptVersion": "judge-v1",
+    "model": "claude-haiku-5-5",
+    "output": {
+      "faithful": {
+        "reason": "All details (80 km, four or five days, refugios/campsites booked months ahead, west to east direction) come from the article; nothing invented.",
+        "pass": true
+      },
+      "specific": {
+        "reason": "Names the W Trek, its length, booking needs and direction, so it is specific to this article rather than generic travel copy.",
+        "pass": true
+      },
+      "plain": {
+        "reason": "Calm, informational tone with no hype, exclamation marks or superlatives.",
+        "pass": true
+      },
+      "purpose": {
+        "reason": "As an SEO description it is a single sentence that previews the content and gives a searcher reason to click, though it leans on listing facts rather than a strong pull.",
+        "pass": true
+      }
+    },
+    "usage": {
+      "inputTokens": 1147,
+      "outputTokens": 223,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 2682,
+    "recordedAt": "2026-11-18T05:17:18.767Z"
+  },
+  "5bb825ffbe7e20690b854019": {
+    "promptVersion": "judge-v1",
+    "model": "claude-haiku-5-5",
+    "output": {
+      "faithful": {
+        "reason": "Every item named (Coyoacán, the anthropology museum, Paseo de la Reforma car-free on Sunday, tacos al pastor) appears in the article; no invented facts are added.",
+        "pass": true
+      },
+      "specific": {
+        "reason": "It names concrete places and activities from this article, so it could not be pasted onto a different travel piece.",
+        "pass": true
+      },
+      "plain": {
+        "reason": "The tone is calm and factual with no hype, superlatives, exclamation marks or clichés.",
+        "pass": true
+      },
+      "purpose": {
+        "reason": "It is a single sentence that previews the weekend itinerary and gives a searcher a clear reason to click, as an SEO description should.",
+        "pass": true
+      }
+    },
+    "usage": {
+      "inputTokens": 1148,
+      "outputTokens": 232,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 2088,
+    "recordedAt": "2026-11-18T05:14:37.308Z"
+  },
+  "63441379a4f4c4183820ef77": {
+    "promptVersion": "judge-v1",
+    "model": "claude-haiku-5-5",
+    "output": {
+      "faithful": {
+        "reason": "The summary accurately reflects the article: four-day hut loop, Les Houches to Chamonix, daily distances and ascents are only implied rather than stated, and the bypass via the valley and lift is in the article. It adds no invented facts.",
+        "pass": true
+      },
+      "specific": {
+        "reason": "It names specific places (Les Houches, Chamonix) and the distinctive ladder-and-chain section on day two, so it is tied to this article.",
+        "pass": true
+      },
+      "plain": {
+        "reason": "The wording is calm and descriptive with no hype, superlatives, exclamation marks or clichés.",
+        "pass": true
+      },
+      "purpose": {
+        "reason": "It is a single sentence telling the reader what the article covers: the route, daily distance and ascent, and the alternative for the exposed section. That matches a summary's job.",
+        "pass": true
+      }
+    },
+    "usage": {
+      "inputTokens": 1203,
+      "outputTokens": 275,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 2604,
+    "recordedAt": "2026-11-18T05:14:01.575Z"
+  },
+  "65a563a7f1a8abc4fd9dfced": {
+    "promptVersion": "judge-v1",
+    "model": "claude-haiku-5-5",
+    "output": {
+      "faithful": {
+        "reason": "The article says about 80 km, but the description says 100 km, an invented number. It also says five days where the article says four or five, which is a narrowing not supported.",
+        "pass": false
+      },
+      "specific": {
+        "reason": "It names the W Trek in Chilean Patagonia and the refugio booking detail, so it is about this article rather than generic.",
+        "pass": true
+      },
+      "plain": {
+        "reason": "The tone is calm and factual with no exclamation marks, superlatives, or hype.",
+        "pass": true
+      },
+      "purpose": {
+        "reason": "It is a single sentence that tells the searcher what the trek involves and would prompt a click, though the factual errors undercut it.",
+        "pass": false
+      }
+    },
+    "usage": {
+      "inputTokens": 1134,
+      "outputTokens": 222,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 2416,
+    "recordedAt": "2026-11-18T05:17:55.727Z"
+  },
+  "6a3e153a303b2635ed4c7380": {
+    "promptVersion": "link-v1",
+    "model": "claude-opus-5-5",
+    "output": {
+      "decisions": [
+        {
+          "source": "demo-author-3",
+          "decision": "link",
+          "entryId": "author-brennan",
+          "reason": "Abbreviated name and bio about mountain guiding, huts and weather match Tom Brennan.",
+          "evidence": "Former mountain guide. Writes about long walks, huts and weather."
+        },
+        {
+          "source": "demo-author-5",
+          "decision": "link",
+          "entryId": "author-okafor",
+          "reason": "Abbreviated name and identical role match Chidi Okafor.",
+          "evidence": "Chidi O.. Editor at large."
+        },
+        {
+          "source": "demo-author-6",
+          "decision": "new",
+          "entryId": null,
+          "reason": "A staff byline with no bio matches none of the individual or collective candidates, so it should be created.",
+          "evidence": "Northbound Staff"
+        },
+        {
+          "source": "x-author-a-ortega",
+          "decision": "link",
+          "entryId": "author-ortega",
+          "reason": "Abbreviated name and Lisbon bakeries and markets beat match Ana-Lucía Ortega.",
+          "evidence": "Writes about Lisbon's bakeries and food markets."
+        },
+        {
+          "source": "x-author-ana-o",
+          "decision": "link",
+          "entryId": "author-ortiz",
+          "reason": "Abbreviated name and photo-picking, caption-writing role match Ana Ortiz.",
+          "evidence": "Picture desk: chooses the photos and writes the captions."
+        },
+        {
+          "source": "x-author-t-brenner",
+          "decision": "link",
+          "entryId": "author-brenner",
+          "reason": "Abbreviated name and Vienna coffee houses and wine bars beat match Tomas Brenner.",
+          "evidence": "Reviews Vienna's coffee houses and wine bars."
+        },
+        {
+          "source": "x-author-kenji-s",
+          "decision": "link",
+          "entryId": "author-satoh",
+          "reason": "Abbreviated name and Tokyo hotels and architecture beat match Kenji Satoh.",
+          "evidence": "Hotels and buildings in Tokyo."
+        },
+        {
+          "source": "x-author-mei",
+          "decision": "link",
+          "entryId": "author-sato",
+          "reason": "First name and night train photography beat match Mei Sato.",
+          "evidence": "Trains at night, and the photos taken from them."
+        },
+        {
+          "source": "x-author-j-ferreira",
+          "decision": "link",
+          "entryId": "author-ferreira",
+          "reason": "Abbreviated name and Porto, port wine and Douro beat match João Ferreira.",
+          "evidence": "From Porto. Port wine and the Douro."
+        },
+        {
+          "source": "x-author-editorial-team",
+          "decision": "link",
+          "entryId": "author-desk",
+          "reason": "The editorial team byline is the same collective as the Editorial Desk entry.",
+          "evidence": "Pieces written by the editorial team together"
+        },
+        {
+          "source": "x-author-laura-kim",
+          "decision": "new",
+          "entryId": null,
+          "reason": "No candidate shares her name or her Seoul street food beat.",
+          "evidence": "Writes about street food in Seoul."
+        },
+        {
+          "source": "x-author-siobhan",
+          "decision": "link",
+          "entryId": "author-oconnell",
+          "reason": "Same name spelled without apostrophe and the same Irish coastal walks beat.",
+          "evidence": "Siobhan O Connell. Coastal walks in Ireland."
+        },
+        {
+          "source": "x-author-guest-writer",
+          "decision": "link",
+          "entryId": "author-guest",
+          "reason": "Both are the generic byline for one-off pieces by outside writers.",
+          "evidence": "Occasional pieces by outside writers."
+        },
+        {
+          "source": "x-author-rania",
+          "decision": "link",
+          "entryId": "author-haddad",
+          "reason": "First name and desert routes and souks beat match Rania Haddad.",
+          "evidence": "Desert routes and souks."
+        },
+        {
+          "source": "x-author-chris-okafor",
+          "decision": "new",
+          "entryId": null,
+          "reason": "Shares only a surname with Chidi Okafor but has a different first name and a sports photography beat.",
+          "evidence": "Sports photographer covering football."
+        }
+      ]
+    },
+    "usage": {
+      "inputTokens": 6671,
+      "outputTokens": 1515,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 14554,
+    "recordedAt": "2026-11-18T05:12:52.577Z"
+  },
+  "6af3f17a5cadc99b6a138302": {
+    "promptVersion": "judge-v1",
+    "model": "claude-haiku-5-5",
+    "output": {
+      "faithful": {
+        "reason": "Every element (morning visit, haggling before purchase, walking away, following the flow downhill to the square) comes from the article; no invented facts.",
+        "pass": true
+      },
+      "specific": {
+        "reason": "Names the souks north of Jemaa el-Fnaa and the specific tips about timing, pricing and exiting the maze, so it is tied to this article.",
+        "pass": true
+      },
+      "plain": {
+        "reason": "Calm, factual wording with no hype, superlatives, exclamation marks or marketing clichés.",
+        "pass": true
+      },
+      "purpose": {
+        "reason": "As a one-sentence summary it tells the reader what they will get: timing, price agreement and navigation tips for the souks.",
+        "pass": true
+      }
+    },
+    "usage": {
+      "inputTokens": 1121,
+      "outputTokens": 233,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 2121,
+    "recordedAt": "2026-11-18T05:14:53.063Z"
+  },
+  "6c03e78c8bad3c340c745172": {
+    "promptVersion": "judge-v1",
+    "model": "claude-haiku-5-5",
+    "output": {
+      "faithful": {
+        "reason": "The summary is empty, so it asserts nothing; it has no content to check against the article.",
+        "pass": false
+      },
+      "specific": {
+        "reason": "There is no text, so it cannot be about this article in particular.",
+        "pass": false
+      },
+      "plain": {
+        "reason": "An empty field contains no hype, but it also is not a usable plain summary.",
+        "pass": false
+      },
+      "purpose": {
+        "reason": "A summary is required to tell the reader what they will get from the article, and the empty text does nothing of this.",
+        "pass": false
+      }
+    },
+    "usage": {
+      "inputTokens": 969,
+      "outputTokens": 168,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 2961,
+    "recordedAt": "2026-11-18T05:16:32.931Z"
+  },
+  "6e8dbf18afe73ecaad731ae8": {
+    "promptVersion": "judge-v1",
+    "model": "claude-haiku-5-5",
+    "output": {
+      "faithful": {
+        "reason": "All claims (reopened after four years, restoration, when to go, lunch upstairs) are supported by the article; it makes no invented facts.",
+        "pass": true
+      },
+      "specific": {
+        "reason": "It names Bolhão market, the four-year restoration, and the upstairs restaurants, so it is about this article in particular.",
+        "pass": true
+      },
+      "plain": {
+        "reason": "The tone is calm and factual with no hype, superlatives, exclamation marks, or clichés.",
+        "pass": true
+      },
+      "purpose": {
+        "reason": "As an SEO description it is a single sentence that tells a searcher the topic and what they will find, giving a reason to click.",
+        "pass": true
+      }
+    },
+    "usage": {
+      "inputTokens": 1136,
+      "outputTokens": 226,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 2627,
+    "recordedAt": "2026-11-18T05:14:08.918Z"
+  },
+  "7e88a10c57cb37a5f8e4c1e5": {
+    "promptVersion": "judge-v1",
+    "model": "claude-haiku-5-5",
+    "output": {
+      "faithful": {
+        "reason": "Every claim (booking ahead, pack list, starting early to beat afternoon storms) comes from the article; it invents no facts or numbers.",
+        "pass": true
+      },
+      "specific": {
+        "reason": "It names the first-timer hut-to-hut Alps walk and specific advice on booking, packing and storms, so it is not generic travel copy.",
+        "pass": true
+      },
+      "plain": {
+        "reason": "The tone is calm and matter-of-fact, with no hype, superlatives, exclamation marks or clichés.",
+        "pass": true
+      },
+      "purpose": {
+        "reason": "As an SEO description it is a single sentence that previews the content (booking, packing, early starts) and gives a searcher a reason to click.",
+        "pass": true
+      }
+    },
+    "usage": {
+      "inputTokens": 1299,
+      "outputTokens": 238,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 2842,
+    "recordedAt": "2026-11-18T05:16:53.424Z"
+  },
+  "7f01d6e4995718f506358c60": {
+    "promptVersion": "judge-v1",
+    "model": "claude-haiku-5-5",
+    "output": {
+      "faithful": {
+        "reason": "Every claim (80 km, four or five days, refugios/campsites booked months ahead, west to east direction) appears in the article; no invented facts.",
+        "pass": true
+      },
+      "specific": {
+        "reason": "Names the W Trek, its length, booking needs and direction, so it is clearly about this article and not pasteable onto another travel piece.",
+        "pass": true
+      },
+      "plain": {
+        "reason": "Calm, factual wording with no hype, superlatives, exclamation marks or clichés.",
+        "pass": true
+      },
+      "purpose": {
+        "reason": "As an SEO description it is a single sentence that previews the content and gives a searcher a reason to click (planning details), though it is somewhat list-like rather than a strong call to click.",
+        "pass": true
+      }
+    },
+    "usage": {
+      "inputTokens": 1121,
+      "outputTokens": 242,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 2367,
+    "recordedAt": "2026-11-18T05:15:35.698Z"
+  },
+  "85c3fb59980938597784635d": {
+    "promptVersion": "judge-v1",
+    "model": "claude-haiku-5-5",
+    "output": {
+      "faithful": {
+        "reason": "The summary only restates items in the article: Coyoacán, the anthropology museum, Sunday car-free Reforma bike ride, and tacos al pastor. It calls the tacos cheap, which the article supports by comparing them to a coffee in European capitals.",
+        "pass": true
+      },
+      "specific": {
+        "reason": "It names Coyoacán, the anthropology museum, Paseo de la Reforma and tacos al pastor, so it could not be pasted onto a different travel article.",
+        "pass": true
+      },
+      "plain": {
+        "reason": "The tone is calm and descriptive with no hype, superlatives, exclamation marks or clichés.",
+        "pass": true
+      },
+      "purpose": {
+        "reason": "It is a single sentence that tells the reader what the article covers: a weekend plan with specific activities. That matches the summary job.",
+        "pass": true
+      }
+    },
+    "usage": {
+      "inputTokens": 1156,
+      "outputTokens": 276,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 3477,
+    "recordedAt": "2026-11-18T05:14:35.218Z"
+  },
+  "8a279676e00415cbea0eecc0": {
+    "promptVersion": "judge-v1",
+    "model": "claude-haiku-5-5",
+    "output": {
+      "faithful": {
+        "reason": "The summary says it's a tip for seeing the city from the water cheaply, which the article supports (commuter ferry, a few dollars). It invents no facts.",
+        "pass": true
+      },
+      "specific": {
+        "reason": "It is vague: 'a famous city' and 'a simple tip' could describe many travel articles. It does not mention Sydney Harbour, the ferry to Manly, or the Opera House.",
+        "pass": false
+      },
+      "plain": {
+        "reason": "The tone is calm and plain, with no hype, superlatives, or exclamation marks.",
+        "pass": true
+      },
+      "purpose": {
+        "reason": "It is one sentence that tells the reader the article offers a cheap way to see a city from the water. That is a reasonable summary of what they will get, though it lacks concrete detail about the route.",
+        "pass": true
+      }
+    },
+    "usage": {
+      "inputTokens": 1128,
+      "outputTokens": 265,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 2132,
+    "recordedAt": "2026-11-18T05:18:02.961Z"
+  },
+  "8a86967a0f4375de8a21db14": {
+    "promptVersion": "judge-v1",
+    "model": "claude-haiku-5-5",
+    "output": {
+      "faithful": {
+        "reason": "The article says to go in the morning, agree prices before wrapping, and follow the flow of people downhill toward the main square. The description repeats these accurately; 'enjoy' echoes the article's advice to enjoy getting lost.",
+        "pass": true
+      },
+      "specific": {
+        "reason": "It names Marrakech's souks, Jemaa el-Fnaa, and the specific tips about early visits, pricing, and downhill navigation, so it could not be pasted onto a different travel article.",
+        "pass": true
+      },
+      "plain": {
+        "reason": "The tone is calm and direct, with no hype, superlatives, exclamation marks, or clichés.",
+        "pass": true
+      },
+      "purpose": {
+        "reason": "As an SEO description it is a single sentence that previews practical tips and names the place, which could attract a searcher to click. It leans toward a list of tips rather than a clear hook, but it does its job.",
+        "pass": true
+      }
+    },
+    "usage": {
+      "inputTokens": 1132,
+      "outputTokens": 305,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 2335,
+    "recordedAt": "2026-11-18T05:14:55.399Z"
+  },
+  "8b82d9acc00cfe2e83674464": {
+    "promptVersion": "judge-v1",
+    "model": "claude-haiku-5-5",
+    "output": {
+      "faithful": {
+        "reason": "The summary's claims (pho for breakfast, bun cha for lunch, egg coffee in the Old Quarter, picking stalls where locals queue) all appear in the article; 'breakfast' is a mild paraphrase of 'start the day'.",
+        "pass": true
+      },
+      "specific": {
+        "reason": "It names Hanoi, the pavement stalls, specific dishes and the Old Quarter, so it could not be pasted onto a different travel article.",
+        "pass": true
+      },
+      "plain": {
+        "reason": "The tone is calm and factual with no hype, superlatives, exclamation marks or clichés.",
+        "pass": true
+      },
+      "purpose": {
+        "reason": "It is a single sentence telling the reader what they will get: the dishes, places and how to choose a stall, which fits a summary's job.",
+        "pass": true
+      }
+    },
+    "usage": {
+      "inputTokens": 1125,
+      "outputTokens": 267,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 2189,
+    "recordedAt": "2026-11-18T05:17:20.962Z"
+  },
+  "8f6738bf0a648d6d9c4f157a": {
+    "promptVersion": "judge-v1",
+    "model": "claude-haiku-5-5",
+    "output": {
+      "faithful": {
+        "reason": "The article mentions pho, bun cha, egg coffee in the Old Quarter, and picking stalls where locals queue. It says pho is for the start of the day, which matches 'pho for breakfast'. Nothing is invented.",
+        "pass": true
+      },
+      "specific": {
+        "reason": "It names Hanoi, pavement stalls, specific dishes, and the Old Quarter, so it could not be pasted onto a different travel article.",
+        "pass": true
+      },
+      "plain": {
+        "reason": "The tone is calm and factual, with no hype, superlatives, exclamation marks or clichés.",
+        "pass": true
+      },
+      "purpose": {
+        "reason": "It is a single sentence that tells the reader what the article covers: the dishes by meal and how to choose a stall. That fits the summary job of saying what the reader will get.",
+        "pass": true
+      }
+    },
+    "usage": {
+      "inputTokens": 1110,
+      "outputTokens": 272,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 2529,
+    "recordedAt": "2026-11-18T05:15:52.880Z"
+  },
+  "99d61e9760b44c3bf06b7024": {
+    "promptVersion": "judge-v1",
+    "model": "claude-haiku-5-5",
+    "output": {
+      "faithful": {
+        "reason": "The description lists flexi passes, night trains and picnics, all mentioned in the article, and 'ten budget tips' and 'a month' match the article. It makes no unsupported claims.",
+        "pass": true
+      },
+      "specific": {
+        "reason": "It names Interrail, a month of travel, ten tips, flexi passes and night trains, so it is tied to this article rather than generic travel copy.",
+        "pass": true
+      },
+      "plain": {
+        "reason": "The tone is calm and descriptive, with no hype, superlatives, exclamation marks or clickbait.",
+        "pass": true
+      },
+      "purpose": {
+        "reason": "As an SEO description it is a single sentence that tells a searcher what the piece covers and why it is useful for budget rail travel, which could encourage a click.",
+        "pass": true
+      }
+    },
+    "usage": {
+      "inputTokens": 1217,
+      "outputTokens": 256,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 2292,
+    "recordedAt": "2026-11-18T05:14:06.281Z"
+  },
+  "9b4eef88f3133f8383c0abe0": {
+    "promptVersion": "judge-v1",
+    "model": "claude-haiku-5-5",
+    "output": {
+      "faithful": {
+        "reason": "All details (going early, agreeing prices before purchase, following the crowd downhill to Jemaa el-Fnaa) appear in the article; nothing is invented.",
+        "pass": true
+      },
+      "specific": {
+        "reason": "Mentions Marrakech's souks, early visits, price agreement and the route to Jemaa el-Fnaa, so it is tied to this article and not generic.",
+        "pass": true
+      },
+      "plain": {
+        "reason": "Calm, direct wording with no hype, superlatives, exclamation marks or clichés.",
+        "pass": true
+      },
+      "purpose": {
+        "reason": "It is a single sentence that tells the searcher what practical tips the article offers, which could encourage a click, though it leans toward summarizing the tips rather than teasing the read.",
+        "pass": true
+      }
+    },
+    "usage": {
+      "inputTokens": 1153,
+      "outputTokens": 256,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 2331,
+    "recordedAt": "2026-11-18T05:17:11.274Z"
+  },
+  "a04b1c6096acf7ecef738ce6": {
+    "promptVersion": "judge-v1",
+    "model": "claude-haiku-5-5",
+    "output": {
+      "faithful": {
+        "reason": "The summary accurately reflects the article: the team stopped taking flights under 1,000 km two years ago, and slower train trips were longer and better. It adds no invented facts.",
+        "pass": true
+      },
+      "specific": {
+        "reason": "It names the specific policy (flights under 1,000 km) and the train-travel reasoning, so it could not be pasted onto a different travel article.",
+        "pass": true
+      },
+      "plain": {
+        "reason": "The tone is calm and descriptive, with no hype, superlatives, exclamation marks or marketing clichés.",
+        "pass": true
+      },
+      "purpose": {
+        "reason": "It is a single sentence telling the reader what the editor's note covers, which is what a one-or-two-sentence summary should do.",
+        "pass": true
+      }
+    },
+    "usage": {
+      "inputTokens": 1169,
+      "outputTokens": 244,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 2220,
+    "recordedAt": "2026-11-18T05:17:03.079Z"
+  },
+  "a584ca8a5ddf35c909a05f33": {
+    "promptVersion": "judge-v1",
+    "model": "claude-haiku-5-5",
+    "output": {
+      "faithful": {
+        "reason": "The article says the team stopped flights under 1,000 km and that trains make the journey part of the story; the description matches these points without invented facts.",
+        "pass": true
+      },
+      "specific": {
+        "reason": "It refers to the editors' decision to stop short-haul flights and the train-journey argument, so it is specific to this article and not generic travel copy.",
+        "pass": true
+      },
+      "plain": {
+        "reason": "The sentence is calm and descriptive, with no hype, superlatives, exclamation marks or clichés.",
+        "pass": true
+      },
+      "purpose": {
+        "reason": "As a single sentence it tells a searcher what the piece covers, but it is more of a neutral description than a strong reason to click; it still works as an SEO description.",
+        "pass": true
+      }
+    },
+    "usage": {
+      "inputTokens": 1166,
+      "outputTokens": 240,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 2169,
+    "recordedAt": "2026-11-18T05:17:05.250Z"
+  },
+  "a697c1e8c2b77ab084538151": {
+    "promptVersion": "judge-v1",
+    "model": "claude-haiku-5-5",
+    "output": {
+      "faithful": {
+        "reason": "The article never mentions prices; the '€45 a night' figure is invented. It also says day two has ladders and fixed chains, so 'no technical sections' contradicts the article's 'nothing technical otherwise' only loosely, but the price is unsupported.",
+        "pass": false
+      },
+      "specific": {
+        "reason": "It names Chamonix and the four-day hut loop, so it is tied to this article rather than generic.",
+        "pass": true
+      },
+      "plain": {
+        "reason": "The tone is calm and factual with no hype, exclamation marks or superlatives.",
+        "pass": true
+      },
+      "purpose": {
+        "reason": "As an SEO description it is one sentence that tells a searcher what the route is, which would make a hiker consider clicking, though the invented price weakens it.",
+        "pass": true
+      }
+    },
+    "usage": {
+      "inputTokens": 1191,
+      "outputTokens": 262,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 2671,
+    "recordedAt": "2026-11-18T05:17:58.401Z"
+  },
+  "a91387af55de309ce057c0dd": {
+    "promptVersion": "judge-v1",
+    "model": "claude-haiku-5-5",
+    "output": {
+      "faithful": {
+        "reason": "The summary says only 'I don't know,' which makes no claims, so it invents nothing; it is faithful in the narrow sense.",
+        "pass": true
+      },
+      "specific": {
+        "reason": "'I don't know' could be pasted onto any article and says nothing about Porto or the Bolhão market.",
+        "pass": false
+      },
+      "plain": {
+        "reason": "The text is plain and calm with no hype, superlatives, or exclamation marks.",
+        "pass": true
+      },
+      "purpose": {
+        "reason": "A summary should tell the reader what they will get from the article; 'I don't know' gives the reader no information about the content.",
+        "pass": false
+      }
+    },
+    "usage": {
+      "inputTokens": 975,
+      "outputTokens": 205,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 2037,
+    "recordedAt": "2026-11-18T05:16:34.978Z"
+  },
+  "b1a90d46d1a69d95a7776cf7": {
+    "promptVersion": "judge-v1",
+    "model": "claude-haiku-5-5",
+    "output": {
+      "faithful": {
+        "reason": "The summary mentions choosing between cable car and Platteklip Gorge path, steepness, timing, queues and weather, all supported by the article. It does not invent facts.",
+        "pass": true
+      },
+      "specific": {
+        "reason": "It names Table Mountain, Platteklip Gorge, the cable car and the queue and weather tips, so it could not be pasted onto a different travel article.",
+        "pass": true
+      },
+      "plain": {
+        "reason": "The tone is calm and factual with no hype, superlatives, exclamation marks or clichés.",
+        "pass": true
+      },
+      "purpose": {
+        "reason": "It is a one-sentence summary that tells the reader the article compares the two ways up and gives timing, queue and weather tips, so they know what they will get.",
+        "pass": true
+      }
+    },
+    "usage": {
+      "inputTokens": 1123,
+      "outputTokens": 256,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 2240,
+    "recordedAt": "2026-11-18T05:16:21.698Z"
+  },
+  "b3420ce162345b88e71529f9": {
+    "promptVersion": "judge-v1",
+    "model": "claude-haiku-5-5",
+    "output": {
+      "faithful": {
+        "reason": "Every claim (book when huts open, book two months ahead for July/August, pack liner, cash, waterproofs, start early for afternoon storms) comes from the article; no invented facts.",
+        "pass": true
+      },
+      "specific": {
+        "reason": "It names the article's specific advice on booking timing, packing, and early starts for the Alps hut walk, so it is tied to this piece rather than generic.",
+        "pass": true
+      },
+      "plain": {
+        "reason": "Calm, direct phrasing with a question and an imperative; no hype, superlatives, exclamation marks, or clichés.",
+        "pass": true
+      },
+      "purpose": {
+        "reason": "As an SEO description it is a single sentence that previews the content and invites a first-time hiker to click, fulfilling its job.",
+        "pass": true
+      }
+    },
+    "usage": {
+      "inputTokens": 1266,
+      "outputTokens": 254,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 2928,
+    "recordedAt": "2026-11-18T05:13:58.959Z"
+  },
+  "b9069369eae37834db915a92": {
+    "promptVersion": "judge-v1",
+    "model": "claude-haiku-5-5",
+    "output": {
+      "faithful": {
+        "reason": "All claims (thirty minutes, Circular Quay to Manly, passes Opera House and harbour heads, a few dollars) come from the article; no invented facts.",
+        "pass": true
+      },
+      "specific": {
+        "reason": "Names the specific route, journey time and landmarks, so it could not be pasted onto a different travel article.",
+        "pass": true
+      },
+      "plain": {
+        "reason": "Calm, direct wording with no hype, superlatives, exclamation marks or clickbait.",
+        "pass": true
+      },
+      "purpose": {
+        "reason": "As an SEO description it is a single sentence that tells a searcher what the piece covers and gives a reason to click.",
+        "pass": true
+      }
+    },
+    "usage": {
+      "inputTokens": 1163,
+      "outputTokens": 219,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 1807,
+    "recordedAt": "2026-11-18T05:17:07.065Z"
+  },
+  "baa27516d0399a57d446e835": {
+    "promptVersion": "judge-v1",
+    "model": "claude-haiku-5-5",
+    "output": {
+      "faithful": {
+        "reason": "The summary claims the market is the ultimate must-see in Europe and promises unbelievable contents, none of which the article supports; it invents superlatives.",
+        "pass": false
+      },
+      "specific": {
+        "reason": "It names no place, market, or detail from the article, so it could be pasted onto any market article.",
+        "pass": false
+      },
+      "plain": {
+        "reason": "Uses hype ('ULTIMATE', 'must-see', 'You won't believe'), multiple exclamation marks, and clickbait phrasing.",
+        "pass": false
+      },
+      "purpose": {
+        "reason": "It doesn't tell the reader what the article covers (Bolhão market's reopening, best visiting time, fish and flowers); it only teases with vague hype.",
+        "pass": false
+      }
+    },
+    "usage": {
+      "inputTokens": 999,
+      "outputTokens": 244,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 2403,
+    "recordedAt": "2026-11-18T05:16:39.516Z"
+  },
+  "c5aa9af027d7430c01f9fbef": {
+    "promptVersion": "judge-v1",
+    "model": "claude-haiku-5-5",
+    "output": {
+      "faithful": {
+        "reason": "The description lists flexi passes, night trains and picnics, all mentioned in the article, and 'ten budget tips' and 'a month' match the article. It makes no unsupported claims.",
+        "pass": true
+      },
+      "specific": {
+        "reason": "It names Interrail, the ten tips, the month-long trip and specific tips like flexi passes and night trains, so it is clearly about this article.",
+        "pass": true
+      },
+      "plain": {
+        "reason": "The wording is calm and descriptive with no exclamation marks, superlatives, or hype.",
+        "pass": true
+      },
+      "purpose": {
+        "reason": "As an SEO description it is a single sentence that tells a searcher what the article covers and gives a reason to click, such as budget tips from a month of trains.",
+        "pass": true
+      }
+    },
+    "usage": {
+      "inputTokens": 1235,
+      "outputTokens": 249,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 2513,
+    "recordedAt": "2026-11-18T05:16:58.476Z"
+  },
+  "c653dcb737f79c1785af95ec": {
+    "promptVersion": "judge-v1",
+    "model": "claude-haiku-5-5",
+    "output": {
+      "faithful": {
+        "reason": "All statements (pavement eating, one dish per stall, pho, bun cha, egg coffee in Old Quarter) come from the article; nothing invented.",
+        "pass": true
+      },
+      "specific": {
+        "reason": "Names Hanoi dishes and the Old Quarter, so it is about this article and not pasteable onto another travel piece.",
+        "pass": true
+      },
+      "plain": {
+        "reason": "Calm, declarative sentences with no hype, superlatives, exclamation marks or clichés.",
+        "pass": true
+      },
+      "purpose": {
+        "reason": "As an SEO description it is three sentences rather than a single sentence, so it does not meet the one-sentence format; it does hint at the content but is not a single click-inducing line.",
+        "pass": false
+      }
+    },
+    "usage": {
+      "inputTokens": 1115,
+      "outputTokens": 243,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 2353,
+    "recordedAt": "2026-11-18T05:18:07.973Z"
+  },
+  "cc3f9797c876b1655808bf68": {
+    "promptVersion": "judge-v1",
+    "model": "claude-haiku-5-5",
+    "output": {
+      "faithful": {
+        "reason": "The description accurately reflects the article: coffee house time, the named coffees, and the no-rush point. It adds no invented facts.",
+        "pass": true
+      },
+      "specific": {
+        "reason": "It names Melange, Einspänner, Verlängerter and the Viennese coffee house, so it could not be pasted onto a different travel article.",
+        "pass": true
+      },
+      "plain": {
+        "reason": "The tone is calm and direct with no hype, superlatives, exclamation marks or marketing clichés.",
+        "pass": true
+      },
+      "purpose": {
+        "reason": "It is a single sentence that tells a searcher what the article covers and invites a click, which is what an SEO description should do.",
+        "pass": true
+      }
+    },
+    "usage": {
+      "inputTokens": 1153,
+      "outputTokens": 231,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 2131,
+    "recordedAt": "2026-11-18T05:17:13.428Z"
+  },
+  "ccccf958241eca48247435fa": {
+    "promptVersion": "judge-v1",
+    "model": "claude-haiku-5-5",
+    "output": {
+      "faithful": {
+        "reason": "The article says they tried to plan it and gave up at the third missing connection, and that several border crossings lack passenger trains. It does not say the trip cannot be done this year; it says to pick one continent this year. The description overstates it as 'can't be done this year', which is not supported.",
+        "pass": false
+      },
+      "specific": {
+        "reason": "It names the specific route Lisbon to Tokyo and the specific regions, so it is tied to this article and could not be pasted onto an arbitrary travel piece.",
+        "pass": true
+      },
+      "plain": {
+        "reason": "The wording is calm and direct with no hype, superlatives, exclamation marks, or clickbait phrasing.",
+        "pass": true
+      },
+      "purpose": {
+        "reason": "It is a single sentence that tells the searcher what the article covers and hints at the answer, which works as an SEO description that invites a click, though it slightly misstates the conclusion.",
+        "pass": true
+      }
+    },
+    "usage": {
+      "inputTokens": 1115,
+      "outputTokens": 305,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 2467,
+    "recordedAt": "2026-11-18T05:15:24.108Z"
+  },
+  "cdb712b68eb412facac0427f": {
+    "promptVersion": "judge-v1",
+    "model": "claude-haiku-5-5",
+    "output": {
+      "faithful": {
+        "reason": "The summary describes ten tips on skiing in the Swiss Alps, lift passes and mountain huts, none of which the Porto market article supports; it invents content.",
+        "pass": false
+      },
+      "specific": {
+        "reason": "It is a generic ski-tips blurb with no connection to the Bolhão market article, so it could be pasted onto a different article.",
+        "pass": false
+      },
+      "plain": {
+        "reason": "The tone is calm and free of hype, exclamation marks or superlatives; 'best mountain huts' is mild but acceptable.",
+        "pass": true
+      },
+      "purpose": {
+        "reason": "It is a single sentence that says what the reader gets, but it describes a different article entirely, so it fails its job for this piece.",
+        "pass": false
+      }
+    },
+    "usage": {
+      "inputTokens": 1006,
+      "outputTokens": 241,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 2130,
+    "recordedAt": "2026-11-18T05:16:37.110Z"
+  },
+  "e0c28bc861a94d4239bb3ef0": {
+    "promptVersion": "judge-v1",
+    "model": "claude-haiku-5-5",
+    "output": {
+      "faithful": {
+        "reason": "The article says they tried to plan it and gave up at a missing connection, and that border crossings lack passenger trains and some need visas. The description says they found out why it can't be done this year, which the article roughly supports. It does not invent specifics, though 'why' is a slight stretch since the article gives general reasons.",
+        "pass": true
+      },
+      "specific": {
+        "reason": "It names Lisbon, Tokyo, the route through Europe, Central Asia and China, and the trip planning attempt, so it is clearly about this article and not pasteable onto another travel piece.",
+        "pass": true
+      },
+      "plain": {
+        "reason": "The sentence is calm and factual with no hype, superlatives, exclamation marks or clichés.",
+        "pass": true
+      },
+      "purpose": {
+        "reason": "As an SEO description it is a single sentence that tells a searcher what the article covers and gives a reason to click, the account of a planning attempt and its failure.",
+        "pass": true
+      }
+    },
+    "usage": {
+      "inputTokens": 1136,
+      "outputTokens": 306,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 2643,
+    "recordedAt": "2026-11-18T05:17:16.079Z"
+  },
+  "ea002412d42f024e76a1d855": {
+    "promptVersion": "judge-v1",
+    "model": "claude-haiku-5-5",
+    "output": {
+      "faithful": {
+        "reason": "Every lesson named (sale purchase, flexi pass, high-speed reservations, night trains) is drawn from the article; it says 'ten lessons' and 'a month', both supported. It does not invent facts.",
+        "pass": true
+      },
+      "specific": {
+        "reason": "It names Interrail, a month of travel, high-speed reservations and night trains, details tied to this piece and not generic enough to paste onto any travel article.",
+        "pass": true
+      },
+      "plain": {
+        "reason": "Calm, factual wording with no hype, superlatives, exclamation marks or clichés.",
+        "pass": true
+      },
+      "purpose": {
+        "reason": "It is two sentences-worth of length as a single sentence and tells the reader they will get ten budget lessons from the trip, which is what a summary should do.",
+        "pass": true
+      }
+    },
+    "usage": {
+      "inputTokens": 1241,
+      "outputTokens": 261,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 2521,
+    "recordedAt": "2026-11-18T05:16:55.961Z"
+  },
+  "f30bd9a6a84195cd5b3115af": {
+    "promptVersion": "judge-v1",
+    "model": "claude-haiku-5-5",
+    "output": {
+      "faithful": {
+        "reason": "The article covers pho, bun cha, egg coffee, plastic stools and stalls, and advice to follow queues. It does not mention 'how to choose where to stop' explicitly beyond looking for queues, which is a mild stretch but roughly supported. Most claims are backed.",
+        "pass": true
+      },
+      "specific": {
+        "reason": "It names Hanoi, specific dishes and the plastic-stool stall setting, so it could not be pasted onto a different travel article.",
+        "pass": true
+      },
+      "plain": {
+        "reason": "Calm, no exclamation marks, hype or superlatives. 'Eat like a local' is mildly common phrasing but not a marketing cliché in a strong sense.",
+        "pass": true
+      },
+      "purpose": {
+        "reason": "It is a single sentence that previews the day's food and the advice offered, giving a searcher a reason to click, though it is somewhat list-heavy.",
+        "pass": true
+      }
+    },
+    "usage": {
+      "inputTokens": 1105,
+      "outputTokens": 308,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 2718,
+    "recordedAt": "2026-11-18T05:15:55.600Z"
+  },
+  "f5edacf676ab5d501e889c8d": {
+    "promptVersion": "judge-v1",
+    "model": "claude-haiku-5-5",
+    "output": {
+      "faithful": {
+        "reason": "The article never mentions Frida Kahlo's blue house or a price of twenty pesos; both are invented details not supported by the article.",
+        "pass": false
+      },
+      "specific": {
+        "reason": "It names Coyoacán and tacos al pastor, so it is tied to this article rather than generic.",
+        "pass": true
+      },
+      "plain": {
+        "reason": "The tone is calm and factual with no hype, superlatives, or exclamation marks.",
+        "pass": true
+      },
+      "purpose": {
+        "reason": "As a one-sentence summary it tells the reader the weekend covers Coyoacán and tacos, so it roughly does its job, though the invented details undermine it.",
+        "pass": false
+      }
+    },
+    "usage": {
+      "inputTokens": 1132,
+      "outputTokens": 220,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 2732,
+    "recordedAt": "2026-11-18T05:17:53.307Z"
+  },
+  "fb00881ce9f6ae2de62e9874": {
+    "promptVersion": "judge-v1",
+    "model": "claude-haiku-5-5",
+    "output": {
+      "faithful": {
+        "reason": "The summary makes claims about coffee generally and travels worldwide, not about the Vienna article's content; it invents no specific facts but is not supported by the article's details.",
+        "pass": false
+      },
+      "specific": {
+        "reason": "It could be pasted onto any travel article about coffee anywhere; it mentions no Vienna, coffee house, or specific drinks.",
+        "pass": false
+      },
+      "plain": {
+        "reason": "The tone is calm with no hype, exclamation marks, or clickbait, though 'great coffee' is mildly promotional.",
+        "pass": true
+      },
+      "purpose": {
+        "reason": "It gestures at the topic but does not tell the reader what they will learn from the article (Viennese coffee types, ordering customs), so it fails to do the summary's job.",
+        "pass": false
+      }
+    },
+    "usage": {
+      "inputTokens": 1127,
+      "outputTokens": 256,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 2401,
+    "recordedAt": "2026-11-18T05:18:00.805Z"
+  },
+  "fe93468c5cabe6537b431d15": {
+    "promptVersion": "judge-v1",
+    "model": "claude-haiku-5-5",
+    "output": {
+      "faithful": {
+        "reason": "Every element (morning visit, price agreement, finding the way out) is drawn from the article; it adds no invented facts.",
+        "pass": true
+      },
+      "specific": {
+        "reason": "Names the souks north of Jemaa el-Fnaa and the specific tips covered, so it is tied to this article.",
+        "pass": true
+      },
+      "plain": {
+        "reason": "Calm, factual wording with no hype, superlatives, exclamation marks or clichés.",
+        "pass": true
+      },
+      "purpose": {
+        "reason": "In one sentence it tells the reader what they will get: timing, bargaining and navigation tips for the souks.",
+        "pass": true
+      }
+    },
+    "usage": {
+      "inputTokens": 1142,
+      "outputTokens": 207,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 1865,
+    "recordedAt": "2026-11-18T05:17:08.941Z"
   }
 }

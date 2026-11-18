@@ -27,11 +27,11 @@ export async function buildIndex(db?: Db): Promise<{ rows: number; embedder: str
 export type Retrieval = { source: SourceEntity; candidates: Candidate[]; vectorUsed: boolean };
 
 /** Hybrid retrieval for every source item: vectors (when the query can be embedded in the index's space) plus keywords, fused by rank. */
-export async function retrieveAll(given?: Db): Promise<Retrieval[]> {
+export async function retrieveAll(given?: Db, only?: SourceEntity[]): Promise<Retrieval[]> {
   const db = given ?? (await getDb());
   const state = await indexState(db);
   if (!state.rows || !state.embedder) throw new Error("Build the index first.");
-  const sources = sourceEntities(source);
+  const sources = only ?? sourceEntities(source);
   const e = embedder();
   const sameSpace = e.id === state.embedder;
   const { vectors } = sameSpace ? await embed(sources.map((s) => s.text), "query") : { vectors: sources.map(() => null) };
@@ -51,9 +51,9 @@ export type Proposal = Retrieval & { decision: LinkDecision; problems: string[] 
  * each item's candidates. Every model decision is checked; one that fails
  * keeps its problems and waits for a person.
  */
-export async function proposeLinks(given?: Db): Promise<{ proposals: Proposal[]; calls: number }> {
+export async function proposeLinks(given?: Db, only?: SourceEntity[]): Promise<{ proposals: Proposal[]; calls: number }> {
   const db = given ?? (await getDb());
-  const retrieved = await retrieveAll(db);
+  const retrieved = await retrieveAll(db, only);
   const proposals: Proposal[] = [];
   const open: Retrieval[] = [];
   for (const r of retrieved) {

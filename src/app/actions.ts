@@ -162,3 +162,25 @@ export async function editEntryFieldAction(_: ActionState, form: FormData): Prom
   revalidatePath("/migrate");
   return { status: "ok", message: "Saved. The entry needs approval again." };
 }
+
+// Stage 05: judge calibration labels (local only: they're committed with the eval)
+
+export async function saveLabelAction(_: ActionState, form: FormData): Promise<ActionState> {
+  if (process.env.VERCEL) return { status: "error", message: "Labels are saved to the repository, so labelling runs locally (npm run dev)." };
+  const { CRITERIA } = await import("@/evals/grade");
+  const id = String(form.get("id") ?? "");
+  const label: Record<string, boolean> = {};
+  for (const c of CRITERIA) {
+    const v = form.get(c);
+    if (v !== "pass" && v !== "fail") return { status: "error", message: `Choose pass or fail for "${c}".` };
+    label[c] = v === "pass";
+  }
+  const fs = await import("node:fs/promises");
+  const path = (await import("node:path")).join(process.cwd(), "samples", "evals", "labels.json");
+  const file = JSON.parse(await fs.readFile(path, "utf8")) as { judgePromptVersion: string; labels: Record<string, Record<string, boolean>> };
+  file.labels[id] = label;
+  file.labels = Object.fromEntries(Object.entries(file.labels).sort(([a], [b]) => a.localeCompare(b)));
+  await fs.writeFile(path, `${JSON.stringify(file, null, 2)}\n`);
+  revalidatePath("/evals/label");
+  return { status: "ok", message: "Saved." };
+}

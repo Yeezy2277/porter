@@ -1,0 +1,19 @@
+{
+  "metrics": [
+    {
+      "id": "correct",
+      "label": "Correct",
+      "kind": "binary"
+    },
+    {
+      "id": "retrieval",
+      "label": "Retrieval@5",
+      "kind": "binary"
+    },
+    {
+      "id": "by_rule",
+      "label": "By rule",
+      "kind": "binary"
+    }
+  ]
+}

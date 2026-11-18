@@ -1,0 +1,13 @@
+{
+  "_comment": "Hand-written flawed texts mixed into the judge's calibration pool, so the labels aren't all 'pass' and a judge that passes everything can't look calibrated. Each breaks one criterion on purpose; the reviewer labels them blind.",
+  "items": [
+    { "id": "planted-1302-summary", "postId": 1302, "field": "summary", "flaw": "faithful", "text": "A weekend in Mexico City, from Frida Kahlo's blue house in Coyoacán to tacos al pastor for twenty pesos." },
+    { "id": "planted-1307-seo", "postId": 1307, "field": "seoDescription", "flaw": "faithful", "text": "Walk the 100 km W Trek in Chilean Patagonia in five days, sleeping in refugios booked months ahead." },
+    { "id": "planted-1203-seo", "postId": 1203, "field": "seoDescription", "flaw": "faithful", "text": "A four-day hut loop above Chamonix with beds from €45 a night and no technical sections." },
+    { "id": "planted-1304-summary", "postId": 1304, "field": "summary", "flaw": "specific", "text": "Everything you need to know to enjoy great coffee wherever your travels take you." },
+    { "id": "planted-1301-summary", "postId": 1301, "field": "summary", "flaw": "specific", "text": "A simple tip for seeing a famous city from the water without spending much." },
+    { "id": "planted-1310-seo", "postId": 1310, "field": "seoDescription", "flaw": "plain", "text": "The MOST breathtaking climb on the planet!!! Table Mountain will blow your mind, cable car or not." },
+    { "id": "planted-1308-seo", "postId": 1308, "field": "seoDescription", "flaw": "purpose", "text": "Hanoi eats on the pavement. Each stall makes one dish. Start with pho, then bun cha, then egg coffee in the Old Quarter." },
+    { "id": "planted-1303-summary", "postId": 1303, "field": "summary", "flaw": "purpose", "text": "Marrakech." }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "metrics": [
+    {
+      "id": "submitted",
+      "label": "Submitted",
+      "kind": "binary"
+    },
+    {
+      "id": "region",
+      "label": "Region",
+      "kind": "binary"
+    },
+    {
+      "id": "grounded",
+      "label": "Grounded",
+      "kind": "binary"
+    },
+    {
+      "id": "rules",
+      "label": "Rules",
+      "kind": "binary"
+    },
+    {
+      "id": "faithful",
+      "label": "Judge: faithfu",
+      "kind": "binary"
+    },
+    {
+      "id": "specific",
+      "label": "Judge: specifi",
+      "kind": "binary"
+    },
+    {
+      "id": "plain",
+      "label": "Judge: plain",
+      "kind": "binary"
+    },
+    {
+      "id": "purpose",
+      "label": "Judge: purpose",
+      "kind": "binary"
+    }
+  ]
+}

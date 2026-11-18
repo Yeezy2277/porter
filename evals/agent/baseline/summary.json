@@ -1,0 +1,61 @@
+{
+  "flow": "agent",
+  "promptVersion": "agent-v1",
+  "judge": {
+    "model": "claude-haiku-5-5",
+    "promptVersion": "judge-v1",
+    "micros": 6988
+  },
+  "posts": 19,
+  "metrics": {
+    "submitted": {
+      "mean": 1,
+      "ci": 0,
+      "n": 19
+    },
+    "rules": {
+      "mean": 1,
+      "ci": 0,
+      "n": 19
+    },
+    "grounded": {
+      "mean": 1,
+      "ci": 0,
+      "n": 19
+    },
+    "region": {
+      "mean": 1,
+      "ci": 0,
+      "n": 19
+    },
+    "faithful": {
+      "mean": 1,
+      "ci": 0,
+      "n": 14
+    },
+    "specific": {
+      "mean": 1,
+      "ci": 0,
+      "n": 14
+    },
+    "plain": {
+      "mean": 1,
+      "ci": 0,
+      "n": 14
+    },
+    "purpose": {
+      "mean": 1,
+      "ci": 0,
+      "n": 14
+    }
+  },
+  "turns": {
+    "mean": 3.789473684210526,
+    "max": 5
+  },
+  "cost": {
+    "agentMicros": 379386,
+    "judgeMicros": 6988
+  },
+  "misses": []
+}

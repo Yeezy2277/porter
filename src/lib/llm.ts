@@ -31,6 +31,8 @@ export type StructuredCall<S extends z.ZodType> = {
   schema: S;
   maxTokens: number;
   effort: "low" | "medium" | "high";
+  /** A different model than the app's (the eval judge). Part of the recording key. */
+  model?: string;
 };
 
 export class LlmError extends Error {}
@@ -58,10 +60,10 @@ let client: Anthropic | null = null;
 const api = () => (client ??= new Anthropic({ maxRetries: 2, timeout: 120_000 }));
 
 export async function structured<S extends z.ZodType>(call: StructuredCall<S>): Promise<CallResult<z.infer<S>>> {
-  const key = inputKey(call.promptVersion, call.system, call.user);
+  const key = inputKey(call.model ? `${call.promptVersion}@${call.model}` : call.promptVersion, call.system, call.user);
   const env = serverEnv();
   if (env.live && !(env.replayFirst && recordings[key])) {
-    const result = await live(call, env.live.model, key);
+    const result = await live(call, call.model ?? env.live.model, key);
     if (env.record) await record(key, { promptVersion: call.promptVersion, model: result.model, output: result.output, usage: result.usage, durationMs: result.durationMs, recordedAt: new Date().toISOString() });
     return result;
   }
@@ -80,15 +82,18 @@ export async function structured<S extends z.ZodType>(call: StructuredCall<S>): 
 async function live<S extends z.ZodType>(call: StructuredCall<S>, model: string, key: string): Promise<CallResult<z.infer<S>>> {
   const started = Date.now();
   try {
+    // Haiku has no server-side refusal fallback; the Opus/Sonnet calls keep it.
+    const fallback: { betas?: Anthropic.AnthropicBeta[]; fallbacks?: "default" } = model.startsWith("claude-haiku") ? {} : { betas: ["server-side-fallback-2026-07-01"], fallbacks: "default" };
     const res = await api().beta.messages.parse({
       model,
       max_tokens: call.maxTokens,
       system: call.system,
       messages: [{ role: "user", content: call.user }],
       output_config: { effort: call.effort, format: betaZodOutputFormat(call.schema) },
-      betas: ["server-side-fallback-2026-07-01"],
-      fallbacks: "default",
+      ...fallback,
     });
+    // An eval scored by the wrong model measures nothing: fail loudly on a silent substitution.
+    if (call.model && res.model !== model) throw new LlmError(`Asked for ${model}, served by ${res.model}.`);
     if (res.stop_reason === "refusal") throw new LlmError(`Claude declined the ${call.purpose} request.`);
     if (res.stop_reason === "max_tokens") throw new LlmError(`Claude's ${call.purpose} answer was cut off; raise maxTokens.`);
     if (!res.parsed_output) throw new LlmError(`Claude's ${call.purpose} answer didn't match the schema.`);

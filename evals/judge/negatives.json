@@ -1,0 +1,31 @@
+{
+  "judgeModel": "claude-haiku-5-5",
+  "judgePromptVersion": "judge-v1",
+  "ok": true,
+  "results": {
+    "empty": {
+      "faithful": false,
+      "specific": false,
+      "plain": false,
+      "purpose": false
+    },
+    "dont-know": {
+      "faithful": true,
+      "specific": false,
+      "plain": true,
+      "purpose": false
+    },
+    "wrong-article": {
+      "faithful": false,
+      "specific": false,
+      "plain": true,
+      "purpose": false
+    },
+    "hype": {
+      "faithful": false,
+      "specific": false,
+      "plain": false,
+      "purpose": false
+    }
+  }
+}

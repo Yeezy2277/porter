@@ -1,10 +1,21 @@
 import type { Metadata, Viewport } from "next";
 import Link from "next/link";
-import { Big_Shoulders_Stencil, Instrument_Sans, Martian_Mono } from "next/font/google";
+import localFont from "next/font/local";
+import { Instrument_Sans, Martian_Mono } from "next/font/google";
 import { ThemeToggle, themeScript } from "@/components/ThemeToggle";
 import "./globals.css";
 
-const stencil = Big_Shoulders_Stencil({ subsets: ["latin"], weight: ["300", "800"], variable: "--nf-stencil", display: "swap" });
+// Self-hosted from Fontsource (OFL): Google serves this family from URLs
+// without a file extension, which next/font/google can't download.
+const stencil = localFont({
+  src: [
+    { path: "../../node_modules/@fontsource/big-shoulders-stencil/files/big-shoulders-stencil-latin-300-normal.woff2", weight: "300", style: "normal" },
+    { path: "../../node_modules/@fontsource/big-shoulders-stencil/files/big-shoulders-stencil-latin-800-normal.woff2", weight: "800", style: "normal" },
+  ],
+  variable: "--nf-stencil",
+  display: "swap",
+  fallback: ["Arial Narrow", "Helvetica Neue", "sans-serif"],
+});
 const sans = Instrument_Sans({ subsets: ["latin"], variable: "--nf-sans", display: "swap" });
 const mono = Martian_Mono({ subsets: ["latin"], weight: ["300", "500"], variable: "--nf-mono", display: "swap" });
 

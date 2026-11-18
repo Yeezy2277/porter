@@ -20,7 +20,7 @@ It is **not** a rebuild of client work. Migrations like this one are a common Co
 | 02 Map | Source fields → target fields, with transforms | Claude proposes (structured output), you approve | built |
 | 03 Link | Authors and topics matched to entries that already exist | retrieval (embeddings + keyword), Claude decides close calls | built |
 | 04 Migrate | An agent assembles each entry with tools, validates, retries | agent, then a human review queue | built |
-| 05 Measure | Golden set, scorers, report per prompt version | evals in CI on recorded responses | next |
+| 05 Measure | Golden set, scorers, report per prompt version | evals in CI on recorded responses | built |
 
 ## Stage 01: convert
 
@@ -96,12 +96,44 @@ Recorded run: all 9 posts submitted in 3–4 turns each, about $0.12 in total, n
 
 Each one has a regression test.
 
+## Stage 05: measure (evals)
+
+Two evals, one per flow, run through the app's real entry points (`proposeLinks`, `runAgent`) on cases with **hand-written gold answers** (`samples/evals/`). They are never copied from model output, because then the eval would only reward imitation. Ambiguous cases accept several answers.
+
+- **Linking: 53 cases** (the 21 demo items plus near-miss names, abbreviations, semantic matches, no-match items), graded by code. Retrieval recall is measured separately from the decision, so a miss is attributed to search or to judgement.
+- **Agent: 19 posts** (the 9 demo posts plus 10 with traps: prices and distances, empty or short excerpts, no place at all, regions outside Europe).
+  - Code grades submission, field rules, grounding (re-checked on the final draft) and region against gold.
+  - A judge (Claude **Haiku 5.5**, not the model under test) answers four yes/no questions on summaries and SEO descriptions: faithful, specific, plain, fit for purpose.
+- **Is the judge trustworthy?**
+  - It fails four known-bad inputs (empty, "I don't know", the wrong article, hype).
+  - A person labels 29 texts **blind** at `/evals/label`, eight of them flawed on purpose, so a judge that passes everything can't look calibrated. `npm run eval -- calibrate` reports its agreement.
+- **Runner:** `npm run eval -- linking|agent|calibrate|negatives`.
+  - It **replays by default**, even with keys in `.env`; `--live` is required to spend money.
+  - Results follow the standard eval-report layout (`results.jsonl`, per-case traces).
+  - CI runs both evals and fails below the floors in `evals/thresholds.json`.
+
+Results (recorded run):
+
+| Eval | Result |
+|---|---|
+| Linking | 98% correct (±4, n=53), retrieval recall 96%. The one miss is `Northbound Staff`, and the eval attributes it to retrieval. |
+| Agent | 19/19 submitted; rules, grounding and region 100%; the judge passes all 14 written fields. |
+
+Live cost of a full run: about $0.17 for linking, $0.15 for the agent and under $0.01 for the judge.
+
+Two findings were bugs in the eval itself:
+- the judge didn't see the excerpt the agent saw, and failed a true SEO description;
+- the runner went live because of keys in `.env`, so it replays by default now.
+
+**Honest limit.** Every metric is at or near its ceiling, with ±4 to ±23 points of noise at these sizes. The evals guard against regressions; showing that a new prompt is better would need harder cases.
+
 ## Run it
 
 ```bash
 npm install
 npm run dev     # http://localhost:3000
 npm test
+npm run eval -- linking   # replays the recorded eval, no keys needed
 ```
 
 No configuration needed: embedded Postgres (PGlite) and recorded model answers. To call Claude and Voyage live, put `ANTHROPIC_API_KEY` and `VOYAGE_API_KEY` in `.env` (see `.env.example`); add `PORTER_RECORD=true` to save new answers and vectors for replay.

@@ -11,17 +11,22 @@ import { structured } from "./llm";
 /** The posts the model sees as samples: published ones, in a fixed order, so the prompt (and its recording key) is stable. */
 const samplePosts = () => source.posts.filter((p) => migratable(p).ok).slice(0, 3);
 
-export async function proposeMapping(ctId: string) {
-  const ct = contentType(model, ctId);
-  const result = await structured({
+/** The exact request for a content type; exported so tests can prove its recording exists and still passes the checks. */
+export function mappingCall(ctId: string) {
+  return {
     purpose: "field mapping",
     promptVersion: MAP_PROMPT_VERSION,
     system: MAP_SYSTEM,
-    user: mapUser(ct, samplePosts()),
+    user: mapUser(contentType(model, ctId), samplePosts()),
     schema: Mapping,
     maxTokens: 8000,
-    effort: "medium",
-  });
+    effort: "medium" as const,
+  };
+}
+
+export async function proposeMapping(ctId: string) {
+  const ct = contentType(model, ctId);
+  const result = await structured(mappingCall(ctId));
   const db = await getDb();
   const call = await logCall(db, "field mapping", MAP_PROMPT_VERSION, result);
   const row = await saveProposal(db, result.output, call.id);

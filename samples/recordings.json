@@ -1,1 +1,152 @@
-{}
+{
+  "4443cf4a2208031e98b88206": {
+    "promptVersion": "map-v1",
+    "model": "claude-opus-5-5",
+    "output": {
+      "contentType": "article",
+      "fields": [
+        {
+          "target": "title",
+          "sources": [
+            "post.title"
+          ],
+          "transform": "copy",
+          "fallback": null,
+          "confidence": "high",
+          "note": ""
+        },
+        {
+          "target": "slug",
+          "sources": [
+            "post.slug"
+          ],
+          "transform": "copy",
+          "fallback": {
+            "sources": [
+              "post.title"
+            ],
+            "transform": "slugify"
+          },
+          "confidence": "high",
+          "note": "The sample slugs already match the required pattern; if a slug is missing, one is made from the title."
+        },
+        {
+          "target": "publishedAt",
+          "sources": [
+            "post.date_gmt"
+          ],
+          "transform": "utcDate",
+          "fallback": null,
+          "confidence": "high",
+          "note": ""
+        },
+        {
+          "target": "summary",
+          "sources": [
+            "post.excerpt"
+          ],
+          "transform": "copy",
+          "fallback": {
+            "sources": [
+              "post.title",
+              "post.content"
+            ],
+            "transform": "generate"
+          },
+          "confidence": "medium",
+          "note": "One sample excerpt is empty, so the fallback is needed; excerpts outside 40..200 characters also need the fallback."
+        },
+        {
+          "target": "body",
+          "sources": [
+            "post.content"
+          ],
+          "transform": "richText",
+          "fallback": null,
+          "confidence": "medium",
+          "note": "The HTML is inconsistent: some posts use bare text with <br /> instead of <p>, and one contains a table that Rich Text may not support."
+        },
+        {
+          "target": "author",
+          "sources": [
+            "post.author"
+          ],
+          "transform": "linkAuthor",
+          "fallback": null,
+          "confidence": "high",
+          "note": "The author 'Tom B.' has an abbreviated name in the source."
+        },
+        {
+          "target": "topics",
+          "sources": [
+            "post.categories",
+            "post.tags"
+          ],
+          "transform": "linkTopics",
+          "fallback": null,
+          "confidence": "medium",
+          "note": "Categories plus tags can exceed the limit of 4 links; the Lisbon post already has at least 4."
+        },
+        {
+          "target": "heroImage",
+          "sources": [
+            "post.featured_media"
+          ],
+          "transform": "linkAsset",
+          "fallback": null,
+          "confidence": "medium",
+          "note": "Some posts have no featured image (null), so this field will be left empty for them."
+        },
+        {
+          "target": "seoDescription",
+          "sources": [
+            "post.yoast_description"
+          ],
+          "transform": "copy",
+          "fallback": {
+            "sources": [
+              "post.title",
+              "post.excerpt",
+              "post.content"
+            ],
+            "transform": "generate"
+          },
+          "confidence": "medium",
+          "note": "One sample Yoast description is empty; the fallback must stay within 160 characters."
+        },
+        {
+          "target": "region",
+          "sources": [
+            "post.title",
+            "post.content"
+          ],
+          "transform": "generate",
+          "fallback": null,
+          "confidence": "medium",
+          "note": "No source field holds the region, so it is classified from the text; all samples (Lisbon, Alps, Chamonix) point to Europe."
+        }
+      ],
+      "unmapped": [
+        {
+          "source": "post.modified_gmt",
+          "reason": "The article type has no last-modified field."
+        }
+      ],
+      "questions": [
+        "Should topics come from categories, tags, or both? If both, which ones should be kept when a post has more than 4?",
+        "Titles like 'The Best Pastéis de Nata in Lisbon (2019 Edition)' are dated. Should they be kept as is?",
+        "The author 'Tom B.' has an abbreviated name. Should the author entry use his full name?",
+        "Should region be left empty for posts that cover several regions or none, rather than being classified?",
+        "How should tables in post content (for example, day-by-day stats) be handled in Rich Text?"
+      ]
+    },
+    "usage": {
+      "inputTokens": 4030,
+      "outputTokens": 1591,
+      "cacheReadTokens": 0,
+      "cacheWriteTokens": 0
+    },
+    "durationMs": 17551,
+    "recordedAt": "2026-11-18T04:14:41.178Z"
+  }
+}

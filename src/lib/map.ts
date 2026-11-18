@@ -39,11 +39,22 @@ export async function proposeMapping(ctId: string) {
 const kindOf = new Map(targets.map((t) => [t.entryId, t.contentType]));
 
 /** Resolves a link to its content type: existing entries, entries approved as "new", and this draft's assets. */
-const resolver = (l: Link): string | null => {
+/**
+ * Entries this migration creates itself: the other articles in the export
+ * (posts link to each other) and the video embeds found in bodies. They don't
+ * exist in the space yet, but the migration writes them before publishing,
+ * so links to them are valid.
+ */
+const created = new Map<string, string>([
+  ...source.posts.filter((p) => migratable(p).ok).map((p) => [`article-${p.slug}`.slice(0, 64), "article"] as const),
+  ...source.posts.filter((p) => migratable(p).ok).flatMap((p) => convertBody(p, source, model, SITE_ORIGIN).videos.map((v) => [v.id, "videoEmbed"] as const)),
+]);
+
+export const resolver = (l: Link): string | null => {
   if (l.sys.linkType === "Asset") return "asset";
   if (l.sys.id.startsWith("author-new-")) return "author";
   if (l.sys.id.startsWith("topic-new-")) return "topic";
-  return kindOf.get(l.sys.id) ?? null;
+  return kindOf.get(l.sys.id) ?? created.get(l.sys.id) ?? null;
 };
 
 const entry = (id: string): Link => ({ sys: { type: "Link", linkType: "Entry", id } });

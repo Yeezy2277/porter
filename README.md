@@ -18,7 +18,7 @@ It is **not** a rebuild of client work. Migrations like this one are a common Co
 |---|---|---|---|
 | 01 Convert | HTML → Contentful Rich Text, word-for-word check | code | built |
 | 02 Map | Source fields → target fields, with transforms | Claude proposes (structured output), you approve | built |
-| 03 Link | Authors and topics matched to entries that already exist | retrieval (embeddings + keyword), Claude decides close calls | next |
+| 03 Link | Authors and topics matched to entries that already exist | retrieval (embeddings + keyword), Claude decides close calls | built |
 | 04 Migrate | An agent assembles each entry with tools, validates, retries | agent, then a human review queue | next |
 | 05 Measure | Golden set, scorers, report per prompt version | evals in CI on recorded responses | next |
 
@@ -54,6 +54,25 @@ Claude proposes which source field fills each target field, and how. It sees rea
 
 First live run (Claude Opus 5.5, prompt `map-v1`): 10/10 fields mapped with no errors from the checks, five questions for the editor, 4,030 in / 1,591 out tokens, $0.05, 17.6 s.
 
+## Stage 03: link (retrieval-augmented)
+
+The new space already has 16 authors and 36 topics, some of them deliberate near-misses: Tom Brennan (former mountain guide) and Tomas Brenner (restaurant critic). Each WordPress author and term has to land on the right one, become a new entry, or be skipped.
+
+1. **Index.** Every existing entry is embedded (Voyage AI `voyage-3.5-lite`, 512 dimensions, called with `fetch`) and stored in Postgres with **pgvector** (HNSW index) next to a full-text column (GIN index, English stemming). The same schema runs on Neon and on PGlite.
+2. **Hybrid retrieval.** Each source item is searched two ways: nearest neighbours by cosine similarity, and full-text matches. The rankings are combined with **Reciprocal Rank Fusion**, which uses ranks rather than scores, so the two never need calibrating against each other.
+3. **Rules first.** Code settles the same name once accents and punctuation are ignored (`Ana Lucia Ortega` = `Ana-Lucía Ortega`), and WordPress's default category.
+4. **Claude decides the rest**, one call per content type. It may only choose an entry retrieved for that item (an enum in the output schema), and it must quote its evidence.
+5. **Code checks every decision.** The entry must have been retrieved for *this* item, the quote must exist in the source or the chosen entry, and tags never create topics. A flagged item blocks approval until a person decides it. A reviewer can pick *any* entry, which fixes retrieval misses; Claude can't.
+
+Recorded run: 21 items, 3 settled by rules, 18 by Claude in 2 calls, no decision flagged by the checks.
+- `Tom B.` → Tom Brennan: the bios agree.
+- `Eating Out` → Food & Drink: no shared words, found by meaning.
+- `Interrail` → Rail Travel, `Kyoto` → Japan.
+
+One honest miss: `Northbound Staff` has no bio, and retrieval never surfaces `Editorial Desk`, so Claude proposes a new author. That is the reviewer's override in the demo, and the kind of case the evals in stage 05 count.
+
+Without keys, the local hashing embedder stands in. It is fine for spelling variants and blind to meaning; the UI says which embedder built the index, and vectors from two embedders are never compared.
+
 ## Run it
 
 ```bash
@@ -62,11 +81,11 @@ npm run dev     # http://localhost:3000
 npm test
 ```
 
-No configuration needed: embedded Postgres (PGlite) and recorded model answers. To call Claude live, put `ANTHROPIC_API_KEY` in `.env` (see `.env.example`); add `PORTER_RECORD=true` to save new answers for replay.
+No configuration needed: embedded Postgres (PGlite) and recorded model answers. To call Claude and Voyage live, put `ANTHROPIC_API_KEY` and `VOYAGE_API_KEY` in `.env` (see `.env.example`); add `PORTER_RECORD=true` to save new answers and vectors for replay.
 
 ## Stack
 
-Next.js 15 (App Router), TypeScript strict, Zod, Anthropic SDK (structured output), Drizzle on Postgres (Neon / PGlite), htmlparser2, `@contentful/rich-text-types`, Vitest + Testing Library.
+Next.js 15 (App Router), TypeScript strict, Zod, Anthropic SDK (structured output), Drizzle on Postgres (Neon / PGlite) with pgvector, Voyage AI embeddings, htmlparser2, `@contentful/rich-text-types`, Vitest + Testing Library.
 
 ## Design
 

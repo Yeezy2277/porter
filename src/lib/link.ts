@@ -1,7 +1,7 @@
 import entriesJson from "../../samples/contentful-entries.json";
 import { checkDecision, decisionSchema, fuse, ruleDecision, sourceEntities, targetEntities, type Candidate, type LinkDecision, type SourceEntity, type TargetKind } from "@/core/link";
 import { source } from "@/config/demo";
-import { getDb } from "@/db/client";
+import { getDb, type Db } from "@/db/client";
 import { logCall } from "@/db/repo";
 import { indexState, keywordSearch, rebuildIndex, saveLinkProposals, vectorSearch } from "@/db/search";
 import { LINK_PROMPT_VERSION, LINK_SYSTEM, linkUser } from "@/prompts/link";
@@ -12,7 +12,7 @@ export const targets = targetEntities(entriesJson);
 const byId = new Map(targets.map((t) => [t.entryId, t]));
 
 /** Embeds every existing entry and replaces the index. */
-export async function buildIndex(): Promise<{ rows: number; embedder: string; tokens: number }> {
+export async function buildIndex(db?: Db): Promise<{ rows: number; embedder: string; tokens: number }> {
   const e = embedder();
   const { vectors, tokens } = await embed(
     targets.map((t) => t.text),
@@ -20,15 +20,15 @@ export async function buildIndex(): Promise<{ rows: number; embedder: string; to
   );
   const rows = targets.flatMap((entity, i) => (vectors[i] ? [{ entity, embedding: vectors[i] as number[] }] : []));
   if (rows.length < targets.length) throw new Error(`${targets.length - rows.length} entries have no recorded vector; record the index again with a Voyage key.`);
-  await rebuildIndex(await getDb(), rows, e.id);
+  await rebuildIndex(db ?? (await getDb()), rows, e.id);
   return { rows: rows.length, embedder: e.id, tokens };
 }
 
 export type Retrieval = { source: SourceEntity; candidates: Candidate[]; vectorUsed: boolean };
 
 /** Hybrid retrieval for every source item: vectors (when the query can be embedded in the index's space) plus keywords, fused by rank. */
-export async function retrieveAll(): Promise<Retrieval[]> {
-  const db = await getDb();
+export async function retrieveAll(given?: Db): Promise<Retrieval[]> {
+  const db = given ?? (await getDb());
   const state = await indexState(db);
   if (!state.rows || !state.embedder) throw new Error("Build the index first.");
   const sources = sourceEntities(source);
@@ -51,9 +51,9 @@ export type Proposal = Retrieval & { decision: LinkDecision; problems: string[] 
  * each item's candidates. Every model decision is checked; one that fails
  * keeps its problems and waits for a person.
  */
-export async function proposeLinks(): Promise<{ proposals: Proposal[]; calls: number }> {
-  const retrieved = await retrieveAll();
-  const db = await getDb();
+export async function proposeLinks(given?: Db): Promise<{ proposals: Proposal[]; calls: number }> {
+  const db = given ?? (await getDb());
+  const retrieved = await retrieveAll(db);
   const proposals: Proposal[] = [];
   const open: Retrieval[] = [];
   for (const r of retrieved) {

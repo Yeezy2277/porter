@@ -3,6 +3,7 @@ import Anthropic from "@anthropic-ai/sdk";
 import { betaZodOutputFormat } from "@anthropic-ai/sdk/helpers/beta/zod";
 import type { z } from "zod";
 import recordingsJson from "../../samples/recordings.json";
+import turnsJson from "../../samples/agent-turns.json";
 import { serverEnv } from "./env";
 
 /**
@@ -59,7 +60,7 @@ const api = () => (client ??= new Anthropic({ maxRetries: 2, timeout: 120_000 })
 export async function structured<S extends z.ZodType>(call: StructuredCall<S>): Promise<CallResult<z.infer<S>>> {
   const key = inputKey(call.promptVersion, call.system, call.user);
   const env = serverEnv();
-  if (env.live) {
+  if (env.live && !(env.replayFirst && recordings[key])) {
     const result = await live(call, env.live.model, key);
     if (env.record) await record(key, { promptVersion: call.promptVersion, model: result.model, output: result.output, usage: result.usage, durationMs: result.durationMs, recordedAt: new Date().toISOString() });
     return result;
@@ -119,4 +120,89 @@ async function record(key: string, rec: Recording): Promise<void> {
   const sorted = Object.fromEntries(Object.entries(current).sort(([a], [b]) => a.localeCompare(b)));
   await fs.writeFile(path, `${JSON.stringify(sorted, null, 2)}\n`);
   recordings[key] = rec;
+}
+
+// ---------------------------------------------------------------------------
+// Agent turns: one Messages API call with tools, recorded like everything else.
+
+
+export type TurnRecording = {
+  promptVersion: string;
+  model: string;
+  content: Anthropic.Beta.BetaContentBlock[];
+  stopReason: string | null;
+  usage: Usage;
+  durationMs: number;
+  recordedAt: string;
+};
+
+export type TurnRequest = {
+  promptVersion: string;
+  system: string;
+  tools: Anthropic.Beta.BetaTool[];
+  messages: Anthropic.Beta.BetaMessageParam[];
+  maxTokens: number;
+  effort: "low" | "medium" | "high";
+};
+
+export type TurnResult = Omit<TurnRecording, "promptVersion" | "recordedAt"> & { mode: "live" | "replay"; inputKey: string; costMicros: number };
+export type TurnFn = (req: TurnRequest) => Promise<TurnResult>;
+
+const turns = turnsJson as unknown as Record<string, TurnRecording>;
+
+/**
+ * The key covers the whole conversation so far (tool results included), so a
+ * replay only matches when every earlier step happened exactly the same way.
+ */
+export const turnKey = (r: TurnRequest) => inputKey(r.promptVersion, r.system, JSON.stringify([r.tools, r.messages]));
+
+export const turn: TurnFn = async (req) => {
+  const key = turnKey(req);
+  const env = serverEnv();
+  if (!env.live || (env.replayFirst && turns[key])) {
+    const rec = turns[key];
+    if (!rec) throw new LlmError(`No recorded agent turn for this step (prompt ${req.promptVersion}). The mapping or link decisions (or an earlier step) differ from the recorded demo: reset them to Claude's proposals to replay, or set ANTHROPIC_API_KEY to run live.`);
+    return { model: rec.model, content: rec.content, stopReason: rec.stopReason, usage: rec.usage, durationMs: rec.durationMs, mode: "replay", inputKey: key, costMicros: costMicros(rec.model, rec.usage) };
+  }
+  const started = Date.now();
+  try {
+    const res = await api().beta.messages.create({
+      model: env.live.model,
+      max_tokens: req.maxTokens,
+      system: req.system,
+      tools: req.tools,
+      messages: req.messages,
+      output_config: { effort: req.effort },
+      // The system prompt and tools never change within a run, and each turn
+      // resends the whole conversation: automatic caching makes repeats cheap.
+      cache_control: { type: "ephemeral" },
+      betas: ["server-side-fallback-2026-07-01"],
+      fallbacks: "default",
+    });
+    const usage: Usage = {
+      inputTokens: res.usage.input_tokens,
+      outputTokens: res.usage.output_tokens,
+      cacheReadTokens: res.usage.cache_read_input_tokens ?? 0,
+      cacheWriteTokens: res.usage.cache_creation_input_tokens ?? 0,
+    };
+    const result: TurnResult = { model: res.model, content: res.content, stopReason: res.stop_reason, usage, durationMs: Date.now() - started, mode: "live", inputKey: key, costMicros: costMicros(res.model, usage) };
+    if (env.record) await recordTurn(key, { promptVersion: req.promptVersion, model: res.model, content: res.content, stopReason: res.stop_reason, usage, durationMs: result.durationMs, recordedAt: new Date().toISOString() });
+    return result;
+  } catch (e) {
+    if (e instanceof Anthropic.AuthenticationError) throw new LlmError("The Anthropic API key was rejected.");
+    if (e instanceof Anthropic.RateLimitError) throw new LlmError("Anthropic rate limit reached; try again in a minute.");
+    if (e instanceof Anthropic.APIError) throw new LlmError(`Anthropic API error ${e.status ?? ""}: ${e.message}`.trim());
+    throw new LlmError("Couldn't reach the Anthropic API.");
+  }
+};
+
+async function recordTurn(key: string, rec: TurnRecording): Promise<void> {
+  if (process.env.VERCEL) return;
+  const fs = await import("node:fs/promises");
+  const path = (await import("node:path")).join(process.cwd(), "samples", "agent-turns.json");
+  const current = JSON.parse(await fs.readFile(path, "utf8")) as Record<string, TurnRecording>;
+  current[key] = rec;
+  const sorted = Object.fromEntries(Object.entries(current).sort(([a], [b]) => a.localeCompare(b)));
+  await fs.writeFile(path, `${JSON.stringify(sorted, null, 1)}\n`);
+  turns[key] = rec;
 }

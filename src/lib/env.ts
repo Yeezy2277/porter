@@ -15,6 +15,7 @@ const Env = z
     PORTER_MODEL: opt,
     PORTER_LIVE: opt,
     PORTER_RECORD: opt,
+    PORTER_REPLAY_FIRST: opt,
   })
   .superRefine((e, ctx) => {
     if (e.DATABASE_URL && !/^postgres(ql)?:\/\//.test(e.DATABASE_URL)) ctx.addIssue({ code: "custom", message: "DATABASE_URL must be a postgres:// connection string" });
@@ -33,6 +34,8 @@ export type ServerEnv = {
   /** Live embeddings, under the same rule as live model calls. */
   voyage: { key: string } | null;
   record: boolean;
+  /** Use a recording when one exists and call live only for what's missing: records a run step by step on the canonical path. */
+  replayFirst: boolean;
 };
 
 export const DEFAULT_MODEL = "claude-opus-5-5";
@@ -56,6 +59,7 @@ export function parseEnv(source: Record<string, string | undefined>): ServerEnv 
     live: liveAllowed ? { model: e.PORTER_MODEL ?? DEFAULT_MODEL } : null,
     voyage: e.VOYAGE_API_KEY && (!source.VERCEL || flag(e.PORTER_LIVE)) ? { key: e.VOYAGE_API_KEY } : null,
     record: flag(e.PORTER_RECORD),
+    replayFirst: flag(e.PORTER_REPLAY_FIRST),
   };
 }
 

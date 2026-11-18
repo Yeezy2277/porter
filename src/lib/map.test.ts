@@ -3,7 +3,7 @@ import modelJson from "../../samples/contentful-model.json";
 import { checkMapping } from "@/core/mapping";
 import { contentType, parseModel } from "@/core/model";
 
-vi.mock("./env", () => ({ serverEnv: () => ({ databaseUrl: null, live: null, voyage: null, record: false }) }));
+vi.mock("./env", () => ({ serverEnv: () => ({ databaseUrl: null, live: null, voyage: null, record: false, replayFirst: false }) }));
 const { structured } = await import("./llm");
 const { mappingCall } = await import("./map");
 

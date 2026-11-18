@@ -1,0 +1,17 @@
+{
+  "_comment": "Entries that already exist in the target space. Migrated articles should link to these instead of creating duplicates.",
+  "authors": [
+    { "id": "author-ortega", "name": "Ana-Lucía Ortega", "slug": "ana-lucia-ortega", "bio": "Food writer based in Lisbon. Covers markets, bakeries and the people who run them." },
+    { "id": "author-brennan", "name": "Tom Brennan", "slug": "tom-brennan", "bio": "Former mountain guide. Writes about long walks, huts and weather." },
+    { "id": "author-sato", "name": "Mei Sato", "slug": "mei-sato", "bio": "Rail enthusiast and photographer. Night trains, timetables and the views between them." },
+    { "id": "author-okafor", "name": "Chidi Okafor", "slug": "chidi-okafor", "bio": "Editor at large. City guides, festivals and practical travel advice." }
+  ],
+  "topics": [
+    { "id": "topic-food", "name": "Food & Drink", "slug": "food-drink", "description": "Markets, restaurants, recipes and what people eat where they live." },
+    { "id": "topic-hiking", "name": "Hiking & Trails", "slug": "hiking-trails", "description": "Day hikes, long-distance trails and mountain huts." },
+    { "id": "topic-rail", "name": "Rail Travel", "slug": "rail-travel", "description": "Trains, routes, passes and sleeper services." },
+    { "id": "topic-cities", "name": "City Guides", "slug": "city-guides", "description": "Neighbourhoods, where to stay and how to get around." },
+    { "id": "topic-budget", "name": "Budget Travel", "slug": "budget-travel", "description": "Travelling well for less: passes, hostels, free things to do." },
+    { "id": "topic-sustainable", "name": "Sustainable Travel", "slug": "sustainable-travel", "description": "Lower-carbon routes, responsible tourism and slow travel." }
+  ]
+}

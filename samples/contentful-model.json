@@ -1,0 +1,55 @@
+{
+  "_comment": "Target content model in the Contentful Management API shape (GET /content_types). A fictional magazine's new space.",
+  "items": [
+    {
+      "sys": { "id": "article" },
+      "name": "Article",
+      "displayField": "title",
+      "fields": [
+        { "id": "title", "name": "Title", "type": "Symbol", "required": true, "localized": false, "validations": [{ "size": { "max": 120 } }] },
+        { "id": "slug", "name": "Slug", "type": "Symbol", "required": true, "localized": false, "validations": [{ "unique": true }, { "regexp": { "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" } }] },
+        { "id": "publishedAt", "name": "Published at", "type": "Date", "required": true, "localized": false, "validations": [] },
+        { "id": "summary", "name": "Summary", "type": "Symbol", "required": true, "localized": false, "validations": [{ "size": { "min": 40, "max": 200 } }] },
+        { "id": "body", "name": "Body", "type": "RichText", "required": true, "localized": false, "validations": [
+          { "enabledNodeTypes": ["heading-2", "heading-3", "heading-4", "ordered-list", "unordered-list", "hr", "blockquote", "table", "embedded-entry-block", "embedded-asset-block", "hyperlink", "entry-hyperlink"] },
+          { "enabledMarks": ["bold", "italic", "underline", "code"] },
+          { "nodes": { "embedded-entry-block": [{ "linkContentType": ["videoEmbed"] }], "entry-hyperlink": [{ "linkContentType": ["article"] }] } }
+        ] },
+        { "id": "author", "name": "Author", "type": "Link", "linkType": "Entry", "required": true, "localized": false, "validations": [{ "linkContentType": ["author"] }] },
+        { "id": "topics", "name": "Topics", "type": "Array", "required": false, "localized": false, "validations": [{ "size": { "max": 4 } }], "items": { "type": "Link", "linkType": "Entry", "validations": [{ "linkContentType": ["topic"] }] } },
+        { "id": "heroImage", "name": "Hero image", "type": "Link", "linkType": "Asset", "required": false, "localized": false, "validations": [] },
+        { "id": "seoDescription", "name": "SEO description", "type": "Symbol", "required": false, "localized": false, "validations": [{ "size": { "max": 160 } }] },
+        { "id": "region", "name": "Region", "type": "Symbol", "required": false, "localized": false, "validations": [{ "in": ["Europe", "Asia", "Africa", "Americas", "Oceania"] }] }
+      ]
+    },
+    {
+      "sys": { "id": "author" },
+      "name": "Author",
+      "displayField": "name",
+      "fields": [
+        { "id": "name", "name": "Name", "type": "Symbol", "required": true, "localized": false, "validations": [] },
+        { "id": "slug", "name": "Slug", "type": "Symbol", "required": true, "localized": false, "validations": [{ "unique": true }] },
+        { "id": "bio", "name": "Bio", "type": "Text", "required": false, "localized": false, "validations": [{ "size": { "max": 600 } }] }
+      ]
+    },
+    {
+      "sys": { "id": "topic" },
+      "name": "Topic",
+      "displayField": "name",
+      "fields": [
+        { "id": "name", "name": "Name", "type": "Symbol", "required": true, "localized": false, "validations": [] },
+        { "id": "slug", "name": "Slug", "type": "Symbol", "required": true, "localized": false, "validations": [{ "unique": true }] },
+        { "id": "description", "name": "Description", "type": "Text", "required": false, "localized": false, "validations": [] }
+      ]
+    },
+    {
+      "sys": { "id": "videoEmbed" },
+      "name": "Video embed",
+      "displayField": "title",
+      "fields": [
+        { "id": "title", "name": "Title", "type": "Symbol", "required": true, "localized": false, "validations": [] },
+        { "id": "url", "name": "URL", "type": "Symbol", "required": true, "localized": false, "validations": [{ "regexp": { "pattern": "^https://(www\\.youtube\\.com|player\\.vimeo\\.com)/" } }] }
+      ]
+    }
+  ]
+}

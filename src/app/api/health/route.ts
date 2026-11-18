@@ -3,6 +3,7 @@ import { sql } from "drizzle-orm";
 import { model, source } from "@/config/demo";
 import { getDb } from "@/db/client";
 import { serverEnv } from "@/lib/env";
+import { embedder } from "@/lib/embed";
 
 export const dynamic = "force-dynamic";
 
@@ -22,7 +23,7 @@ export async function GET() {
     database = false;
   }
   return NextResponse.json(
-    { ok: database, env: true, database, postgres: env.databaseUrl ? "neon" : "pglite", claude: env.live ? "live" : "replay", samples: { posts: source.posts.length, contentTypes: model.length } },
+    { ok: database, env: true, database, postgres: env.databaseUrl ? "neon" : "pglite", claude: env.live ? "live" : "replay", embeddings: embedder().mode, samples: { posts: source.posts.length, contentTypes: model.length } },
     { status: database ? 200 : 503 },
   );
 }

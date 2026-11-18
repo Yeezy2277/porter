@@ -812,3 +812,96 @@ a.chip.chip--on {
 .stage__link {
   color: inherit;
 }
+
+/* Stage 03: linking */
+.steps {
+  margin: 0;
+  padding-left: 22px;
+}
+.steps li {
+  margin: 6px 0;
+}
+.stamp--new {
+  color: var(--accent);
+  background: var(--card);
+}
+.stamp--skip {
+  color: var(--muted);
+  background: var(--card);
+}
+.links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+.linkrow {
+  display: grid;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 2px solid var(--line);
+  background: var(--card);
+  border-radius: var(--radius);
+}
+@media (min-width: 900px) {
+  .linkrow {
+    grid-template-columns: minmax(180px, 1fr) minmax(220px, 1.3fr) minmax(240px, 1.4fr);
+  }
+}
+.linkrow--flag {
+  border-color: var(--held);
+}
+.linkrow__src,
+.linkrow__decision {
+  display: grid;
+  gap: 4px;
+  align-content: start;
+  justify-items: start;
+  min-width: 0;
+}
+.linkrow__cands {
+  min-width: 0;
+}
+.linkrow__cands ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 4px;
+}
+.linkrow__cands li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 8px;
+  align-items: baseline;
+  padding: 2px 0 4px;
+  position: relative;
+  font-size: 0.92rem;
+}
+.linkrow__cands li.is-chosen > span:first-child {
+  font-weight: 700;
+  color: var(--accent);
+}
+.bar {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  max-width: 100%;
+  background: var(--label);
+}
+.linkrow q {
+  font-size: 0.88rem;
+}
+.choice {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+  margin-top: 4px;
+  max-width: 100%;
+}
+.choice .select {
+  max-width: 100%;
+}

@@ -128,3 +128,37 @@ export async function resetLinksAction(_: ActionState): Promise<ActionState> {
   revalidatePath("/link");
   return { status: "ok", message: "Cleared." };
 }
+
+// Stage 04: review queue
+
+export async function entryDecisionAction(_: ActionState, form: FormData): Promise<ActionState> {
+  const { setEntryStatus } = await import("@/db/repo");
+  const postId = Number(form.get("postId"));
+  const decision = String(form.get("decision"));
+  if (decision !== "approved" && decision !== "rejected") return { status: "error", message: "Unknown decision." };
+  const row = await setEntryStatus(await getDb(), postId, decision, String(form.get("seen") ?? ""));
+  if (!row) return { status: "error", message: "The draft changed since you loaded it. Review the new version first." };
+  revalidatePath("/migrate");
+  return { status: "ok", message: decision === "approved" ? "Approved." : "Rejected. Run the agent again or edit the fields." };
+}
+
+export async function editEntryFieldAction(_: ActionState, form: FormData): Promise<ActionState> {
+  const { editEntryField, getEntries } = await import("@/db/repo");
+  const { contentType, validateField } = await import("@/core/model");
+  const { resolver } = await import("@/lib/map");
+  const db = await getDb();
+  const postId = Number(form.get("postId"));
+  const field = String(form.get("field") ?? "");
+  const value = String(form.get("value") ?? "").trim();
+  const entry = (await getEntries(db)).find((e) => e.postId === postId);
+  // Reviewers edit the text fields the agent wrote; the rest comes from earlier, approved stages.
+  if (!entry || (entry.provenance[field]?.origin !== "agent" && entry.provenance[field]?.origin !== "person")) return { status: "error", message: "Only fields the agent wrote can be edited here." };
+  const def = contentType(model, "article").fields.find((f) => f.id === field);
+  if (!def) return { status: "error", message: "Unknown field." };
+  const problems = value ? validateField(def, value, resolver) : [`${def.name} can't be empty`];
+  if (problems.length) return { status: "error", message: problems.join(" ") };
+  const row = await editEntryField(db, postId, field, value, String(form.get("seen") ?? ""));
+  if (!row) return { status: "error", message: "The draft changed since you loaded it. Reload and edit again." };
+  revalidatePath("/migrate");
+  return { status: "ok", message: "Saved. The entry needs approval again." };
+}

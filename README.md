@@ -19,7 +19,7 @@ It is **not** a rebuild of client work. Migrations like this one are a common Co
 | 01 Convert | HTML → Contentful Rich Text, word-for-word check | code | built |
 | 02 Map | Source fields → target fields, with transforms | Claude proposes (structured output), you approve | built |
 | 03 Link | Authors and topics matched to entries that already exist | retrieval (embeddings + keyword), Claude decides close calls | built |
-| 04 Migrate | An agent assembles each entry with tools, validates, retries | agent, then a human review queue | next |
+| 04 Migrate | An agent assembles each entry with tools, validates, retries | agent, then a human review queue | built |
 | 05 Measure | Golden set, scorers, report per prompt version | evals in CI on recorded responses | next |
 
 ## Stage 01: convert
@@ -72,6 +72,29 @@ Recorded run: 21 items, 3 settled by rules, 18 by Claude in 2 calls, no decision
 One honest miss: `Northbound Staff` has no bio, and retrieval never surfaces `Editorial Desk`, so Claude proposes a new author. That is the reviewer's override in the demo, and the kind of case the evals in stage 05 count.
 
 Without keys, the local hashing embedder stands in. It is fine for spelling variants and blind to meaning; the UI says which embedder built the index, and vectors from two embedders are never compared.
+
+## Stage 04: migrate (an agent with tools)
+
+For each post an agent reads the source, fills the draft from the approved mapping and links, writes the fields left to it, checks the draft and submits it to a review queue, or flags it for a person.
+
+- **The loop is hand-written, not the SDK's tool runner.** Every turn is recorded for replay (keyed by the whole conversation so far), the loop enforces limits (10 turns, $0.40 per post), and every tool input is validated with Zod before it runs. The model call is injected, so tests drive the loop with a scripted model.
+- **Six tools:** `read_post`, `apply_mapping`, `write_field`, `validate_draft`, `submit_for_review`, `flag_for_human`. `write_field` takes an **enum of exactly the fields this post leaves to the agent**, so it can't touch the title or the body.
+- **Every write is checked** against the field's rules and against the source: no number or proper name that isn't in the post. Rejections go back to the model as tool errors with the reason, and it rewrites.
+- **Thinking blocks go back unchanged** on every turn. Parallel tool calls return in one message. Automatic prompt caching makes each turn re-read the conversation from cache.
+- **The trace streams to the page** (newline-delimited JSON from a route handler): tool calls, rejections, tokens, cache hits and cost per turn.
+- **Provenance per field** in the review queue: mapping, link, agent or reviewer. Reviewers edit the agent's text (re-checked on the server) and approve only the version they saw.
+
+Recorded run: all 9 posts submitted in 3–4 turns each, about $0.12 in total, no write rejected. The agent's notes to reviewers are the best part:
+- the Chamonix post says "four huts" while its table lists three;
+- a publish time of 23:00 UTC is 1 April locally;
+- the Northbound Staff byline was linked to a new author: worth a check.
+
+**The first recording run found three bugs in my code, not in the model.** The agent flagged four posts instead of guessing, and each flag pointed at a real defect:
+- the validator treated links to entries the migration itself creates (cross-linked articles, video embeds) as missing;
+- an optional field left empty on purpose blocked submitting;
+- `ungrounded` took a sentence's first word ("Planning") for a proper name.
+
+Each one has a regression test.
 
 ## Run it
 

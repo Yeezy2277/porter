@@ -94,10 +94,17 @@ export default async function LinkPage() {
                 const s = sources.get(r.sourceKey);
                 const label = s?.name ?? r.sourceKey;
                 const current = r.decision === "link" ? `link:${r.entryId}` : r.decision;
-                const options = [
-                  ...r.candidates.map((c) => ({ value: `link:${c.entryId}`, label: `Link → ${c.name}` })),
-                  ...(r.sourceKey.startsWith("tag:") ? [] : [{ value: "new", label: `New ${r.contentType} (${newEntryId(r.contentType, s?.slug ?? "")})` }]),
-                  { value: "skip", label: "Skip" },
+                const retrieved = new Set(r.candidates.map((c) => c.entryId));
+                const groups = [
+                  { label: "Retrieved", options: r.candidates.map((c) => ({ value: `link:${c.entryId}`, label: `Link → ${c.name}` })) },
+                  {
+                    label: r.sourceKey.startsWith("tag:") ? "Or" : "Or create / skip",
+                    options: [...(r.sourceKey.startsWith("tag:") ? [] : [{ value: "new", label: `New ${r.contentType} (${newEntryId(r.contentType, s?.slug ?? "")})` }]), { value: "skip", label: "Skip" }],
+                  },
+                  {
+                    label: `Every other ${r.contentType} (retrieval missed it)`,
+                    options: targets.filter((t) => t.contentType === r.contentType && !retrieved.has(t.entryId)).map((t) => ({ value: `link:${t.entryId}`, label: `Link → ${t.name}` })),
+                  },
                 ];
                 return (
                   <li key={r.sourceKey} className={`linkrow${r.problems.length ? " linkrow--flag" : ""}`}>
@@ -142,7 +149,7 @@ export default async function LinkPage() {
                           ))}
                         </ul>
                       )}
-                      <LinkChoice source={r.sourceKey} label={label} current={current} options={options} />
+                      <LinkChoice key={current} source={r.sourceKey} label={label} current={current} groups={groups} />
                     </div>
                   </li>
                 );

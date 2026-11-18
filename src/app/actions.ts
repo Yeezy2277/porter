@@ -102,8 +102,10 @@ export async function overrideLinkAction(_: ActionState, form: FormData): Promis
   const choice = String(form.get("choice") ?? "");
   const row = (await getLinks(db)).find((r) => r.sourceKey === key);
   if (!row) return { status: "error", message: "That item isn't in the current proposal. Reload the page." };
-  // Only a retrieved candidate, "new" or "skip": the same limits Claude has, enforced on the server.
-  const allowed = new Set([...row.candidates.map((c) => `link:${c.entryId}`), "skip", ...(key.startsWith("tag:") ? [] : ["new"])]);
+  // A person may pick any existing entry of the right type (fixing a retrieval miss), "new" or "skip".
+  // Claude is limited to what was retrieved; a reviewer isn't. Still checked here, not in the UI.
+  const { targets } = await import("@/lib/link");
+  const allowed = new Set([...targets.filter((t) => t.contentType === row.contentType).map((t) => `link:${t.entryId}`), "skip", ...(key.startsWith("tag:") ? [] : ["new"])]);
   if (!allowed.has(choice)) return { status: "error", message: "Pick one of the listed options." };
   const [decision, entryId] = choice.startsWith("link:") ? (["link", choice.slice(5)] as const) : ([choice as "new" | "skip", null] as const);
   await overrideLink(db, key, decision, entryId);

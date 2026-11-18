@@ -4,9 +4,10 @@ import { useActionState } from "react";
 import { overrideLinkAction, type ActionState } from "@/app/actions";
 
 type Option = { value: string; label: string };
+type Group = { label: string; options: Option[] };
 
 /** A reviewer's override for one item: a select of the allowed choices, saved on change. */
-export function LinkChoice({ source, label, current, options }: { source: string; label: string; current: string; options: Option[] }) {
+export function LinkChoice({ source, label, current, groups }: { source: string; label: string; current: string; groups: Group[] }) {
   const [state, run, busy] = useActionState<ActionState, FormData>(overrideLinkAction, { status: "idle" });
   const id = `choice-${source.replace(/[^a-z0-9]/gi, "-")}`;
   return (
@@ -23,10 +24,14 @@ export function LinkChoice({ source, label, current, options }: { source: string
         disabled={busy}
         onChange={(e) => e.currentTarget.form?.requestSubmit()}
       >
-        {options.map((o) => (
-          <option key={o.value} value={o.value}>
-            {o.label}
-          </option>
+        {groups.map((g) => (
+          <optgroup key={g.label} label={g.label}>
+            {g.options.map((o) => (
+              <option key={o.value} value={o.value}>
+                {o.label}
+              </option>
+            ))}
+          </optgroup>
         ))}
       </select>
       <span className={`action__msg${state.status === "error" ? " action__msg--error" : ""}`} role={state.status === "error" ? "alert" : "status"} aria-live="polite">

@@ -4,8 +4,8 @@ import { convertBody } from "@/core/convert";
 import { migratable } from "@/core/source";
 
 const STAGES = [
-  { n: "01", name: "Convert", what: "HTML to Rich Text in code, with a word-for-word check", built: true },
-  { n: "02", name: "Map", what: "Claude proposes field mappings; you approve them", built: false },
+  { n: "01", name: "Convert", what: "HTML to Rich Text in code, with a word-for-word check", built: true, href: "/posts/1201" },
+  { n: "02", name: "Map", what: "Claude proposes field mappings; you approve them", built: true, href: "/map" },
   { n: "03", name: "Link", what: "Authors and topics matched to existing entries (RAG)", built: false },
   { n: "04", name: "Migrate", what: "An agent assembles each entry with tools; you review", built: false },
   { n: "05", name: "Measure", what: "Evals on a golden set, per prompt version", built: false },
@@ -44,7 +44,15 @@ export default function Home() {
               <span className="stage__n" aria-hidden="true">
                 {s.n}
               </span>
-              <span className="stage__name">{s.name}</span>
+              <span className="stage__name">
+                {"href" in s && s.href ? (
+                  <Link className="stage__link" href={s.href}>
+                    {s.name}
+                  </Link>
+                ) : (
+                  s.name
+                )}
+              </span>
               <span className="stage__what">{s.what}</span>
               <span className="stage__state mono">{s.built ? "Built" : "Next"}</span>
             </li>

@@ -20,4 +20,7 @@ jobs:
       - run: npm run typecheck
       # Repository tests run against in-memory PGlite: no database service or secrets.
       - run: npm test
+      # Evals replay their recorded runs (no keys) and fail the build below the floors in evals/thresholds.json.
+      - run: npm run eval -- linking
+      - run: npm run eval -- agent
       - run: npm run build

@@ -1,0 +1,764 @@
+[
+ {
+  "id": "1202:seoDescription",
+  "postId": 1202,
+  "title": "Hut to Hut in the Alps: A First-Timer’s Guide",
+  "field": "seoDescription",
+  "text": "Planning your first hut-to-hut walk in the Alps? Learn when to book, what to pack and why to start early to beat afternoon storms.",
+  "article": "Hut to Hut in the Alps: A First-Timer’s Guide\n\nExcerpt: Booking, packing and pacing for your first multi-day walk between mountain huts.\n\nWalking from hut to hut is the easiest way to spend a week in the high mountains without carrying a tent. You sleep in dormitories, eat what the warden cooks, and set off again after breakfast. Booking Most huts open from late June to mid September. Book at least two months ahead for weekends in July and August, and always tell the hut if you cancel: they will send someone looking for you if you don’t arrive. What to pack A sleeping-bag liner (required in most huts) Hut shoes or light sandals Cash: many huts don’t take cards Half board usually costs €60–80 a night Waterproofs, even if the forecast is clear Start early, finish early. Afternoon storms are the rule in July, not the exception. We’ve put our favourite four-day loop in a separate guide: four days above Chamonix .",
+  "verdict": {
+   "faithful": {
+    "reason": "Every claim (booking ahead, pack list, starting early to beat afternoon storms) comes from the article; it invents no facts or numbers.",
+    "pass": true
+   },
+   "specific": {
+    "reason": "It names the first-timer hut-to-hut Alps walk and specific advice on booking, packing and storms, so it is not generic travel copy.",
+    "pass": true
+   },
+   "plain": {
+    "reason": "The tone is calm and matter-of-fact, with no hype, superlatives, exclamation marks or clichés.",
+    "pass": true
+   },
+   "purpose": {
+    "reason": "As an SEO description it is a single sentence that previews the content (booking, packing, early starts) and gives a searcher a reason to click.",
+    "pass": true
+   }
+  }
+ },
+ {
+  "id": "1203:summary",
+  "postId": 1203,
+  "title": "Four Days Above Chamonix",
+  "field": "summary",
+  "text": "A four-day hut loop from Les Houches to Chamonix, with distance and ascent for each day and a way around the ladders and chains on day two.",
+  "article": "Four Days Above Chamonix\n\nThis loop links four huts on the south side of the valley. It needs a head for heights on day two and nothing technical otherwise. Day Route Distance Ascent 1 Les Houches to Refuge de Bellachat 9 km 1,150 m 2 Bellachat to Lac Blanc 14 km 900 m 3 Lac Blanc to Refuge de la Charlanon 8 km 350 m 4 Charlanon to Chamonix 11 km 200 m Day two crosses a section with ladders and fixed chains. If that isn’t for you, drop down to the valley and take the lift up again. For booking and packing, see our first-timer’s guide .",
+  "verdict": {
+   "faithful": {
+    "reason": "The summary accurately reflects the article: four-day hut loop, Les Houches to Chamonix, daily distances and ascents are only implied rather than stated, and the bypass via the valley and lift is in the article. It adds no invented facts.",
+    "pass": true
+   },
+   "specific": {
+    "reason": "It names specific places (Les Houches, Chamonix) and the distinctive ladder-and-chain section on day two, so it is tied to this article.",
+    "pass": true
+   },
+   "plain": {
+    "reason": "The wording is calm and descriptive with no hype, superlatives, exclamation marks or clichés.",
+    "pass": true
+   },
+   "purpose": {
+    "reason": "It is a single sentence telling the reader what the article covers: the route, daily distance and ascent, and the alternative for the exposed section. That matches a summary's job.",
+    "pass": true
+   }
+  }
+ },
+ {
+  "id": "1205:summary",
+  "postId": 1205,
+  "title": "Interrail on a Budget: 10 Things We Learned",
+  "field": "summary",
+  "text": "Ten lessons from a month of Interrail travel around Europe on a tight budget, from buying the pass in a sale to skipping high-speed reservations and taking night trains.",
+  "article": "Interrail on a Budget: 10 Things We Learned\n\nExcerpt: How to make a rail pass go further.\n\nA month of trains around Europe, spending as little as we could. Here’s what made the difference. Buy the pass in a sale. They come round twice a year. Pick a flexi pass with fewer travel days than you think you need. Avoid high-speed trains in France, Italy and Spain: reservations cost extra. Regional trains are often free with the pass and only a little slower. Night trains save a night of accommodation. Bring a refillable bottle and a picnic. Stations with left-luggage lockers let you see a city between trains. Book hostels with kitchens. Many city museums are free on the first Sunday of the month. Don’t try to see everything. Two nights per stop is plenty.",
+  "verdict": {
+   "faithful": {
+    "reason": "Every lesson named (sale purchase, flexi pass, high-speed reservations, night trains) is drawn from the article; it says 'ten lessons' and 'a month', both supported. It does not invent facts.",
+    "pass": true
+   },
+   "specific": {
+    "reason": "It names Interrail, a month of travel, high-speed reservations and night trains, details tied to this piece and not generic enough to paste onto any travel article.",
+    "pass": true
+   },
+   "plain": {
+    "reason": "Calm, factual wording with no hype, superlatives, exclamation marks or clichés.",
+    "pass": true
+   },
+   "purpose": {
+    "reason": "It is two sentences-worth of length as a single sentence and tells the reader they will get ten budget lessons from the trip, which is what a summary should do.",
+    "pass": true
+   }
+  }
+ },
+ {
+  "id": "1205:seoDescription",
+  "postId": 1205,
+  "title": "Interrail on a Budget: 10 Things We Learned",
+  "field": "seoDescription",
+  "text": "How to make an Interrail pass go further: ten budget tips from a month of trains around Europe, from flexi passes to night trains and picnics.",
+  "article": "Interrail on a Budget: 10 Things We Learned\n\nExcerpt: How to make a rail pass go further.\n\nA month of trains around Europe, spending as little as we could. Here’s what made the difference. Buy the pass in a sale. They come round twice a year. Pick a flexi pass with fewer travel days than you think you need. Avoid high-speed trains in France, Italy and Spain: reservations cost extra. Regional trains are often free with the pass and only a little slower. Night trains save a night of accommodation. Bring a refillable bottle and a picnic. Stations with left-luggage lockers let you see a city between trains. Book hostels with kitchens. Many city museums are free on the first Sunday of the month. Don’t try to see everything. Two nights per stop is plenty.",
+  "verdict": {
+   "faithful": {
+    "reason": "The description lists flexi passes, night trains and picnics, all mentioned in the article, and 'ten budget tips' and 'a month' match the article. It makes no unsupported claims.",
+    "pass": true
+   },
+   "specific": {
+    "reason": "It names Interrail, the ten tips, the month-long trip and specific tips like flexi passes and night trains, so it is clearly about this article.",
+    "pass": true
+   },
+   "plain": {
+    "reason": "The wording is calm and descriptive with no exclamation marks, superlatives, or hype.",
+    "pass": true
+   },
+   "purpose": {
+    "reason": "As an SEO description it is a single sentence that tells a searcher what the article covers and gives a reason to click, such as budget tips from a month of trains.",
+    "pass": true
+   }
+  }
+ },
+ {
+  "id": "1207:seoDescription",
+  "postId": 1207,
+  "title": "Porto’s Bolhão Market Reopens",
+  "field": "seoDescription",
+  "text": "Porto's Bolhão market has reopened after four years of restoration: when to go, what to find at the stalls, and where to eat lunch upstairs.",
+  "article": "Porto’s Bolhão Market Reopens\n\nExcerpt: After four years of restoration, the city’s market hall is back.\n\nPorto’s Bolhão market reopened in September after four years of restoration. The iron roof is the original, cleaned and repaired; the stalls are new, and many of the old traders are back. Go on a weekday morning for fish, flowers and the best people-watching in the city. There’s a row of small restaurants on the upper level if you want lunch with a view of the stalls. Open Monday to Saturday, 8am to 8pm.",
+  "verdict": {
+   "faithful": {
+    "reason": "Restoration, reopening, four years, stalls, upstairs restaurants and lunch are all in the article. 'When to go' reflects the weekday morning advice. Nothing invented.",
+    "pass": true
+   },
+   "specific": {
+    "reason": "Names Porto's Bolhão market and its specific details (reopening after restoration, upstairs restaurants), so it is not generic.",
+    "pass": true
+   },
+   "plain": {
+    "reason": "Calm, factual wording with no hype, superlatives, exclamation marks or clichés.",
+    "pass": true
+   },
+   "purpose": {
+    "reason": "It is a single sentence that tells a searcher what the page covers and invites a click, matching the SEO description purpose.",
+    "pass": true
+   }
+  }
+ },
+ {
+  "id": "1208:summary",
+  "postId": 1208,
+  "title": "Why We Stopped Flying Short-Haul",
+  "field": "summary",
+  "text": "An editor's note on why the team stopped taking flights under 1,000 km for stories, and how slower train journeys made trips longer and better.",
+  "article": "Why We Stopped Flying Short-Haul\n\nExcerpt: An editor’s note on slower trips.\n\nTwo years ago the editorial team agreed to stop taking flights under 1,000 km for our stories. This is what changed. Trips got longer, and they got better. On the train you arrive in the middle of a city instead of at its edge, and the journey becomes part of the story rather than a gap in it. It is not always possible, and we still fly when there is no reasonable alternative. But “reasonable” turned out to cover a lot more than we expected. Editor's note: our Interrail budget guide is a good place to start.",
+  "verdict": {
+   "faithful": {
+    "reason": "The summary accurately reflects the article: the team stopped taking flights under 1,000 km two years ago, and slower train trips were longer and better. It adds no invented facts.",
+    "pass": true
+   },
+   "specific": {
+    "reason": "It names the specific policy (flights under 1,000 km) and the train-travel reasoning, so it could not be pasted onto a different travel article.",
+    "pass": true
+   },
+   "plain": {
+    "reason": "The tone is calm and descriptive, with no hype, superlatives, exclamation marks or marketing clichés.",
+    "pass": true
+   },
+   "purpose": {
+    "reason": "It is a single sentence telling the reader what the editor's note covers, which is what a one-or-two-sentence summary should do.",
+    "pass": true
+   }
+  }
+ },
+ {
+  "id": "1208:seoDescription",
+  "postId": 1208,
+  "title": "Why We Stopped Flying Short-Haul",
+  "field": "seoDescription",
+  "text": "Why our editors gave up flights under 1,000 km, and how travelling by train turned the journey into part of the story.",
+  "article": "Why We Stopped Flying Short-Haul\n\nExcerpt: An editor’s note on slower trips.\n\nTwo years ago the editorial team agreed to stop taking flights under 1,000 km for our stories. This is what changed. Trips got longer, and they got better. On the train you arrive in the middle of a city instead of at its edge, and the journey becomes part of the story rather than a gap in it. It is not always possible, and we still fly when there is no reasonable alternative. But “reasonable” turned out to cover a lot more than we expected. Editor's note: our Interrail budget guide is a good place to start.",
+  "verdict": {
+   "faithful": {
+    "reason": "The article says the team stopped flights under 1,000 km and that trains make the journey part of the story; the description matches these points without invented facts.",
+    "pass": true
+   },
+   "specific": {
+    "reason": "It refers to the editors' decision to stop short-haul flights and the train-journey argument, so it is specific to this article and not generic travel copy.",
+    "pass": true
+   },
+   "plain": {
+    "reason": "The sentence is calm and descriptive, with no hype, superlatives, exclamation marks or clichés.",
+    "pass": true
+   },
+   "purpose": {
+    "reason": "As a single sentence it tells a searcher what the piece covers, but it is more of a neutral description than a strong reason to click; it still works as an SEO description.",
+    "pass": true
+   }
+  }
+ },
+ {
+  "id": "1301:seoDescription",
+  "postId": 1301,
+  "title": "Sydney Harbour by Ferry",
+  "field": "seoDescription",
+  "text": "Skip the tour boats: the thirty-minute public ferry from Circular Quay to Manly passes the Opera House and the harbour heads for a few dollars.",
+  "article": "Sydney Harbour by Ferry\n\nExcerpt: The cheapest harbour cruise in the world is a commuter ferry.\n\nSkip the tour boats. The public ferry from Circular Quay to Manly takes thirty minutes, passes the Opera House and the harbour heads, and costs a few dollars with a transport card. Go late in the afternoon, sit outside on the left going out, and stay for dinner in Manly. The last boats run until around midnight. On Sundays fares are capped for the whole day, so it is the day to ride every route.",
+  "verdict": {
+   "faithful": {
+    "reason": "All claims (thirty minutes, Circular Quay to Manly, passes Opera House and harbour heads, a few dollars) come from the article; no invented facts.",
+    "pass": true
+   },
+   "specific": {
+    "reason": "Names the specific route, journey time and landmarks, so it could not be pasted onto a different travel article.",
+    "pass": true
+   },
+   "plain": {
+    "reason": "Calm, direct wording with no hype, superlatives, exclamation marks or clickbait.",
+    "pass": true
+   },
+   "purpose": {
+    "reason": "As an SEO description it is a single sentence that tells a searcher what the piece covers and gives a reason to click.",
+    "pass": true
+   }
+  }
+ },
+ {
+  "id": "1302:summary",
+  "postId": 1302,
+  "title": "A Weekend in Mexico City",
+  "field": "summary",
+  "text": "A slow weekend plan for Mexico City: Coyoacán and the anthropology museum on Saturday, a car-free Sunday bike ride on Paseo de la Reforma, and cheap tacos al pastor.",
+  "article": "A Weekend in Mexico City\n\nMexico City rewards a slow weekend. Spend Saturday morning in Coyoacán and the afternoon at the anthropology museum in Chapultepec Park. On Sunday, Paseo de la Reforma closes to cars until early afternoon and fills with cyclists. Rent a bike from one of the stands and ride towards the centre. Eat where the queues are: tacos al pastor cost less than a coffee in most European capitals.",
+  "verdict": {
+   "faithful": {
+    "reason": "The summary only restates items in the article: Coyoacán, the anthropology museum, Sunday car-free Reforma bike ride, and tacos al pastor. It calls the tacos cheap, which the article supports by comparing them to a coffee in European capitals.",
+    "pass": true
+   },
+   "specific": {
+    "reason": "It names Coyoacán, the anthropology museum, Paseo de la Reforma and tacos al pastor, so it could not be pasted onto a different travel article.",
+    "pass": true
+   },
+   "plain": {
+    "reason": "The tone is calm and descriptive with no hype, superlatives, exclamation marks or clichés.",
+    "pass": true
+   },
+   "purpose": {
+    "reason": "It is a single sentence that tells the reader what the article covers: a weekend plan with specific activities. That matches the summary job.",
+    "pass": true
+   }
+  }
+ },
+ {
+  "id": "1302:seoDescription",
+  "postId": 1302,
+  "title": "A Weekend in Mexico City",
+  "field": "seoDescription",
+  "text": "Spend a weekend in Mexico City: Coyoacán, the anthropology museum, cycling car-free Paseo de la Reforma on Sunday and tacos al pastor.",
+  "article": "A Weekend in Mexico City\n\nMexico City rewards a slow weekend. Spend Saturday morning in Coyoacán and the afternoon at the anthropology museum in Chapultepec Park. On Sunday, Paseo de la Reforma closes to cars until early afternoon and fills with cyclists. Rent a bike from one of the stands and ride towards the centre. Eat where the queues are: tacos al pastor cost less than a coffee in most European capitals.",
+  "verdict": {
+   "faithful": {
+    "reason": "Every item named (Coyoacán, the anthropology museum, Paseo de la Reforma car-free on Sunday, tacos al pastor) appears in the article; no invented facts are added.",
+    "pass": true
+   },
+   "specific": {
+    "reason": "It names concrete places and activities from this article, so it could not be pasted onto a different travel piece.",
+    "pass": true
+   },
+   "plain": {
+    "reason": "The tone is calm and factual with no hype, superlatives, exclamation marks or clichés.",
+    "pass": true
+   },
+   "purpose": {
+    "reason": "It is a single sentence that previews the weekend itinerary and gives a searcher a clear reason to click, as an SEO description should.",
+    "pass": true
+   }
+  }
+ },
+ {
+  "id": "1303:summary",
+  "postId": 1303,
+  "title": "Marrakech’s Souks Without the Stress",
+  "field": "summary",
+  "text": "Practical tips for the souks north of Jemaa el-Fnaa: when to go, how to agree on prices, and how to find your way out of the maze.",
+  "article": "Marrakech’s Souks Without the Stress\n\nExcerpt: How to enjoy the markets of the medina.\n\nThe souks north of Jemaa el-Fnaa are a maze on purpose. Getting lost is part of the visit; the trick is to enjoy it. Go in the morning, before the heat and the crowds. Agree on a price before anything is wrapped, and walk away politely if it is too high: you will usually be called back. When you want to find your way out, follow the flow of people downhill towards the main square.",
+  "verdict": {
+   "faithful": {
+    "reason": "Every element (morning visit, price agreement, finding the way out) is drawn from the article; it adds no invented facts.",
+    "pass": true
+   },
+   "specific": {
+    "reason": "Names the souks north of Jemaa el-Fnaa and the specific tips covered, so it is tied to this article.",
+    "pass": true
+   },
+   "plain": {
+    "reason": "Calm, factual wording with no hype, superlatives, exclamation marks or clichés.",
+    "pass": true
+   },
+   "purpose": {
+    "reason": "In one sentence it tells the reader what they will get: timing, bargaining and navigation tips for the souks.",
+    "pass": true
+   }
+  }
+ },
+ {
+  "id": "1303:seoDescription",
+  "postId": 1303,
+  "title": "Marrakech’s Souks Without the Stress",
+  "field": "seoDescription",
+  "text": "Enjoy Marrakech's souks: go early, agree on prices before anything is wrapped, and follow the crowd downhill to Jemaa el-Fnaa.",
+  "article": "Marrakech’s Souks Without the Stress\n\nExcerpt: How to enjoy the markets of the medina.\n\nThe souks north of Jemaa el-Fnaa are a maze on purpose. Getting lost is part of the visit; the trick is to enjoy it. Go in the morning, before the heat and the crowds. Agree on a price before anything is wrapped, and walk away politely if it is too high: you will usually be called back. When you want to find your way out, follow the flow of people downhill towards the main square.",
+  "verdict": {
+   "faithful": {
+    "reason": "All details (going early, agreeing prices before purchase, following the crowd downhill to Jemaa el-Fnaa) appear in the article; nothing is invented.",
+    "pass": true
+   },
+   "specific": {
+    "reason": "Mentions Marrakech's souks, early visits, price agreement and the route to Jemaa el-Fnaa, so it is tied to this article and not generic.",
+    "pass": true
+   },
+   "plain": {
+    "reason": "Calm, direct wording with no hype, superlatives, exclamation marks or clichés.",
+    "pass": true
+   },
+   "purpose": {
+    "reason": "It is a single sentence that tells the searcher what practical tips the article offers, which could encourage a click, though it leans toward summarizing the tips rather than teasing the read.",
+    "pass": true
+   }
+  }
+ },
+ {
+  "id": "1304:seoDescription",
+  "postId": 1304,
+  "title": "How to Order Coffee in Vienna",
+  "field": "seoDescription",
+  "text": "Melange, Einspänner or Verlängerter? Learn what to order in a Viennese coffee house, and why nobody will rush you to leave.",
+  "article": "How to Order Coffee in Vienna\n\nExcerpt: A Melange is not a cappuccino, and nobody will rush you.\n\nA Viennese coffee house sells time as much as coffee. Order, and you can stay for hours with the newspapers. Melange : espresso with steamed milk and foam. Einspänner : black coffee under whipped cream, served in a glass. Verlängerter : espresso lengthened with hot water. Every coffee comes with a glass of water. When it is refilled without asking, you are welcome to stay.",
+  "verdict": {
+   "faithful": {
+    "reason": "The description accurately reflects the article: coffee house time, the named coffees, and the no-rush point. It adds no invented facts.",
+    "pass": true
+   },
+   "specific": {
+    "reason": "It names Melange, Einspänner, Verlängerter and the Viennese coffee house, so it could not be pasted onto a different travel article.",
+    "pass": true
+   },
+   "plain": {
+    "reason": "The tone is calm and direct with no hype, superlatives, exclamation marks or marketing clichés.",
+    "pass": true
+   },
+   "purpose": {
+    "reason": "It is a single sentence that tells a searcher what the article covers and invites a click, which is what an SEO description should do.",
+    "pass": true
+   }
+  }
+ },
+ {
+  "id": "1306:seoDescription",
+  "postId": 1306,
+  "title": "Could You Go From Lisbon to Tokyo by Train?",
+  "field": "seoDescription",
+  "text": "We tried to plan a train trip from Lisbon to Tokyo through Europe, Central Asia and China, and found out why it can't be done this year.",
+  "article": "Could You Go From Lisbon to Tokyo by Train?\n\nExcerpt: In theory yes; in practice, not this year.\n\nOn a map the route looks almost continuous: across Europe, then east through Central Asia and China, and a ferry to Japan at the end. In practice several border crossings have no passenger trains, and some services need visas weeks in advance. We tried to plan it and gave up at the third missing connection. If you want a long train journey this year, pick one continent and do it properly.",
+  "verdict": {
+   "faithful": {
+    "reason": "The article says they tried to plan it and gave up at a missing connection, and that border crossings lack passenger trains and some need visas. The description says they found out why it can't be done this year, which the article roughly supports. It does not invent specifics, though 'why' is a slight stretch since the article gives general reasons.",
+    "pass": true
+   },
+   "specific": {
+    "reason": "It names Lisbon, Tokyo, the route through Europe, Central Asia and China, and the trip planning attempt, so it is clearly about this article and not pasteable onto another travel piece.",
+    "pass": true
+   },
+   "plain": {
+    "reason": "The sentence is calm and factual with no hype, superlatives, exclamation marks or clichés.",
+    "pass": true
+   },
+   "purpose": {
+    "reason": "As an SEO description it is a single sentence that tells a searcher what the article covers and gives a reason to click, the account of a planning attempt and its failure.",
+    "pass": true
+   }
+  }
+ },
+ {
+  "id": "1307:seoDescription",
+  "postId": 1307,
+  "title": "The W Trek in Torres del Paine",
+  "field": "seoDescription",
+  "text": "Plan the W Trek in Chilean Patagonia: about 80 km over four or five days, refugios and campsites to book months ahead, and why to walk it west to east.",
+  "article": "The W Trek in Torres del Paine\n\nExcerpt: Four or five days on Patagonia’s most famous trail.\n\nThe W Trek in Chilean Patagonia takes four or five days and is about 80 km long. You sleep in refugios or campsites, and both must be booked months ahead for the summer season. The wind is the real challenge: gusts can knock you off your feet on the exposed sections. Pack for four seasons in a day. Walk it west to east and you save the towers for the last morning.",
+  "verdict": {
+   "faithful": {
+    "reason": "All details (80 km, four or five days, refugios/campsites booked months ahead, west to east direction) come from the article; nothing invented.",
+    "pass": true
+   },
+   "specific": {
+    "reason": "Names the W Trek, its length, booking needs and direction, so it is specific to this article rather than generic travel copy.",
+    "pass": true
+   },
+   "plain": {
+    "reason": "Calm, informational tone with no hype, exclamation marks or superlatives.",
+    "pass": true
+   },
+   "purpose": {
+    "reason": "As an SEO description it is a single sentence that previews the content and gives a searcher reason to click, though it leans on listing facts rather than a strong pull.",
+    "pass": true
+   }
+  }
+ },
+ {
+  "id": "1308:summary",
+  "postId": 1308,
+  "title": "Eating Well in Hanoi",
+  "field": "summary",
+  "text": "How to eat well at the one-dish pavement stalls of Hanoi: pho for breakfast, bun cha for lunch, egg coffee in the Old Quarter, and how to pick a stall.",
+  "article": "Eating Well in Hanoi\n\nExcerpt: Pho, and much more.\n\nHanoi eats on the pavement. Most of the best food in the city is cooked at stalls with plastic stools, and each stall makes one dish. Start the day with pho, have bun cha for lunch, and end with egg coffee in the Old Quarter. Look for the stalls where locals are queuing and point at what they are having.",
+  "verdict": {
+   "faithful": {
+    "reason": "The summary's claims (pho for breakfast, bun cha for lunch, egg coffee in the Old Quarter, picking stalls where locals queue) all appear in the article; 'breakfast' is a mild paraphrase of 'start the day'.",
+    "pass": true
+   },
+   "specific": {
+    "reason": "It names Hanoi, the pavement stalls, specific dishes and the Old Quarter, so it could not be pasted onto a different travel article.",
+    "pass": true
+   },
+   "plain": {
+    "reason": "The tone is calm and factual with no hype, superlatives, exclamation marks or clichés.",
+    "pass": true
+   },
+   "purpose": {
+    "reason": "It is a single sentence telling the reader what they will get: the dishes, places and how to choose a stall, which fits a summary's job.",
+    "pass": true
+   }
+  }
+ },
+ {
+  "id": "1308:seoDescription",
+  "postId": 1308,
+  "title": "Eating Well in Hanoi",
+  "field": "seoDescription",
+  "text": "Eat like a local in Hanoi: a day of pho, bun cha and egg coffee at the city's plastic-stool street stalls, plus how to choose where to stop.",
+  "article": "Eating Well in Hanoi\n\nExcerpt: Pho, and much more.\n\nHanoi eats on the pavement. Most of the best food in the city is cooked at stalls with plastic stools, and each stall makes one dish. Start the day with pho, have bun cha for lunch, and end with egg coffee in the Old Quarter. Look for the stalls where locals are queuing and point at what they are having.",
+  "verdict": {
+   "faithful": {
+    "reason": "The article mentions pho, bun cha, egg coffee, plastic stools, stalls, and queuing locals, but says nothing about 'how to choose where to stop' beyond looking for queues; that is a mild extension, and 'a day of' matches the article's day plan. Claim that stalls each make one dish is in the article. Mostly supported, with a small overreach on the 'how to choose' promise being a reasonable reading of the queue tip.",
+    "pass": true
+   },
+   "specific": {
+    "reason": "Names Hanoi, specific dishes, the Old Quarter-style street stall setting, and the queuing tip; it could not be pasted onto a different travel article.",
+    "pass": true
+   },
+   "plain": {
+    "reason": "Calm, descriptive wording with no exclamation marks, superlatives, or hype; 'Eat like a local' is mild but not clickbait.",
+    "pass": true
+   },
+   "purpose": {
+    "reason": "A single sentence that tells the searcher what the article covers and invites a click, which fits an SEO description.",
+    "pass": true
+   }
+  }
+ },
+ {
+  "id": "1309:summary",
+  "postId": 1309,
+  "title": "Why We Don’t Rate Restaurants",
+  "field": "summary",
+  "text": "Why our food pieces skip stars and scores, what we tell you about a place instead, and how we pay for every meal we recommend.",
+  "article": "Why We Don’t Rate Restaurants\n\nReaders sometimes ask why our food pieces never give stars or scores. A score says how a meal was on one evening for one writer. We would rather tell you what a place is good for, who will like it, and when to go, and let you decide. When we recommend somewhere, we have paid for the meal ourselves.",
+  "verdict": {
+   "faithful": {
+    "reason": "The article says scores reflect one evening for one writer, that they instead describe what a place is good for, who will like it, and when to go, and that recommended meals are paid for by the writers. The summary matches these points without adding unsupported claims.",
+    "pass": true
+   },
+   "specific": {
+    "reason": "It names this article's specific policy topic (no stars or scores, paying for meals) and could not be pasted onto an unrelated travel article.",
+    "pass": true
+   },
+   "plain": {
+    "reason": "The tone is calm and factual with no hype, superlatives, exclamation marks, or marketing clichés.",
+    "pass": true
+   },
+   "purpose": {
+    "reason": "As a one-sentence summary it tells the reader what they will get: the reasoning for no ratings, what is offered instead, and the payment policy.",
+    "pass": true
+   }
+  }
+ },
+ {
+  "id": "1309:seoDescription",
+  "postId": 1309,
+  "title": "Why We Don’t Rate Restaurants",
+  "field": "seoDescription",
+  "text": "Why our restaurant pieces give no stars or scores, and what we tell you instead: what a place is good for, who will like it and when to go.",
+  "article": "Why We Don’t Rate Restaurants\n\nReaders sometimes ask why our food pieces never give stars or scores. A score says how a meal was on one evening for one writer. We would rather tell you what a place is good for, who will like it, and when to go, and let you decide. When we recommend somewhere, we have paid for the meal ourselves.",
+  "verdict": {
+   "faithful": {
+    "reason": "The description accurately reflects the article: no stars or scores, instead what a place is good for, who will like it, and when to go. It does not add unsupported claims.",
+    "pass": true
+   },
+   "specific": {
+    "reason": "It names the specific policy of not rating restaurants and the specific three things offered instead, so it is tied to this article and not generic travel copy.",
+    "pass": true
+   },
+   "plain": {
+    "reason": "The tone is calm and factual with no hype, superlatives, exclamation marks, or marketing clichés.",
+    "pass": true
+   },
+   "purpose": {
+    "reason": "It is a single sentence that tells a searcher what the article covers and gives a reason to click for readers wondering about restaurant ratings, though it is somewhat descriptive rather than strongly inviting.",
+    "pass": true
+   }
+  }
+ },
+ {
+  "id": "1310:summary",
+  "postId": 1310,
+  "title": "Table Mountain: Cable Car or On Foot?",
+  "field": "summary",
+  "text": "How to choose between the cable car and the steep Platteklip Gorge path up Table Mountain, with tips on timing, queues and the weather.",
+  "article": "Table Mountain: Cable Car or On Foot?\n\nThe cable car reaches the top of Table Mountain in a few minutes. The Platteklip Gorge path takes two to three hours and climbs steeply the whole way. Walk up in the cool of the morning and ride down in the afternoon, when the queues for the descent are short. Check the weather first: when the cloud the locals call the tablecloth sits on the summit, the cable car stops and the views disappear.",
+  "verdict": {
+   "faithful": {
+    "reason": "The summary mentions choosing between cable car and Platteklip Gorge path, steepness, timing, queues and weather, all supported by the article. It does not invent facts.",
+    "pass": true
+   },
+   "specific": {
+    "reason": "It names Table Mountain, Platteklip Gorge, the cable car and the queue and weather tips, so it could not be pasted onto a different travel article.",
+    "pass": true
+   },
+   "plain": {
+    "reason": "The tone is calm and factual with no hype, superlatives, exclamation marks or clichés.",
+    "pass": true
+   },
+   "purpose": {
+    "reason": "It is a one-sentence summary that tells the reader the article compares the two ways up and gives timing, queue and weather tips, so they know what they will get.",
+    "pass": true
+   }
+  }
+ },
+ {
+  "id": "1310:seoDescription",
+  "postId": 1310,
+  "title": "Table Mountain: Cable Car or On Foot?",
+  "field": "seoDescription",
+  "text": "Cable car or a two-to-three-hour climb up Platteklip Gorge? How to plan your Table Mountain visit around queues and the tablecloth cloud.",
+  "article": "Table Mountain: Cable Car or On Foot?\n\nThe cable car reaches the top of Table Mountain in a few minutes. The Platteklip Gorge path takes two to three hours and climbs steeply the whole way. Walk up in the cool of the morning and ride down in the afternoon, when the queues for the descent are short. Check the weather first: when the cloud the locals call the tablecloth sits on the summit, the cable car stops and the views disappear.",
+  "verdict": {
+   "faithful": {
+    "reason": "Mentions cable car vs Platteklip Gorge climb of two to three hours, queues and tablecloth cloud, all drawn from the article. Nothing invented.",
+    "pass": true
+   },
+   "specific": {
+    "reason": "Names Table Mountain, Platteklip Gorge and the tablecloth cloud; clearly about this article only.",
+    "pass": true
+   },
+   "plain": {
+    "reason": "Calm, plain wording with a question and no hype, superlatives or exclamation marks.",
+    "pass": true
+   },
+   "purpose": {
+    "reason": "As an SEO description it is a single sentence that poses the cable car versus hike choice a searcher would want answered, giving a reason to click.",
+    "pass": true
+   }
+  }
+ },
+ {
+  "id": "planted-1302-summary",
+  "postId": 1302,
+  "title": "A Weekend in Mexico City",
+  "field": "summary",
+  "text": "A weekend in Mexico City, from Frida Kahlo's blue house in Coyoacán to tacos al pastor for twenty pesos.",
+  "article": "A Weekend in Mexico City\n\nMexico City rewards a slow weekend. Spend Saturday morning in Coyoacán and the afternoon at the anthropology museum in Chapultepec Park. On Sunday, Paseo de la Reforma closes to cars until early afternoon and fills with cyclists. Rent a bike from one of the stands and ride towards the centre. Eat where the queues are: tacos al pastor cost less than a coffee in most European capitals.",
+  "verdict": {
+   "faithful": {
+    "reason": "The article never mentions Frida Kahlo's blue house or a price of twenty pesos; both are invented details not supported by the article.",
+    "pass": false
+   },
+   "specific": {
+    "reason": "It names Coyoacán and tacos al pastor, so it is tied to this article rather than generic.",
+    "pass": true
+   },
+   "plain": {
+    "reason": "The tone is calm and factual with no hype, superlatives, or exclamation marks.",
+    "pass": true
+   },
+   "purpose": {
+    "reason": "As a one-sentence summary it tells the reader the weekend covers Coyoacán and tacos, so it roughly does its job, though the invented details undermine it.",
+    "pass": false
+   }
+  },
+  "planted": "faithful"
+ },
+ {
+  "id": "planted-1307-seo",
+  "postId": 1307,
+  "title": "The W Trek in Torres del Paine",
+  "field": "seoDescription",
+  "text": "Walk the 100 km W Trek in Chilean Patagonia in five days, sleeping in refugios booked months ahead.",
+  "article": "The W Trek in Torres del Paine\n\nExcerpt: Four or five days on Patagonia’s most famous trail.\n\nThe W Trek in Chilean Patagonia takes four or five days and is about 80 km long. You sleep in refugios or campsites, and both must be booked months ahead for the summer season. The wind is the real challenge: gusts can knock you off your feet on the exposed sections. Pack for four seasons in a day. Walk it west to east and you save the towers for the last morning.",
+  "verdict": {
+   "faithful": {
+    "reason": "The article says about 80 km, but the description says 100 km, an invented number. It also says five days where the article says four or five, which is a narrowing not supported.",
+    "pass": false
+   },
+   "specific": {
+    "reason": "It names the W Trek in Chilean Patagonia and the refugio booking detail, so it is about this article rather than generic.",
+    "pass": true
+   },
+   "plain": {
+    "reason": "The tone is calm and factual with no exclamation marks, superlatives, or hype.",
+    "pass": true
+   },
+   "purpose": {
+    "reason": "It is a single sentence that tells the searcher what the trek involves and would prompt a click, though the factual errors undercut it.",
+    "pass": false
+   }
+  },
+  "planted": "faithful"
+ },
+ {
+  "id": "planted-1203-seo",
+  "postId": 1203,
+  "title": "Four Days Above Chamonix",
+  "field": "seoDescription",
+  "text": "A four-day hut loop above Chamonix with beds from €45 a night and no technical sections.",
+  "article": "Four Days Above Chamonix\n\nThis loop links four huts on the south side of the valley. It needs a head for heights on day two and nothing technical otherwise. Day Route Distance Ascent 1 Les Houches to Refuge de Bellachat 9 km 1,150 m 2 Bellachat to Lac Blanc 14 km 900 m 3 Lac Blanc to Refuge de la Charlanon 8 km 350 m 4 Charlanon to Chamonix 11 km 200 m Day two crosses a section with ladders and fixed chains. If that isn’t for you, drop down to the valley and take the lift up again. For booking and packing, see our first-timer’s guide .",
+  "verdict": {
+   "faithful": {
+    "reason": "The article never mentions prices; the '€45 a night' figure is invented. It also says day two has ladders and fixed chains, so 'no technical sections' contradicts the article's 'nothing technical otherwise' only loosely, but the price is unsupported.",
+    "pass": false
+   },
+   "specific": {
+    "reason": "It names Chamonix and the four-day hut loop, so it is tied to this article rather than generic.",
+    "pass": true
+   },
+   "plain": {
+    "reason": "The tone is calm and factual with no hype, exclamation marks or superlatives.",
+    "pass": true
+   },
+   "purpose": {
+    "reason": "As an SEO description it is one sentence that tells a searcher what the route is, which would make a hiker consider clicking, though the invented price weakens it.",
+    "pass": true
+   }
+  },
+  "planted": "faithful"
+ },
+ {
+  "id": "planted-1304-summary",
+  "postId": 1304,
+  "title": "How to Order Coffee in Vienna",
+  "field": "summary",
+  "text": "Everything you need to know to enjoy great coffee wherever your travels take you.",
+  "article": "How to Order Coffee in Vienna\n\nExcerpt: A Melange is not a cappuccino, and nobody will rush you.\n\nA Viennese coffee house sells time as much as coffee. Order, and you can stay for hours with the newspapers. Melange : espresso with steamed milk and foam. Einspänner : black coffee under whipped cream, served in a glass. Verlängerter : espresso lengthened with hot water. Every coffee comes with a glass of water. When it is refilled without asking, you are welcome to stay.",
+  "verdict": {
+   "faithful": {
+    "reason": "The summary makes claims about coffee generally and travels worldwide, not about the Vienna article's content; it invents no specific facts but is not supported by the article's details.",
+    "pass": false
+   },
+   "specific": {
+    "reason": "It could be pasted onto any travel article about coffee anywhere; it mentions no Vienna, coffee house, or specific drinks.",
+    "pass": false
+   },
+   "plain": {
+    "reason": "The tone is calm with no hype, exclamation marks, or clickbait, though 'great coffee' is mildly promotional.",
+    "pass": true
+   },
+   "purpose": {
+    "reason": "It gestures at the topic but does not tell the reader what they will learn from the article (Viennese coffee types, ordering customs), so it fails to do the summary's job.",
+    "pass": false
+   }
+  },
+  "planted": "specific"
+ },
+ {
+  "id": "planted-1301-summary",
+  "postId": 1301,
+  "title": "Sydney Harbour by Ferry",
+  "field": "summary",
+  "text": "A simple tip for seeing a famous city from the water without spending much.",
+  "article": "Sydney Harbour by Ferry\n\nExcerpt: The cheapest harbour cruise in the world is a commuter ferry.\n\nSkip the tour boats. The public ferry from Circular Quay to Manly takes thirty minutes, passes the Opera House and the harbour heads, and costs a few dollars with a transport card. Go late in the afternoon, sit outside on the left going out, and stay for dinner in Manly. The last boats run until around midnight. On Sundays fares are capped for the whole day, so it is the day to ride every route.",
+  "verdict": {
+   "faithful": {
+    "reason": "The summary says it's a tip for seeing the city from the water cheaply, which the article supports (commuter ferry, a few dollars). It invents no facts.",
+    "pass": true
+   },
+   "specific": {
+    "reason": "It is vague: 'a famous city' and 'a simple tip' could describe many travel articles. It does not mention Sydney Harbour, the ferry to Manly, or the Opera House.",
+    "pass": false
+   },
+   "plain": {
+    "reason": "The tone is calm and plain, with no hype, superlatives, or exclamation marks.",
+    "pass": true
+   },
+   "purpose": {
+    "reason": "It is one sentence that tells the reader the article offers a cheap way to see a city from the water. That is a reasonable summary of what they will get, though it lacks concrete detail about the route.",
+    "pass": true
+   }
+  },
+  "planted": "specific"
+ },
+ {
+  "id": "planted-1310-seo",
+  "postId": 1310,
+  "title": "Table Mountain: Cable Car or On Foot?",
+  "field": "seoDescription",
+  "text": "The MOST breathtaking climb on the planet!!! Table Mountain will blow your mind, cable car or not.",
+  "article": "Table Mountain: Cable Car or On Foot?\n\nThe cable car reaches the top of Table Mountain in a few minutes. The Platteklip Gorge path takes two to three hours and climbs steeply the whole way. Walk up in the cool of the morning and ride down in the afternoon, when the queues for the descent are short. Check the weather first: when the cloud the locals call the tablecloth sits on the summit, the cable car stops and the views disappear.",
+  "verdict": {
+   "faithful": {
+    "reason": "The text claims the climb is the most breathtaking on the planet and that the mountain will blow your mind, which the article does not support; it only describes logistics and a cloud that obscures views.",
+    "pass": false
+   },
+   "specific": {
+    "reason": "It mentions Table Mountain and the cable car, so it is tied to this article, though the content is generic hype that could fit many mountain pieces.",
+    "pass": false
+   },
+   "plain": {
+    "reason": "It uses superlatives, all-caps, multiple exclamation marks and hype language like blow your mind, the opposite of plain and calm.",
+    "pass": false
+   },
+   "purpose": {
+    "reason": "As an SEO description it is a single sentence-like blurb, but it does not convey what the article covers (cable car versus Platteklip path, timing, weather) and so gives a searcher little reason to click beyond vague hype.",
+    "pass": false
+   }
+  },
+  "planted": "plain"
+ },
+ {
+  "id": "planted-1308-seo",
+  "postId": 1308,
+  "title": "Eating Well in Hanoi",
+  "field": "seoDescription",
+  "text": "Hanoi eats on the pavement. Each stall makes one dish. Start with pho, then bun cha, then egg coffee in the Old Quarter.",
+  "article": "Eating Well in Hanoi\n\nExcerpt: Pho, and much more.\n\nHanoi eats on the pavement. Most of the best food in the city is cooked at stalls with plastic stools, and each stall makes one dish. Start the day with pho, have bun cha for lunch, and end with egg coffee in the Old Quarter. Look for the stalls where locals are queuing and point at what they are having.",
+  "verdict": {
+   "faithful": {
+    "reason": "All statements (pavement eating, one dish per stall, pho, bun cha, egg coffee in Old Quarter) come from the article; nothing invented.",
+    "pass": true
+   },
+   "specific": {
+    "reason": "Names Hanoi dishes and the Old Quarter, so it is about this article and not pasteable onto another travel piece.",
+    "pass": true
+   },
+   "plain": {
+    "reason": "Calm, declarative sentences with no hype, superlatives, exclamation marks or clichés.",
+    "pass": true
+   },
+   "purpose": {
+    "reason": "As an SEO description it is three sentences rather than a single sentence, so it does not meet the one-sentence format; it does hint at the content but is not a single click-inducing line.",
+    "pass": false
+   }
+  },
+  "planted": "purpose"
+ },
+ {
+  "id": "planted-1303-summary",
+  "postId": 1303,
+  "title": "Marrakech’s Souks Without the Stress",
+  "field": "summary",
+  "text": "Marrakech.",
+  "article": "Marrakech’s Souks Without the Stress\n\nExcerpt: How to enjoy the markets of the medina.\n\nThe souks north of Jemaa el-Fnaa are a maze on purpose. Getting lost is part of the visit; the trick is to enjoy it. Go in the morning, before the heat and the crowds. Agree on a price before anything is wrapped, and walk away politely if it is too high: you will usually be called back. When you want to find your way out, follow the flow of people downhill towards the main square.",
+  "verdict": {
+   "faithful": {
+    "reason": "The text is just the word 'Marrakech', which is a place the article covers, so it invents nothing.",
+    "pass": true
+   },
+   "specific": {
+    "reason": "A single city name is too generic; it could sit atop any Marrakech article and says nothing about souks or the advice given.",
+    "pass": false
+   },
+   "plain": {
+    "reason": "It is plain and calm with no hype, superlatives, or clichés.",
+    "pass": true
+   },
+   "purpose": {
+    "reason": "A summary should tell the reader what they will get in one or two sentences; a bare city name tells them nothing about the content or benefit.",
+    "pass": false
+   }
+  },
+  "planted": "purpose"
+ }
+]

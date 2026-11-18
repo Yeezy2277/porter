@@ -1,0 +1,5 @@
+{
+  "_comment": "The floor each metric must stay at or above; CI fails the build when a replayed eval drops below. Set just under the recorded baseline, with room for the known miss.",
+  "linking": { "correct": 0.95, "retrieval": 0.9 },
+  "agent": { "submitted": 1, "rules": 1, "grounded": 1, "region": 0.9, "faithful": 0.9, "specific": 0.9, "plain": 0.9, "purpose": 0.9 }
+}

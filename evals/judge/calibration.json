@@ -1,0 +1,30 @@
+{
+  "judgeModel": "claude-haiku-5-5",
+  "judgePromptVersion": "judge-v1",
+  "labelledItems": 0,
+  "per": {
+    "faithful": {
+      "n": 0,
+      "agree": 0,
+      "rate": 0
+    },
+    "specific": {
+      "n": 0,
+      "agree": 0,
+      "rate": 0
+    },
+    "plain": {
+      "n": 0,
+      "agree": 0,
+      "rate": 0
+    },
+    "purpose": {
+      "n": 0,
+      "agree": 0,
+      "rate": 0
+    }
+  },
+  "rate": 0,
+  "n": 0,
+  "disagreements": []
+}

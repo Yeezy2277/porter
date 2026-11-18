@@ -1,7 +1,9 @@
 import { parseDocument } from "htmlparser2";
 import type { ChildNode, Element } from "domhandler";
 import { BLOCKS, INLINES, type Document } from "@contentful/rich-text-types";
-import { slugify } from "./text";
+import { stableId } from "./text";
+
+export { stableId };
 
 /**
  * HTML body → Contentful Rich Text, deterministically.
@@ -61,14 +63,6 @@ export type TransformResult = {
 const DROP = new Set(["script", "style", "noscript", "form", "input", "button", "select", "textarea", "svg", "template", "head"]);
 const MARK_OF: Record<string, Mark> = { strong: "bold", b: "bold", em: "italic", i: "italic", u: "underline", code: "code", kbd: "code", tt: "code" };
 const HEADINGS = [BLOCKS.HEADING_1, BLOCKS.HEADING_2, BLOCKS.HEADING_3, BLOCKS.HEADING_4, BLOCKS.HEADING_5, BLOCKS.HEADING_6] as string[];
-
-/** Stable Contentful-safe id ([a-zA-Z0-9-_.], ≤64) for an asset or embed, so re-running a migration updates instead of duplicating. */
-export function stableId(prefix: string, key: string): string {
-  let h = 0x811c9dc5;
-  for (let i = 0; i < key.length; i++) h = Math.imul(h ^ key.charCodeAt(i), 0x01000193);
-  const hash = (h >>> 0).toString(36);
-  return `${prefix}-${slugify(key.split("/").pop() ?? key).slice(0, 40)}-${hash}`.slice(0, 64);
-}
 
 /**
  * WordPress shortcodes aren't HTML. [caption] wraps a real image and its

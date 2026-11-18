@@ -95,6 +95,11 @@ export function validateEntry(draft: EntryDraft, ct: ContentType, resolve: Resol
   return problems;
 }
 
+/** One field's value against its own rules (no required check): used to decide when a fallback applies. */
+export function validateField(field: Field, value: Exclude<FieldValue, null | undefined>, resolve: Resolver): string[] {
+  return checkValue(field, value, resolve);
+}
+
 function checkValue(field: Field, value: Exclude<FieldValue, null | undefined>, resolve: Resolver): string[] {
   const out: string[] = [];
   const v = field.validations;

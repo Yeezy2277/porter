@@ -1,0 +1,18 @@
+{
+  "_comment": "The reference mapping for the article type, written by hand. Tests use it; stage 05 scores model proposals against it.",
+  "contentType": "article",
+  "fields": [
+    { "target": "title", "sources": ["post.title"], "transform": "copy", "fallback": null, "confidence": "high", "note": "" },
+    { "target": "slug", "sources": ["post.slug"], "transform": "slugify", "fallback": null, "confidence": "high", "note": "Keep the old slugs so redirects are one-to-one." },
+    { "target": "publishedAt", "sources": ["post.date_gmt"], "transform": "utcDate", "fallback": null, "confidence": "high", "note": "" },
+    { "target": "summary", "sources": ["post.excerpt"], "transform": "copy", "fallback": { "sources": ["post.title", "post.content"], "transform": "generate" }, "confidence": "medium", "note": "Some excerpts are empty or shorter than 40 characters." },
+    { "target": "body", "sources": ["post.content"], "transform": "richText", "fallback": null, "confidence": "high", "note": "" },
+    { "target": "author", "sources": ["post.author"], "transform": "linkAuthor", "fallback": null, "confidence": "high", "note": "" },
+    { "target": "topics", "sources": ["post.categories", "post.tags"], "transform": "linkTopics", "fallback": null, "confidence": "medium", "note": "Topics are broad; most tags will not match one." },
+    { "target": "heroImage", "sources": ["post.featured_media"], "transform": "linkAsset", "fallback": null, "confidence": "high", "note": "" },
+    { "target": "seoDescription", "sources": ["post.yoast_description"], "transform": "copy", "fallback": { "sources": ["post.excerpt", "post.content"], "transform": "generate" }, "confidence": "medium", "note": "" },
+    { "target": "region", "sources": ["post.title", "post.content"], "transform": "generate", "fallback": null, "confidence": "low", "note": "No source field; classify from the text." }
+  ],
+  "unmapped": [{ "source": "post.modified_gmt", "reason": "The new model has no last-modified field; Contentful tracks its own." }],
+  "questions": ["Should tags that match no topic be dropped, or become new topics?"]
+}

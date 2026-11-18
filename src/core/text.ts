@@ -59,3 +59,11 @@ export function words(s: string): string[] {
 export function slugify(s: string): string {
   return words(s).join("-");
 }
+
+/** Stable Contentful-safe id ([a-zA-Z0-9-_.], ≤64) for an asset or embed, so re-running a migration updates instead of duplicating. */
+export function stableId(prefix: string, key: string): string {
+  let h = 0x811c9dc5;
+  for (let i = 0; i < key.length; i++) h = Math.imul(h ^ key.charCodeAt(i), 0x01000193);
+  const hash = (h >>> 0).toString(36);
+  return `${prefix}-${slugify(key.split("/").pop() ?? key).slice(0, 40)}-${hash}`.slice(0, 64);
+}

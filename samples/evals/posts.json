@@ -1,0 +1,428 @@
+{
+  "_comment": "Extra posts for the agent eval, in the wp/v2 shape, by the demo's authors and with the demo's terms (so their links are already decided). All text is invented. `gold.region` is human-written: the regions an editor would accept, where null means 'leave it empty'. `gold.traps` says what each post tests.",
+  "posts": [
+    {
+      "id": 1301,
+      "date_gmt": "2023-02-11T21:00:00",
+      "modified_gmt": "2023-02-11T21:00:00",
+      "slug": "sydney-harbour-by-ferry",
+      "status": "publish",
+      "title": {
+        "rendered": "Sydney Harbour by Ferry"
+      },
+      "excerpt": {
+        "rendered": "<p>The cheapest harbour cruise in the world is a commuter ferry.</p>"
+      },
+      "content": {
+        "rendered": "<p>Skip the tour boats. The public ferry from Circular Quay to Manly takes thirty minutes, passes the Opera House and the harbour heads, and costs a few dollars with a transport card.</p><p>Go late in the afternoon, sit outside on the left going out, and stay for dinner in Manly. The last boats run until around midnight.</p><p>On Sundays fares are capped for the whole day, so it is the day to ride every route.</p>"
+      },
+      "author": 5,
+      "categories": [
+        13
+      ],
+      "tags": [
+        107
+      ],
+      "featured_media": 0,
+      "yoast_head_json": {
+        "description": ""
+      },
+      "gold": {
+        "region": [
+          "Oceania"
+        ],
+        "traps": [
+          "no exact price in the text: a summary must not invent one"
+        ]
+      }
+    },
+    {
+      "id": 1302,
+      "date_gmt": "2023-05-20T15:00:00",
+      "modified_gmt": "2023-05-20T15:00:00",
+      "slug": "a-weekend-in-mexico-city",
+      "status": "publish",
+      "title": {
+        "rendered": "A Weekend in Mexico City"
+      },
+      "excerpt": {
+        "rendered": ""
+      },
+      "content": {
+        "rendered": "<p>Mexico City rewards a slow weekend. Spend Saturday morning in Coyoacán and the afternoon at the anthropology museum in Chapultepec Park.</p><p>On Sunday, Paseo de la Reforma closes to cars until early afternoon and fills with cyclists. Rent a bike from one of the stands and ride towards the centre.</p><p>Eat where the queues are: tacos al pastor cost less than a coffee in most European capitals.</p>"
+      },
+      "author": 5,
+      "categories": [
+        13
+      ],
+      "tags": [
+        106
+      ],
+      "featured_media": 0,
+      "yoast_head_json": {
+        "description": ""
+      },
+      "gold": {
+        "region": [
+          "Americas"
+        ],
+        "traps": [
+          "empty excerpt and SEO description: both fields written from scratch"
+        ]
+      }
+    },
+    {
+      "id": 1303,
+      "date_gmt": "2023-09-02T09:00:00",
+      "modified_gmt": "2023-09-02T09:00:00",
+      "slug": "marrakech-souks-without-the-stress",
+      "status": "publish",
+      "title": {
+        "rendered": "Marrakech&#8217;s Souks Without the Stress"
+      },
+      "excerpt": {
+        "rendered": "<p>How to enjoy the markets of the medina.</p>"
+      },
+      "content": {
+        "rendered": "<p>The souks north of Jemaa el-Fnaa are a maze on purpose. Getting lost is part of the visit; the trick is to enjoy it.</p><p>Go in the morning, before the heat and the crowds. Agree on a price before anything is wrapped, and walk away politely if it is too high: you will usually be called back.</p><p>When you want to find your way out, follow the flow of people downhill towards the main square.</p>"
+      },
+      "author": 5,
+      "categories": [
+        13
+      ],
+      "tags": [
+        109
+      ],
+      "featured_media": 0,
+      "yoast_head_json": {
+        "description": ""
+      },
+      "gold": {
+        "region": [
+          "Africa"
+        ],
+        "traps": [
+          "excerpt under 40 characters: the summary must be rewritten, not copied"
+        ]
+      }
+    },
+    {
+      "id": 1304,
+      "date_gmt": "2024-01-15T08:00:00",
+      "modified_gmt": "2024-01-15T08:00:00",
+      "slug": "how-to-order-coffee-in-vienna",
+      "status": "publish",
+      "title": {
+        "rendered": "How to Order Coffee in Vienna"
+      },
+      "excerpt": {
+        "rendered": "<p>A Melange is not a cappuccino, and nobody will rush you.</p>"
+      },
+      "content": {
+        "rendered": "<p>A Viennese coffee house sells time as much as coffee. Order, and you can stay for hours with the newspapers.</p><ul><li><b>Melange</b>: espresso with steamed milk and foam.</li><li><b>Einspänner</b>: black coffee under whipped cream, served in a glass.</li><li><b>Verlängerter</b>: espresso lengthened with hot water.</li></ul><p>Every coffee comes with a glass of water. When it is refilled without asking, you are welcome to stay.</p>"
+      },
+      "author": 2,
+      "categories": [
+        10
+      ],
+      "tags": [],
+      "featured_media": 0,
+      "yoast_head_json": {
+        "description": ""
+      },
+      "gold": {
+        "region": [
+          "Europe"
+        ],
+        "traps": [
+          "German drink names: grounding must accept names that are in the text"
+        ]
+      }
+    },
+    {
+      "id": 1305,
+      "date_gmt": "2024-03-03T18:00:00",
+      "modified_gmt": "2024-03-03T18:00:00",
+      "slug": "packing-for-a-night-train",
+      "status": "publish",
+      "title": {
+        "rendered": "Packing for a Night Train"
+      },
+      "excerpt": {
+        "rendered": "<p>Everything you need for a good night in a couchette fits in one small bag.</p>"
+      },
+      "content": {
+        "rendered": "<p>Keep one small bag for the night and put the big one in the luggage space before the train leaves.</p><ul><li>Earplugs and an eye mask</li><li>A refillable bottle: water on board is not always free</li><li>Slippers for the corridor</li><li>A charger with a long cable, because sockets are rarely near the bunk</li></ul><p>Dress in layers. Compartments are warm at night and cold in the morning.</p>"
+      },
+      "author": 4,
+      "categories": [
+        12
+      ],
+      "tags": [
+        104
+      ],
+      "featured_media": 0,
+      "yoast_head_json": {
+        "description": "What to pack for a night train, from earplugs to a long charging cable."
+      },
+      "gold": {
+        "region": [
+          null
+        ],
+        "traps": [
+          "no place at all: region should stay empty"
+        ]
+      }
+    },
+    {
+      "id": 1306,
+      "date_gmt": "2024-06-10T10:00:00",
+      "modified_gmt": "2024-06-10T10:00:00",
+      "slug": "could-you-go-from-lisbon-to-tokyo-by-train",
+      "status": "publish",
+      "title": {
+        "rendered": "Could You Go From Lisbon to Tokyo by Train?"
+      },
+      "excerpt": {
+        "rendered": "<p>In theory yes; in practice, not this year.</p>"
+      },
+      "content": {
+        "rendered": "<p>On a map the route looks almost continuous: across Europe, then east through Central Asia and China, and a ferry to Japan at the end.</p><p>In practice several border crossings have no passenger trains, and some services need visas weeks in advance. We tried to plan it and gave up at the third missing connection.</p><p>If you want a long train journey this year, pick one continent and do it properly.</p>"
+      },
+      "author": 6,
+      "categories": [
+        12
+      ],
+      "tags": [
+        107
+      ],
+      "featured_media": 0,
+      "yoast_head_json": {
+        "description": ""
+      },
+      "gold": {
+        "region": [
+          null,
+          "Europe",
+          "Asia"
+        ],
+        "traps": [
+          "spans continents: empty, Europe or Asia are all defensible"
+        ]
+      }
+    },
+    {
+      "id": 1307,
+      "date_gmt": "2024-11-25T12:00:00",
+      "modified_gmt": "2024-11-25T12:00:00",
+      "slug": "the-w-trek-in-torres-del-paine",
+      "status": "publish",
+      "title": {
+        "rendered": "The W Trek in Torres del Paine"
+      },
+      "excerpt": {
+        "rendered": "<p>Four or five days on Patagonia&#8217;s most famous trail.</p>"
+      },
+      "content": {
+        "rendered": "<p>The W Trek in Chilean Patagonia takes four or five days and is about 80 km long. You sleep in refugios or campsites, and both must be booked months ahead for the summer season.</p><p>The wind is the real challenge: gusts can knock you off your feet on the exposed sections. Pack for four seasons in a day.</p><p>Walk it west to east and you save the towers for the last morning.</p>"
+      },
+      "author": 3,
+      "categories": [
+        11
+      ],
+      "tags": [
+        103
+      ],
+      "featured_media": 0,
+      "yoast_head_json": {
+        "description": ""
+      },
+      "gold": {
+        "region": [
+          "Americas"
+        ],
+        "traps": [
+          "numbers in the text (4–5 days, 80 km): a summary may use them, never change them"
+        ]
+      }
+    },
+    {
+      "id": 1308,
+      "date_gmt": "2025-02-08T07:00:00",
+      "modified_gmt": "2025-02-08T07:00:00",
+      "slug": "eating-well-in-hanoi",
+      "status": "publish",
+      "title": {
+        "rendered": "Eating Well in Hanoi"
+      },
+      "excerpt": {
+        "rendered": "<p>Pho, and much more.</p>"
+      },
+      "content": {
+        "rendered": "<p>Hanoi eats on the pavement. Most of the best food in the city is cooked at stalls with plastic stools, and each stall makes one dish.</p><p>Start the day with pho, have bun cha for lunch, and end with egg coffee in the Old Quarter. Look for the stalls where locals are queuing and point at what they are having.</p>"
+      },
+      "author": 2,
+      "categories": [
+        10
+      ],
+      "tags": [
+        106
+      ],
+      "featured_media": 0,
+      "yoast_head_json": {
+        "description": ""
+      },
+      "gold": {
+        "region": [
+          "Asia"
+        ],
+        "traps": [
+          "very short excerpt; dish names must survive grounding"
+        ]
+      }
+    },
+    {
+      "id": 1309,
+      "date_gmt": "2025-04-01T09:00:00",
+      "modified_gmt": "2025-04-01T09:00:00",
+      "slug": "why-we-dont-rate-restaurants",
+      "status": "publish",
+      "title": {
+        "rendered": "Why We Don&#8217;t Rate Restaurants"
+      },
+      "excerpt": {
+        "rendered": ""
+      },
+      "content": {
+        "rendered": "<p>Readers sometimes ask why our food pieces never give stars or scores.</p><p>A score says how a meal was on one evening for one writer. We would rather tell you what a place is good for, who will like it, and when to go, and let you decide.</p><p>When we recommend somewhere, we have paid for the meal ourselves.</p>"
+      },
+      "author": 6,
+      "categories": [
+        1
+      ],
+      "tags": [],
+      "featured_media": 0,
+      "yoast_head_json": {
+        "description": ""
+      },
+      "gold": {
+        "region": [
+          null
+        ],
+        "traps": [
+          "editor's note with no place: region empty; no invented numbers"
+        ]
+      }
+    },
+    {
+      "id": 1310,
+      "date_gmt": "2025-08-19T06:00:00",
+      "modified_gmt": "2025-08-19T06:00:00",
+      "slug": "table-mountain-cable-car-or-on-foot",
+      "status": "publish",
+      "title": {
+        "rendered": "Table Mountain: Cable Car or On Foot?"
+      },
+      "excerpt": {
+        "rendered": ""
+      },
+      "content": {
+        "rendered": "<p>The cable car reaches the top of Table Mountain in a few minutes. The Platteklip Gorge path takes two to three hours and climbs steeply the whole way.</p><p>Walk up in the cool of the morning and ride down in the afternoon, when the queues for the descent are short.</p><p>Check the weather first: when the cloud the locals call the tablecloth sits on the summit, the cable car stops and the views disappear.</p>"
+      },
+      "author": 3,
+      "categories": [
+        11
+      ],
+      "tags": [
+        103
+      ],
+      "featured_media": 0,
+      "yoast_head_json": {
+        "description": ""
+      },
+      "gold": {
+        "region": [
+          "Africa"
+        ],
+        "traps": [
+          "Cape Town is not named: region must come from Table Mountain, not a guessed city"
+        ]
+      }
+    }
+  ],
+  "demoGold": {
+    "1201": {
+      "region": [
+        "Europe"
+      ],
+      "traps": [
+        "prices and a year in the text"
+      ]
+    },
+    "1202": {
+      "region": [
+        "Europe"
+      ],
+      "traps": [
+        "SEO description written from scratch"
+      ]
+    },
+    "1203": {
+      "region": [
+        "Europe"
+      ],
+      "traps": [
+        "empty excerpt; 'four huts' vs three in the table"
+      ]
+    },
+    "1204": {
+      "region": [
+        "Europe"
+      ],
+      "traps": [
+        "only region left to write"
+      ]
+    },
+    "1205": {
+      "region": [
+        "Europe"
+      ],
+      "traps": [
+        "excerpt under 40 characters; author is a new entry"
+      ]
+    },
+    "1206": {
+      "region": [
+        "Asia"
+      ],
+      "traps": [
+        "publish time 23:00 UTC is the next day locally"
+      ]
+    },
+    "1207": {
+      "region": [
+        "Europe"
+      ],
+      "traps": [
+        "empty SEO description"
+      ]
+    },
+    "1208": {
+      "region": [
+        null,
+        "Europe"
+      ],
+      "traps": [
+        "editor's note with no single place"
+      ]
+    },
+    "1209": {
+      "region": [
+        "Europe"
+      ],
+      "traps": [
+        "only region left to write"
+      ]
+    }
+  }
+}

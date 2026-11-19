@@ -1,10 +1,26 @@
 # Porter
 
+[![CI](https://github.com/Yeezy2277/porter/actions/workflows/ci.yml/badge.svg)](https://github.com/Yeezy2277/porter/actions/workflows/ci.yml)
+
 Moves a legacy CMS export into Contentful. **Code converts the text; Claude does the parts that need judgement; a person approves before anything is written.**
 
 **Live demo: [porter.vitaliipopov.dev](https://porter.vitaliipopov.dev).** Walk the stages in order: [Map](https://porter.vitaliipopov.dev/map) → [Link](https://porter.vitaliipopov.dev/link) → [Migrate](https://porter.vitaliipopov.dev/migrate) → [Evals](https://porter.vitaliipopov.dev/evals). The public demo replays recorded model answers, so it costs nothing and behaves the same every time; the database (Neon) is real and shared, and each stage has a Reset.
 
 Sample data is a fictional travel magazine's WordPress export ([`samples/`](samples)). No real site or space is contacted unless you configure one.
+
+## At a glance
+
+| | |
+|---|---|
+| What | A WordPress → Contentful migration where code converts the text and Claude only makes judgement calls. A learning project I built on my own, not client work. |
+| Try it | [Live demo](https://porter.vitaliipopov.dev), no sign-up and no API keys: it replays recorded model answers. Locally: `npm install && npm run dev`. |
+| Retrieval | Hybrid search (Voyage embeddings in pgvector + Postgres full-text, Reciprocal Rank Fusion): **98% correct, 96% retrieval recall on 53 hand-labelled cases**. |
+| Agent | Hand-written tool loop, 6 tools, **max 10 turns and $0.40 per post**, every tool input validated; anything uncertain goes to a human review queue. Recorded run: 9 posts, 3–4 turns each, about **$0.013 per post**. |
+| Evals | Linking and agent evals run in CI on recorded answers and **fail the build below set floors**; a separate Haiku judge scores the free text, checked against known-bad inputs. |
+| Guardrails | The model never writes article text; a word-level diff proves each body survived. Model-written fields are checked for names and numbers the source doesn't contain. |
+| Honest limits | Small eval sets (n=53 and 19), so metrics sit near their ceiling with wide intervals; the judge's agreement with human labels is still being measured. |
+
+**Why the conversion isn't an agent:** turning HTML into rich text has a right answer, so it's a deterministic workflow that can be proved word for word. The agent only gets the open-ended part (summaries, region, review notes), where judgement is the job.
 
 ## Why it exists
 

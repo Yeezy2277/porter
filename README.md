@@ -2,6 +2,8 @@
 
 Moves a legacy CMS export into Contentful. **Code converts the text; Claude does the parts that need judgement; a person approves before anything is written.**
 
+**Live demo: [porter.vitaliipopov.dev](https://porter.vitaliipopov.dev).** Walk the stages in order: [Map](https://porter.vitaliipopov.dev/map) → [Link](https://porter.vitaliipopov.dev/link) → [Migrate](https://porter.vitaliipopov.dev/migrate) → [Evals](https://porter.vitaliipopov.dev/evals). The public demo replays recorded model answers, so it costs nothing and behaves the same every time; the database (Neon) is real and shared, and each stage has a Reset.
+
 Sample data is a fictional travel magazine's WordPress export ([`samples/`](samples)). No real site or space is contacted unless you configure one.
 
 ## Why it exists
